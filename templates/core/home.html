@@ -4,7 +4,8 @@
 
 <!-- ===== Hero Section ===== -->
 <section class="hero-section">
-  <div class="container">
+  <canvas id="cosmicStarfield" class="hero-canvas"></canvas>
+  <div class="container position-relative" style="z-index: 2;">
     <div class="row align-items-center">
       <div class="col-lg-6">
         <span class="hero-badge"><i class="fa-solid fa-om"></i> Trusted Vedic Astrologer</span>
@@ -14,7 +15,7 @@
           guidance, Puja and Vedic rituals — rooted in ancient wisdom, delivered with modern care.
         </p>
         <div class="d-flex flex-wrap gap-3">
-          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg">
+          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg shimmer-btn">
             <i class="fa-solid fa-calendar-check"></i> Book Appointment
           </a>
           <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-outline-light btn-lg">
@@ -68,7 +69,7 @@
     <div class="row g-4">
       {% for service in services %}
       <div class="col-lg-4 col-md-6">
-        <div class="service-card">
+        <div class="service-card glass-card">
           <div class="service-icon"><i class="{{ service.icon }}"></i></div>
           <h5>{{ service.title }}</h5>
           <p>{{ service.short_description }}</p>
@@ -81,6 +82,120 @@
       {% endfor %}
     </div>
     <a href="{% url 'services:list' %}" class="btn btn-navy btn-lg mt-5">View All Services</a>
+  </div>
+</section>
+
+<!-- ===== Interactive 12-Rashi Cosmic Zodiac Wheel ===== -->
+<section class="rashi-section section-pad">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-label text-gold">Vedic Zodiac Insights</span>
+      <h2 class="section-title text-white">Interactive <span>12-Rashi Chakra</span> (द्वादश राशि चक्र)</h2>
+      <div class="section-divider"></div>
+      <p class="text-gold-light mx-auto" style="max-width:620px;">Touch or click on your Rashi to reveal your Ruling Planet (स्वामी ग्रह), Auspicious Gemstone (शुभ रत्न), Lucky Element, and Vedic Remedies.</p>
+    </div>
+
+    <div class="row align-items-center g-5">
+      <!-- 12-Rashi Buttons Grid -->
+      <div class="col-lg-7">
+        <div class="rashi-wheel-container">
+          <div class="rashi-items-grid">
+            <div class="rashi-btn active" data-rashi="mesh" data-name="Mesh (मेष - Aries)" data-glyph="♈" data-planet="Mars (मंगल देव)" data-element="Agni (अग्नि - Fire)" data-gem="Moonga (Red Coral / मूँगा)" data-color="Red & Saffron" data-mantra="ॐ क्रां क्रीं क्रौं सः भौमाय नमः" data-desc="Energetic, courageous, and natural leaders. Mangal brings immense vitality and ambition. Remedies include Hanuman Chalisa recitation and Coral gemstone.">
+              <span class="rashi-icon">♈</span>
+              <span class="rashi-text">मेष (Mesh)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="vrishabh" data-name="Vrishabh (वृषभ - Taurus)" data-glyph="♉" data-planet="Venus (शुक्र देव)" data-element="Prithvi (पृथ्वी - Earth)" data-gem="Diamond / Opal (हीरा / ओपल)" data-color="White & Light Blue" data-mantra="ॐ द्रां द्रीं द्रौं सः शुक्राय नमः" data-desc="Determined, reliable, artistic, and lovers of beauty and comfort. Shukra blesses with luxury, wealth, and happy relationships.">
+              <span class="rashi-icon">♉</span>
+              <span class="rashi-text">वृषभ (Vrishabh)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="mithun" data-name="Mithun (मिथुन - Gemini)" data-glyph="♊" data-planet="Mercury (बुध देव)" data-element="Vayu (वायु - Air)" data-gem="Emerald (पन्ना)" data-color="Green" data-mantra="ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः" data-desc="Intellectual, articulate communicators and quick thinkers. Budha sharpens analytical business acumen and networking skills.">
+              <span class="rashi-icon">♊</span>
+              <span class="rashi-text">मिथुन (Mithun)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="kark" data-name="Kark (कर्क - Cancer)" data-glyph="♋" data-planet="Moon (चन्द्र देव)" data-element="Jal (जल - Water)" data-gem="Pearl (मोती / Moti)" data-color="Milky White & Silver" data-mantra="ॐ श्रां श्रीं श्रौं सः चन्द्रमसे नमः" data-desc="Intuitive, deeply caring, emotional, and protective of family. Chandra grants inner peace, mental calmness, and emotional stability.">
+              <span class="rashi-icon">♋</span>
+              <span class="rashi-text">कर्क (Kark)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="singh" data-name="Singh (सिंह - Leo)" data-glyph="♌" data-planet="Sun (सूर्य देव)" data-element="Agni (अग्नि - Fire)" data-gem="Ruby (माणिक्य / Manikya)" data-color="Golden Yellow & Orange" data-mantra="ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः" data-desc="Royal, charismatic, generous, and commanding authority. Surya bestows high government success, respect, and radiant health.">
+              <span class="rashi-icon">♌</span>
+              <span class="rashi-text">सिंह (Singh)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="kanya" data-name="Kanya (कन्या - Virgo)" data-glyph="♍" data-planet="Mercury (बुध देव)" data-element="Prithvi (पृथ्वी - Earth)" data-gem="Emerald (पन्ना)" data-color="Dark Green & Emerald" data-mantra="ॐ बुधाय नमः" data-desc="Meticulous, practical, analytical, and perfectionists. Excels in finance, management, and solving complex problems.">
+              <span class="rashi-icon">♍</span>
+              <span class="rashi-text">कन्या (Kanya)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="tula" data-name="Tula (तुला - Libra)" data-glyph="♎" data-planet="Venus (शुक्र देव)" data-element="Vayu (वायु - Air)" data-gem="Diamond / White Zircon" data-color="Pink & Pastel Shades" data-mantra="ॐ शुं शुक्राय नमः" data-desc="Charming, diplomatic, fair-minded, and lovers of harmony. Shukra grants blissful marriage, flourishing partnerships, and artistic success.">
+              <span class="rashi-icon">♎</span>
+              <span class="rashi-text">तुला (Tula)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="vrishchik" data-name="Vrishchik (वृश्चिक - Scorpio)" data-glyph="♏" data-planet="Mars (मंगल देव)" data-element="Jal (जल - Water)" data-gem="Red Coral (मूँगा)" data-color="Deep Red & Maroon" data-mantra="ॐ अं अंगारकाय नमः" data-desc="Passionate, intensely focused, intuitive, and spiritually transformative. Overcomes huge hurdles with unshakable willpower.">
+              <span class="rashi-icon">♏</span>
+              <span class="rashi-text">वृश्चिक (Vrishchik)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="dhanu" data-name="Dhanu (धनु - Sagittarius)" data-glyph="♐" data-planet="Jupiter (बृहस्पति / गुरु)" data-element="Agni (अग्नि - Fire)" data-gem="Yellow Sapphire (पुखराज)" data-color="Bright Yellow & Gold" data-mantra="ॐ ग्रां ग्रीं ग्रौं सः गुरवे नमः" data-desc="Philosophical, optimistic, truth-seekers, and wise advisors. Brihaspati bestows higher education, divine fortune, and dharmic prosperity.">
+              <span class="rashi-icon">♐</span>
+              <span class="rashi-text">धनु (Dhanu)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="makar" data-name="Makar (मकर - Capricorn)" data-glyph="♑" data-planet="Saturn (शनि देव)" data-element="Prithvi (पृथ्वी - Earth)" data-gem="Blue Sapphire (नीलम)" data-color="Dark Blue & Black" data-mantra="ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः" data-desc="Disciplined, perseverant, patient, and highly ambitious. Shani grants long-lasting empire, career heights, and karmic justice.">
+              <span class="rashi-icon">♑</span>
+              <span class="rashi-text">मकर (Makar)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="kumbh" data-name="Kumbh (कुंभ - Aquarius)" data-glyph="♒" data-planet="Saturn (शनि देव)" data-element="Vayu (वायु - Air)" data-gem="Blue Sapphire / Amethyst" data-color="Electric Blue & Cyan" data-mantra="ॐ शं शनैश्चराय नमः" data-desc="Visionary, humanitarian, independent, and innovative thinkers. Shani unlocks breakthrough inventions and social leadership.">
+              <span class="rashi-icon">♒</span>
+              <span class="rashi-text">कुंभ (Kumbh)</span>
+            </div>
+            <div class="rashi-btn" data-rashi="meen" data-name="Meen (मीन - Pisces)" data-glyph="♓" data-planet="Jupiter (बृहस्पति / गुरु)" data-element="Jal (जल - Water)" data-gem="Yellow Sapphire (पुखराज)" data-color="Saffron Yellow & Sea Green" data-mantra="ॐ बृं बृहस्पतये नमः" data-desc="Compassionate, spiritually gifted, imaginative, and deeply devotional. Guru brings moksha tendencies, profound intuition, and global success.">
+              <span class="rashi-icon">♓</span>
+              <span class="rashi-text">मीन (Meen)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Rashi Insights Display Card -->
+      <div class="col-lg-5">
+        <div class="rashi-display-card" id="rashiDisplayCard">
+          <div class="rashi-display-header d-flex align-items-center gap-3">
+            <span class="display-glyph" id="rashiGlyph">♈</span>
+            <div>
+              <span class="display-tag">Vedic Rashi Kundli</span>
+              <h3 class="display-name mb-0 text-gold" id="rashiName">Mesh (मेष - Aries)</h3>
+            </div>
+          </div>
+          <hr class="rashi-divider my-3">
+          <div class="rashi-details-list">
+            <div class="detail-row mb-2">
+              <span class="detail-label"><i class="fa-solid fa-sun text-gold"></i> Ruling Planet:</span>
+              <strong id="rashiPlanet" class="text-white">Mars (मंगल देव)</strong>
+            </div>
+            <div class="detail-row mb-2">
+              <span class="detail-label"><i class="fa-solid fa-fire text-gold"></i> Element:</span>
+              <strong id="rashiElement" class="text-white">Agni (अग्नि - Fire)</strong>
+            </div>
+            <div class="detail-row mb-2">
+              <span class="detail-label"><i class="fa-solid fa-gem text-gold"></i> Lucky Gemstone:</span>
+              <strong id="rashiGem" class="text-gold-light">Moonga (Red Coral / मूँगा)</strong>
+            </div>
+            <div class="detail-row mb-2">
+              <span class="detail-label"><i class="fa-solid fa-palette text-gold"></i> Lucky Color:</span>
+              <strong id="rashiColor" class="text-white">Red &amp; Saffron</strong>
+            </div>
+          </div>
+          <div class="rashi-mantra-box my-3">
+            <span class="mantra-lbl">Beej Mantra (बीज मंत्र)</span>
+            <div class="mantra-val" id="rashiMantra">ॐ क्रां क्रीं क्रौं सः भौमाय नमः</div>
+          </div>
+          <p class="rashi-desc text-gold-light small" id="rashiDesc">
+            Energetic, courageous, and natural leaders. Mangal brings immense vitality and ambition. Remedies include Hanuman Chalisa recitation and Coral gemstone.
+          </p>
+          <div class="mt-4">
+            <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg w-100 shimmer-btn temple-chime-btn">
+              <i class="fa-solid fa-hand-sparkles"></i> Consult Pandit Ji for Your Kundli
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
