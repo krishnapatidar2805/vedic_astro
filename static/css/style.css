@@ -248,13 +248,13 @@ a { text-decoration: none; transition: all .3s ease; }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: scale(1.18);
-  object-position: center 38%;
+  transform: scale(1.36);
+  object-position: center 30%;
   display: block;
   transition: transform .4s ease;
 }
 .hero-photo-frame:hover .hero-photo-box img {
-  transform: scale(1.22);
+  transform: scale(1.40);
 }
 .hero-photo-badge {
   position: absolute;
