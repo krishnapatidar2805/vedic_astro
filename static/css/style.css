@@ -212,8 +212,8 @@ a { text-decoration: none; transition: all .3s ease; }
 .hero-photo-frame {
   position: relative;
   display: inline-block;
-  width: 440px;
-  height: 440px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
   padding: 8px;
   background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
@@ -238,22 +238,19 @@ a { text-decoration: none; transition: all .3s ease; }
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid var(--navy-dark);
-  background: radial-gradient(circle, #183a6b 0%, #0b1c3d 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--navy-dark);
   position: relative;
 }
 .hero-photo-box img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center 18%;
   display: block;
-  margin-bottom: -15px;
   transition: transform .4s ease;
 }
 .hero-photo-frame:hover .hero-photo-box img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 .hero-photo-badge {
   position: absolute;
