@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Privacy Policy | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container"><h1>Privacy Policy</h1></div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <p class="text-muted">Last updated: {% now "F Y" %}</p>
+        <h4 style="color:var(--navy);">1. Information We Collect</h4>
+        <p class="text-muted">We collect information you provide during registration and appointment booking, including your name, phone number, email, birth details (date, time, place of birth), and consultation messages.</p>
+        <h4 style="color:var(--navy);">2. How We Use Your Information</h4>
+        <p class="text-muted">Your information is used solely to provide astrology consultation services, confirm appointments, and communicate with you regarding your bookings. We never sell or share your personal data with third parties.</p>
+        <h4 style="color:var(--navy);">3. Data Security</h4>
+        <p class="text-muted">We take reasonable technical measures to protect your data from unauthorized access, alteration, or disclosure.</p>
+        <h4 style="color:var(--navy);">4. Cookies</h4>
+        <p class="text-muted">Our website may use cookies to enhance your browsing experience. You can disable cookies through your browser settings.</p>
+        <h4 style="color:var(--navy);">5. Contact</h4>
+        <p class="text-muted">For any privacy-related questions, please contact us at {{ BUSINESS_EMAIL }} or {{ BUSINESS_PHONE }}.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

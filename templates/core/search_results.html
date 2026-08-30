@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Search Results | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>Search Results</h1>
+    <p class="text-white-50 mt-2">Showing results for "{{ query }}"</p>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <h4 style="color:var(--navy);" class="mb-3">Services ({{ services.count }})</h4>
+    <div class="row g-4 mb-5">
+      {% for service in services %}
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon"><i class="{{ service.icon }}"></i></div>
+          <h5>{{ service.title }}</h5>
+          <p>{{ service.short_description }}</p>
+          <a href="{{ service.get_absolute_url }}" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-muted">No matching services found.</p>
+      {% endfor %}
+    </div>
+    <h4 style="color:var(--navy);" class="mb-3">Blog Posts ({{ posts.count }})</h4>
+    <div class="row g-4">
+      {% for post in posts %}
+      <div class="col-lg-4 col-md-6">
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <h5><a href="{{ post.get_absolute_url }}" style="color:var(--navy); text-decoration:none;">{{ post.title }}</a></h5>
+            <p class="text-muted">{{ post.summary|truncatewords:15 }}</p>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-muted">No matching blog posts found.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

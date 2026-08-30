@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Terms & Conditions | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container"><h1>Terms &amp; Conditions</h1></div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <p class="text-muted">Last updated: {% now "F Y" %}</p>
+        <h4 style="color:var(--navy);">1. Acceptance of Terms</h4>
+        <p class="text-muted">By using this website and booking appointments with Vedic Gajendra Sharma, you agree to these Terms &amp; Conditions.</p>
+        <h4 style="color:var(--navy);">2. Services</h4>
+        <p class="text-muted">All astrology, puja, and Vastu consultations are provided for guidance purposes. Results may vary from person to person and are based on traditional Vedic principles.</p>
+        <h4 style="color:var(--navy);">3. Appointments</h4>
+        <p class="text-muted">Appointments are subject to availability and confirmation. Please arrive or be available on time for your scheduled consultation slot.</p>
+        <h4 style="color:var(--navy);">4. Payments</h4>
+        <p class="text-muted">Consultation fees, if applicable, will be communicated at the time of booking confirmation.</p>
+        <h4 style="color:var(--navy);">5. Limitation of Liability</h4>
+        <p class="text-muted">Astrological guidance is advisory in nature. We are not liable for personal, financial, or legal decisions made based on consultations.</p>
+        <h4 style="color:var(--navy);">6. Contact</h4>
+        <p class="text-muted">For questions regarding these terms, contact us at {{ BUSINESS_EMAIL }}.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

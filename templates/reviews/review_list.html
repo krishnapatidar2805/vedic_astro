@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Reviews | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>Client Reviews</h1>
+    <p class="text-white-50 mt-2">{{ avg_rating }} ★ average from {{ total_reviews }} reviews</p>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-4 mb-5">
+      {% for review in page_obj %}
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card">
+          <i class="fa-solid fa-quote-right quote-icon"></i>
+          <div class="review-stars">
+            {% for i in "12345" %}<i class="fa-solid fa-star{% if forloop.counter > review.rating %}-o{% endif %}"></i>{% endfor %}
+          </div>
+          <p class="text-muted">{{ review.comment }}</p>
+          <div class="review-user">
+            <div class="review-avatar">{{ review.user.first_name|first|default:review.user.username|first|upper }}</div>
+            <strong>{{ review.user.first_name|default:review.user.username }}</strong>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-muted text-center">No reviews yet. Be the first to share your experience!</p>
+      {% endfor %}
+    </div>
+
+    {% if form %}
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="form-card">
+          <h5 style="color:var(--navy);" class="mb-3">Share Your Experience</h5>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label">Rating</label>
+              {{ form.rating }}
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your Review</label>
+              {{ form.comment }}
+            </div>
+            <button type="submit" class="btn btn-gold btn-lg">Submit Review</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="text-center">
+      <p class="text-muted">Please <a href="{% url 'accounts:login' %}?next={% url 'reviews:list' %}" class="text-gold fw-bold">login</a> to submit a review.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

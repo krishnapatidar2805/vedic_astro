@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}{{ service.title }} | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ service.title }}</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <a href="{% url 'services:list' %}">Services</a> <span class="mx-1">/</span> <span>{{ service.title }}</span></nav>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        {% if service.image %}<img src="{{ service.image.url }}" class="rounded-4 mb-4 w-100" style="max-height:380px;object-fit:cover;" alt="{{ service.title }}">{% endif %}
+        <h3 style="color:var(--navy);">{{ service.title }}</h3>
+        <p class="text-muted">{{ service.description|linebreaks }}</p>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-card">
+          <div class="service-icon mx-auto"><i class="{{ service.icon }}"></i></div>
+          <h4 class="text-center mt-3" style="color:var(--navy);">{{ service.title }}</h4>
+          {% if service.price > 0 %}<p class="text-center service-price fs-4">₹{{ service.price }}</p>{% endif %}
+          <a href="{% url 'appointments:book' %}?service={{ service.slug }}" class="btn btn-gold btn-lg w-100 mt-3">Book This Service</a>
+          <a href="https://wa.me/{{ BUSINESS_WHATSAPP }}?text=Hello%20Pandit%20ji%2C%20I%20would%20like%20to%20know%20more%20about%20your%20{{ service.title|urlencode }}%20service." target="_blank" class="btn btn-outline-gold btn-lg w-100 mt-2">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    {% if related %}
+    <h4 class="mt-5 mb-4" style="color:var(--navy);">You May Also Like</h4>
+    <div class="row g-4">
+      {% for s in related %}
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon"><i class="{{ s.icon }}"></i></div>
+          <h5>{{ s.title }}</h5>
+          <p>{{ s.short_description }}</p>
+          <a href="{{ s.get_absolute_url }}" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

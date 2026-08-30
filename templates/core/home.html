@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- ===== Hero Section ===== -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="hero-badge"><i class="fa-solid fa-om"></i> Trusted Vedic Astrologer</span>
+        <h1 class="hero-title">Discover Your Destiny with <span>Vedic Gajendra Sharma</span></h1>
+        <p class="hero-subtitle">
+          Authentic Janam Kundli analysis, Kundli Matching, Vastu Shanti, Career &amp; Business
+          guidance, Puja and Vedic rituals — rooted in ancient wisdom, delivered with modern care.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          </a>
+          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-outline-light btn-lg">
+            <i class="fa-solid fa-phone"></i> Call Now
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">1000+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div>
+            <div class="stat-num">{{ avg_rating }}★</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+          <div>
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame">
+            <img src="{% static 'img/astrologer.jpeg' %}" alt="Vedic Gajendra Sharma - Astrologer">
+          </div>
+          <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> Blessed by Tradition</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none" style="width:100%;height:70px;">
+      <path fill="#fdf6e3" d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,100L0,100Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== Services Section ===== -->
+<section class="section-pad">
+  <div class="container text-center">
+    <span class="section-label">Our Sacred Offerings</span>
+    <h2 class="section-title">Astrology &amp; Vedic <span>Services</span></h2>
+    <div class="section-divider"></div>
+    <p class="text-muted mb-5 mx-auto" style="max-width:600px;">
+      From resolving life's toughest problems to guiding auspicious beginnings — explore our
+      full range of Vedic consultation services.
+    </p>
+    <div class="row g-4">
+      {% for service in services %}
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon"><i class="{{ service.icon }}"></i></div>
+          <h5>{{ service.title }}</h5>
+          <p>{{ service.short_description }}</p>
+          {% if service.price > 0 %}<div class="service-price mb-2">₹{{ service.price }}</div>{% endif %}
+          <a href="{{ service.get_absolute_url }}" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-muted">Services will appear here soon. Add services from the Admin Dashboard.</p>
+      {% endfor %}
+    </div>
+    <a href="{% url 'services:list' %}" class="btn btn-navy btn-lg mt-5">View All Services</a>
+  </div>
+</section>
+
+<!-- ===== About Preview ===== -->
+<section class="section-pad" style="background:var(--cream-dark);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7 order-lg-1 order-2">
+        <span class="section-label">About the Astrologer</span>
+        <h2 class="section-title">Pandit <span>Gajendra Sharma</span></h2>
+        <p class="text-muted">
+          A dedicated Vedic scholar and Bhagwat speaker from Kherkheda, Sitamau, Pandit Gajendra
+          Sharma has guided thousands of families through Kundli analysis, Vastu correction, Puja
+          rituals, and life-changing astrological remedies — combining deep scriptural knowledge
+          with genuine compassion for every client.
+        </p>
+        <ul class="list-unstyled about-list">
+          <li><i class="fa-solid fa-check"></i> Authentic Janam Kundli &amp; Palmistry Reading</li>
+          <li><i class="fa-solid fa-check"></i> Kundli Matching for Marriage Compatibility</li>
+          <li><i class="fa-solid fa-check"></i> Vastu Shanti &amp; Grah Dosh Nivaran</li>
+          <li><i class="fa-solid fa-check"></i> Shrimad Bhagwat Katha &amp; Vedic Anushthan</li>
+        </ul>
+        <a href="{% url 'core:about' %}" class="btn btn-outline-gold mt-3">More About Us</a>
+      </div>
+      <div class="col-lg-5 order-lg-2 order-1 text-center">
+        <div class="about-img-wrap">
+          <div class="about-img-box">
+            <img src="{% static 'img/astrologer.jpeg' %}" alt="Gajendra Sharma">
+          </div>
+          <div class="about-exp-badge">
+            <div class="num">10+</div>
+            <div>Years of<br>Vedic Practice</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Gallery Preview ===== -->
+<section class="section-pad">
+  <div class="container text-center">
+    <span class="section-label">Moments of Devotion</span>
+    <h2 class="section-title">Our <span>Gallery &amp; Posters</span></h2>
+    <div class="section-divider"></div>
+    <div class="row g-4 mt-4 justify-content-center">
+      {% for img in gallery_images %}
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="gallery-item">
+          <img src="{{ img.image.url }}" alt="{{ img.title }}">
+          <div class="gallery-overlay">{{ img.title }}</div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="gallery-item">
+          <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services">
+          <div class="gallery-overlay">Astrology Services</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="gallery-item">
+          <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha">
+          <div class="gallery-overlay">Shrimad Bhagwat Katha</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="gallery-item">
+          <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan &amp; Astrology">
+          <div class="gallery-overlay">Vedic Pujan &amp; Astrology</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="gallery-item">
+          <img src="{% static 'img/poster4.jpeg' %}" alt="Contact Vedic Astrologer">
+          <div class="gallery-overlay">Contact for Pooja &amp; Katha</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="{% url 'gallery:list' %}" class="btn btn-navy btn-lg mt-5">View Full Gallery</a>
+  </div>
+</section>
+
+<!-- ===== CTA Band ===== -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Seeking Clarity in Life? Let the Stars Guide You.</h2>
+    <div class="section-divider"></div>
+    <p class="text-white-50 mb-4">Book a personal consultation today and take the first step towards a brighter future.</p>
+    <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg me-2"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+    <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-outline-light btn-lg"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+  </div>
+</section>
+
+<!-- ===== Reviews Preview ===== -->
+{% if reviews %}
+<section class="section-pad">
+  <div class="container text-center">
+    <span class="section-label">Client Testimonials</span>
+    <h2 class="section-title">What Our <span>Clients Say</span></h2>
+    <div class="section-divider"></div>
+    <div class="row g-4 mt-3">
+      {% for review in reviews %}
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card text-start">
+          <i class="fa-solid fa-quote-right quote-icon"></i>
+          <div class="review-stars">
+            {% for i in "12345" %}<i class="fa-solid fa-star{% if forloop.counter > review.rating %}-o{% endif %}"></i>{% endfor %}
+          </div>
+          <p class="text-muted">{{ review.comment|truncatewords:25 }}</p>
+          <div class="review-user">
+            <div class="review-avatar">{{ review.user.first_name|first|default:review.user.username|first|upper }}</div>
+            <div>
+              <strong>{{ review.user.first_name|default:review.user.username }}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="{% url 'reviews:list' %}" class="btn btn-outline-gold btn-lg mt-5">Read All Reviews</a>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Blog Preview ===== -->
+{% if posts %}
+<section class="section-pad" style="background:var(--cream-dark);">
+  <div class="container text-center">
+    <span class="section-label">Vedic Insights</span>
+    <h2 class="section-title">Latest From Our <span>Blog</span></h2>
+    <div class="section-divider"></div>
+    <div class="row g-4 mt-3">
+      {% for post in posts %}
+      <div class="col-lg-4 col-md-6">
+        <div class="blog-card text-start">
+          {% if post.featured_image %}<img src="{{ post.featured_image.url }}" alt="{{ post.title }}">{% endif %}
+          <div class="blog-card-body">
+            {% if post.category %}<span class="blog-cat-tag">{{ post.category.name }}</span>{% endif %}
+            <h5><a href="{{ post.get_absolute_url }}" class="text-decoration-none" style="color:inherit;">{{ post.title }}</a></h5>
+            <p class="text-muted">{{ post.summary|truncatewords:15 }}</p>
+            <div class="blog-meta"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"d M Y" }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="{% url 'blog:list' %}" class="btn btn-navy btn-lg mt-5">Visit Our Blog</a>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

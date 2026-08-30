@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}My Appointments | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>My Appointments</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>My Appointments</span></nav>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 style="color:var(--navy);">Appointment History</h4>
+      <a href="{% url 'appointments:book' %}" class="btn btn-gold">+ New Appointment</a>
+    </div>
+    <div class="table-responsive form-card">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Mode</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for appt in appointments %}
+          <tr>
+            <td>{{ appt.service.title|default:"—" }}</td>
+            <td>{{ appt.preferred_date }}</td>
+            <td>{{ appt.preferred_time }}</td>
+            <td>{{ appt.get_consultation_mode_display }}</td>
+            <td><span class="status-badge status-{{ appt.status }}">{{ appt.get_status_display }}</span></td>
+            <td>
+              {% if appt.status == 'pending' or appt.status == 'confirmed' %}
+              <a href="{% url 'appointments:cancel' appt.pk %}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Cancel this appointment?');">Cancel</a>
+              {% else %}—{% endif %}
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="6" class="text-center text-muted py-4">You have no appointments yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

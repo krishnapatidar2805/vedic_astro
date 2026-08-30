@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Pay Online & Dakshina | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div class="container">
+    <h1>Pay Online / Dakshina</h1>
+    <nav class="breadcrumb-nav mt-2">
+      <a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Pay Online</span>
+    </nav>
+  </div>
+</div>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="payment-card text-center">
+          <div class="payment-header">
+            <span class="section-label">Digital Dakshina &amp; Fees</span>
+            <h3 class="section-title mb-2">Scan &amp; <span>Pay via UPI</span></h3>
+            <p class="text-muted small">Fast, secure and convenient payment for your Vedic consultation, Kundli analysis &amp; Puja anushthan.</p>
+          </div>
+
+          <!-- QR Code Image Box -->
+          <div class="qr-box my-4">
+            <img src="{% static 'img/upi_qr.jpg' %}" alt="UPI QR Code - Gurmit Sharma" class="img-fluid upi-qr-img">
+          </div>
+
+          <!-- Account Details -->
+          <div class="account-details-box mb-4">
+            <div class="account-name">
+              <i class="fa-solid fa-circle-check text-success"></i> <strong>Gurmit Sharma</strong>
+              <span class="text-muted d-block small">(Vedic Gajendra Sharma)</span>
+            </div>
+            <div class="upi-id-wrap mt-3">
+              <span class="upi-label">UPI ID:</span>
+              <code id="upiIdText" class="upi-code">gurmitsharma09-1@okhdfcbank</code>
+              <button id="copyUpiBtn" class="btn btn-sm btn-outline-gold ms-2" onclick="copyUpiId()" title="Copy UPI ID">
+                <i class="fa-regular fa-copy"></i> <span id="copyText">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Direct Mobile Pay Button -->
+          <div class="d-grid gap-2 mb-4">
+            <a href="upi://pay?pa=gurmitsharma09-1@okhdfcbank&pn=Gurmit%20Sharma&cu=INR" class="btn btn-gold btn-lg">
+              <i class="fa-solid fa-mobile-screen-button"></i> Pay with Any UPI App
+            </a>
+          </div>
+
+          <!-- Supported UPI Apps -->
+          <div class="supported-apps mb-4">
+            <span class="text-muted small d-block mb-2">Accepted on all major UPI Apps:</span>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <span class="badge bg-light text-dark border px-3 py-2"><i class="fa-brands fa-google-pay text-primary"></i> Google Pay</span>
+              <span class="badge bg-light text-dark border px-3 py-2"><i class="fa-solid fa-wallet" style="color:#5f259f;"></i> PhonePe</span>
+              <span class="badge bg-light text-dark border px-3 py-2"><i class="fa-solid fa-money-bill-wave text-info"></i> Paytm</span>
+              <span class="badge bg-light text-dark border px-3 py-2"><i class="fa-solid fa-building-columns text-success"></i> BHIM / NetBanking</span>
+            </div>
+          </div>
+
+          <!-- Step Instructions -->
+          <div class="alert alert-warning text-start small border-warning p-3 mt-4" style="background:#fff9e6; border-radius: 12px;">
+            <h6 class="fw-bold mb-2 text-navy" style="color:var(--navy);"><i class="fa-solid fa-circle-info text-gold"></i> Payment Instructions:</h6>
+            <ol class="mb-0 ps-3">
+              <li>Scan the QR code above or copy the UPI ID in your UPI application.</li>
+              <li>Enter the consultation fee / Puja dakshina amount.</li>
+              <li>Complete the payment securely through your UPI app.</li>
+              <li><strong>Share payment screenshot on WhatsApp</strong> for instant booking confirmation.</li>
+            </ol>
+          </div>
+
+          <!-- WhatsApp Share Button -->
+          <a href="https://wa.me/{{ BUSINESS_WHATSAPP }}?text=Hello%20Pandit%20ji%2C%20I%20have%20completed%20the%20UPI%20payment%20for%20my%20astrology%20consultation.%20Please%20find%20my%20details." target="_blank" class="btn btn-success btn-lg w-100 mt-3" style="background:#25D366; border:none;">
+            <i class="fa-brands fa-whatsapp"></i> Share Screenshot on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function copyUpiId() {
+  const upiId = document.getElementById('upiIdText').innerText.trim();
+  navigator.clipboard.writeText(upiId).then(function() {
+    const copyText = document.getElementById('copyText');
+    copyText.innerText = 'Copied! ✓';
+    setTimeout(function() {
+      copyText.innerText = 'Copy';
+    }, 2500);
+  });
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{{ SITE_NAME }} | Vedic Astrology, Puja & Kundli Expert{% endblock %}</title>
+<meta name="description" content="Vedic Gajendra Sharma - Expert astrologer offering Janam Kundli, Kundli Matching, Vastu Shanti, Career, Marriage & Business consultation, Puja and Katha services.">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}?v=1.9">
+{% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<!-- ===== Loading Animation ===== -->
+<div id="page-loader">
+  <div class="om-loader">ॐ</div>
+</div>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-lg sticky-top main-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'core:home' %}">
+      <span class="brand-icon">ॐ</span>
+      <span class="brand-text">
+        Vedic <span class="brand-gold">Gajendra Sharma</span>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:about' %}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'services:list' %}">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'gallery:list' %}">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'blog:list' %}">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'reviews:list' %}">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:festivals' %}">Vrat &amp; Festivals</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:payment' %}"><i class="fa-solid fa-qrcode text-gold"></i> Pay Online</a></li>
+        <li class="nav-item">
+          <form class="d-flex nav-search" action="{% url 'core:search' %}" method="get">
+            <input class="form-control form-control-sm" type="search" name="q" placeholder="Search...">
+            <button class="btn btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-circle-user"></i> {{ user.first_name|default:user.username }}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="{% url 'accounts:dashboard' %}">Dashboard</a></li>
+            <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">My Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'appointments:history' %}">My Appointments</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item ms-lg-2">
+          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-sm">Book Now</a>
+        </li>
+        {% else %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">Login</a></li>
+        <li class="nav-item ms-lg-2">
+          <a href="{% url 'accounts:register' %}" class="btn btn-gold btn-sm">Book Appointment</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Messages ===== -->
+{% if messages %}
+<div class="container mt-3">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- ===== Page Content ===== -->
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h5 class="footer-brand"><span class="brand-gold">ॐ</span> Vedic Gajendra Sharma</h5>
+        <p class="footer-about">Trusted Vedic astrologer offering authentic Janam Kundli, Kundli Matching, Vastu Shanti, Puja &amp; Katha services with decades of ancestral wisdom.</p>
+        <div class="social-icons">
+          <a href="{{ BUSINESS_INSTAGRAM }}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:{{ BUSINESS_PHONE }}"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="{% url 'core:about' %}">About Us</a></li>
+          <li><a href="{% url 'services:list' %}">Services</a></li>
+          <li><a href="{% url 'gallery:list' %}">Gallery</a></li>
+          <li><a href="{% url 'blog:list' %}">Blog</a></li>
+          <li><a href="{% url 'reviews:list' %}">Reviews</a></li>
+          <li><a href="{% url 'core:festivals' %}">Vrat &amp; Festivals Calendar</a></li>
+          <li><a href="{% url 'core:payment' %}"><i class="fa-solid fa-qrcode text-gold"></i> Pay Online / Dakshina</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-heading">Our Services</h6>
+        <ul class="footer-links">
+          <li><a href="{% url 'services:list' %}">Janam Kundli Analysis</a></li>
+          <li><a href="{% url 'services:list' %}">Kundli Matching</a></li>
+          <li><a href="{% url 'services:list' %}">Vastu Shanti</a></li>
+          <li><a href="{% url 'services:list' %}">Career &amp; Business</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-heading">Contact Us</h6>
+        <ul class="footer-links">
+          <li><i class="fa-solid fa-location-dot"></i> {{ BUSINESS_ADDRESS }}</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:{{ BUSINESS_PHONE }}">{{ BUSINESS_PHONE }}</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ BUSINESS_EMAIL }}">{{ BUSINESS_EMAIL }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="copyright">&copy; {% now "Y" %} Vedic Gajendra Sharma. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="{% url 'core:privacy_policy' %}">Privacy Policy</a> |
+        <a href="{% url 'core:terms_conditions' %}">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Floating Buttons ===== -->
+<!-- Sacred Vedic Audio Player (Bottom Left) -->
+<div id="mantraPlayer" class="mantra-widget" title="Play Divine Vedic Om Chanting">
+  <button id="mantraToggleBtn" class="mantra-btn" aria-label="Play Divine Om Chanting">
+    <span class="om-icon">ॐ</span>
+  </button>
+  <span class="mantra-label">Play Sacred Om</span>
+  <span class="sound-wave">
+    <span></span><span></span><span></span><span></span>
+  </span>
+  <audio id="sacredAudio" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_db65918731.mp3?filename=om-chanting-110825.mp3" type="audio/mp3">
+  </audio>
+</div>
+
+<a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="float-btn whatsapp-btn" title="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<a href="tel:{{ BUSINESS_PHONE }}" class="float-btn call-btn" title="Call Now">
+  <i class="fa-solid fa-phone"></i>
+</a>
+<button id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/script.js' %}?v=1.2"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

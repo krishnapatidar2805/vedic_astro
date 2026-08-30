@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Blog | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>Vedic Insights Blog</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Blog</span></nav>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-4">
+      {% for post in page_obj %}
+      <div class="col-lg-4 col-md-6">
+        <div class="blog-card">
+          {% if post.featured_image %}<img src="{{ post.featured_image.url }}" alt="{{ post.title }}">{% endif %}
+          <div class="blog-card-body">
+            {% if post.category %}<span class="blog-cat-tag">{{ post.category.name }}</span>{% endif %}
+            <h5><a href="{{ post.get_absolute_url }}" style="color:var(--navy); text-decoration:none;">{{ post.title }}</a></h5>
+            <p class="text-muted">{{ post.summary|truncatewords:18 }}</p>
+            <div class="blog-meta"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"d M Y" }} &nbsp; <i class="fa-regular fa-user"></i> {% if post.author %}{{ post.author.first_name|default:post.author.username }}{% else %}Admin{% endif %}</div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-muted text-center">No blog posts published yet.</p>
+      {% endfor %}
+    </div>
+    {% if page_obj.has_other_pages %}
+    <nav class="mt-5">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>{% endif %}
+        {% for num in page_obj.paginator.page_range %}
+        <li class="page-item {% if page_obj.number == num %}active{% endif %}"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+        {% endfor %}
+        {% if page_obj.has_next %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>{% endif %}
+      </ul>
+    </nav>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

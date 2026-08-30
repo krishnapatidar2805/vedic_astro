@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}My Profile | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>My Profile</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>My Profile</span></nav>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="form-card">
+          <h4 style="color:var(--navy);" class="mb-4">Update Your Information</h4>
+          <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            {% if user_form.non_field_errors %}
+              <div class="alert alert-danger">
+                {% for error in user_form.non_field_errors %}
+                  <p class="mb-0">{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            {% if profile_form.non_field_errors %}
+              <div class="alert alert-danger">
+                {% for error in profile_form.non_field_errors %}
+                  <p class="mb-0">{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <h6 class="text-gold mb-3">Account Details</h6>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                {{ user_form.first_name }}
+                {% if user_form.first_name.errors %}<div class="text-danger small mt-1">{{ user_form.first_name.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last Name</label>
+                {{ user_form.last_name }}
+                {% if user_form.last_name.errors %}<div class="text-danger small mt-1">{{ user_form.last_name.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-12">
+                <label class="form-label">Email Address</label>
+                {{ user_form.email }}
+                {% if user_form.email.errors %}<div class="text-danger small mt-1">{{ user_form.email.errors|striptags }}</div>{% endif %}
+              </div>
+            </div>
+            <h6 class="text-gold mb-3">Birth &amp; Personal Details</h6>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Phone Number</label>
+                {{ profile_form.phone }}
+                {% if profile_form.phone.errors %}<div class="text-danger small mt-1">{{ profile_form.phone.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Gender</label>
+                {{ profile_form.gender }}
+                {% if profile_form.gender.errors %}<div class="text-danger small mt-1">{{ profile_form.gender.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Date of Birth</label>
+                {{ profile_form.date_of_birth }}
+                {% if profile_form.date_of_birth.errors %}<div class="text-danger small mt-1">{{ profile_form.date_of_birth.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Time of Birth</label>
+                {{ profile_form.time_of_birth }}
+                {% if profile_form.time_of_birth.errors %}<div class="text-danger small mt-1">{{ profile_form.time_of_birth.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Place of Birth</label>
+                {{ profile_form.place_of_birth }}
+                {% if profile_form.place_of_birth.errors %}<div class="text-danger small mt-1">{{ profile_form.place_of_birth.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Address</label>
+                {{ profile_form.address }}
+                {% if profile_form.address.errors %}<div class="text-danger small mt-1">{{ profile_form.address.errors|striptags }}</div>{% endif %}
+              </div>
+              <div class="col-12">
+                <label class="form-label">Profile Picture</label>
+                {{ profile_form.profile_picture }}
+                {% if profile_form.profile_picture.errors %}<div class="text-danger small mt-1">{{ profile_form.profile_picture.errors|striptags }}</div>{% endif %}
+              </div>
+            </div>
+            <button type="submit" class="btn btn-gold btn-lg mt-4">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

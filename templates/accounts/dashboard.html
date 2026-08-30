@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>My Dashboard</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Dashboard</span></nav>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <h4 style="color:var(--navy);">Welcome, {{ user.first_name|default:user.username }} 🙏</h4>
+    <div class="row g-4 my-2">
+      <div class="col-lg-4 col-md-6">
+        <div class="dashboard-stat">
+          <div class="num">{{ total_count }}</div>
+          <div>Total Appointments</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="dashboard-stat">
+          <div class="num">{{ upcoming_count }}</div>
+          <div>Upcoming Appointments</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="dashboard-card text-center">
+          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg w-100 mb-2">Book New Appointment</a>
+          <a href="{% url 'accounts:profile' %}" class="btn btn-outline-gold w-100">Edit Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-card mt-4">
+      <h5 style="color:var(--navy);" class="mb-3">Recent Appointments</h5>
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr><th>Service</th><th>Date</th><th>Time</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            {% for appt in appointments %}
+            <tr>
+              <td>{{ appt.service.title|default:"—" }}</td>
+              <td>{{ appt.preferred_date }}</td>
+              <td>{{ appt.preferred_time }}</td>
+              <td><span class="status-badge status-{{ appt.status }}">{{ appt.get_status_display }}</span></td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4" class="text-center text-muted py-4">No appointments yet.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <a href="{% url 'appointments:history' %}" class="btn btn-outline-gold mt-2">View All Appointments</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

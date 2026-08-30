@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}FAQ | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>FAQ</span></nav>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="accordion faq-accordion" id="faqAccordion">
+          {% for faq in faqs %}
+          <div class="accordion-item mb-3 border-0 shadow-sm">
+            <h2 class="accordion-header">
+              <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ forloop.counter }}">
+                {{ faq.question }}
+              </button>
+            </h2>
+            <div id="faq{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">{{ faq.answer }}</div>
+            </div>
+          </div>
+          {% empty %}
+          <p class="text-muted text-center">FAQs will be added soon. Please contact us directly for any questions.</p>
+          {% endfor %}
+        </div>
+        <div class="text-center mt-5">
+          <p class="text-muted">Still have questions?</p>
+          <a href="{% url 'core:contact' %}" class="btn btn-gold btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

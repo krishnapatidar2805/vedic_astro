@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Vedic Vrat & Festival Calendar | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div class="container">
+    <h1>Vedic Vrat &amp; Festivals Calendar</h1>
+    <p class="lead text-gold-light mt-2 mb-0">व्रत, पर्व एवं हिन्दू त्यौहार पंचांग – तिथि, मुहूर्त, पूजा विधि एवं महत्व</p>
+    <nav class="breadcrumb-nav mt-3">
+      <a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Vrat &amp; Festivals</span>
+    </nav>
+  </div>
+</div>
+
+<section class="section-pad">
+  <div class="container">
+    
+    <!-- Filter Navigation Tabs -->
+    <div class="festival-filters text-center mb-5">
+      <button class="filter-btn active" data-filter="all">All Festivals (सभी व्रत-त्यौहार)</button>
+      <button class="filter-btn" data-filter="festivals">Major Festivals (प्रमुख पर्व)</button>
+      <button class="filter-btn" data-filter="ekadashi">Ekadashi Vrat (एकादशी)</button>
+      <button class="filter-btn" data-filter="pradosh">Pradosh &amp; Shivratri (प्रदोष/शिव)</button>
+      <button class="filter-btn" data-filter="purnima">Purnima &amp; Amavasya (पूर्णिमा/अमावस्या)</button>
+    </div>
+
+    <!-- Festival Cards Grid -->
+    <div class="row g-4" id="festivalsGrid">
+      {% for fest in festivals %}
+      <div class="col-lg-6 festival-item-col" data-category="{{ fest.category }}">
+        <div class="festival-card h-100">
+          <div class="festival-card-header d-flex justify-content-between align-items-center">
+            <div class="festival-icon-title d-flex align-items-center gap-3">
+              <div class="festival-icon"><i class="{{ fest.icon }}"></i></div>
+              <div>
+                <h4 class="festival-name mb-0">{{ fest.name }}</h4>
+                <span class="festival-tithi"><i class="fa-regular fa-calendar-check text-gold"></i> {{ fest.tithi }}</span>
+              </div>
+            </div>
+            <span class="festival-badge">{{ fest.badge }}</span>
+          </div>
+
+          <div class="festival-card-body mt-3">
+            <div class="festival-date-highlight mb-3">
+              <i class="fa-solid fa-clock text-gold"></i> <strong>Auspicious Occasion:</strong> {{ fest.date }}
+            </div>
+
+            <div class="festival-info-box mb-3">
+              <h6 class="info-title"><i class="fa-solid fa-sun text-gold"></i> Spiritual Significance (आध्यात्मिक महत्व):</h6>
+              <p class="mb-0 text-muted small">{{ fest.significance }}</p>
+            </div>
+
+            <div class="festival-info-box mb-3">
+              <h6 class="info-title"><i class="fa-solid fa-fire text-gold"></i> Puja Vidhi (पूजा विधि एवं अनुष्ठान):</h6>
+              <p class="mb-0 text-muted small">{{ fest.vidhi }}</p>
+            </div>
+
+            <div class="festival-mantra-box mb-4">
+              <span class="mantra-tag">Sacred Mantra</span>
+              <div class="mantra-text">{{ fest.mantra }}</div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 pt-2 border-top">
+              <span class="text-muted small">Special Vedic Anushthan Available</span>
+              <a href="{% url 'appointments:book' %}" class="btn btn-sm btn-gold">
+                <i class="fa-solid fa-calendar-check"></i> Book Puja for this Festival
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Need Consultation Banner -->
+    <div class="consultation-banner mt-5 p-4 rounded-4 text-center">
+      <h4 class="text-white mb-2">Want to perform Special Puja / Hawan on Auspicious Muhurat?</h4>
+      <p class="text-gold-light mb-3">Pandit Gajendra Sharma performs sacred Vedic Anushthan, Rudrabhishek, Bhagwat Katha &amp; Dosh Shanti at your home or mandir.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg"><i class="fa-solid fa-om"></i> Book Anushthan Now</a>
+        <a href="https://wa.me/{{ BUSINESS_WHATSAPP }}?text=Hello%20Pandit%20ji%2C%20I%20want%20to%20know%20about%20special%20festival%20puja%20and%20anushthan." target="_blank" class="btn btn-outline-light btn-lg"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const filterBtns = document.querySelectorAll('.festival-filters .filter-btn');
+  const festivalCols = document.querySelectorAll('.festival-item-col');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const filter = this.getAttribute('data-filter');
+
+      festivalCols.forEach(function (col) {
+        if (filter === 'all' || col.getAttribute('data-category') === filter) {
+          col.style.display = 'block';
+          col.style.opacity = 0;
+          setTimeout(() => {
+            col.style.opacity = 1;
+            col.style.transition = 'opacity .4s ease';
+          }, 30);
+        } else {
+          col.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>
+
+{% endblock %}

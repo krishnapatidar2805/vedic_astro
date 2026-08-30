@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }} | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ post.title }}</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <a href="{% url 'blog:list' %}">Blog</a> <span class="mx-1">/</span> <span>{{ post.title }}</span></nav>
+  </div>
+</div>
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        {% if post.featured_image %}<img src="{{ post.featured_image.url }}" class="rounded-4 mb-4 w-100" style="max-height:420px;object-fit:cover;" alt="{{ post.title }}">{% endif %}
+        <div class="blog-meta mb-3"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"d M Y" }} &nbsp; <i class="fa-regular fa-user"></i> {% if post.author %}{{ post.author.first_name|default:post.author.username }}{% else %}Admin{% endif %}</div>
+        <div class="text-muted">{{ post.content|linebreaks }}</div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-card">
+          <h5 style="color:var(--navy);" class="mb-3">Recent Posts</h5>
+          {% for p in recent_posts %}
+          <div class="mb-3 pb-3 border-bottom">
+            <a href="{{ p.get_absolute_url }}" style="color:var(--navy); font-weight:600; text-decoration:none;">{{ p.title }}</a>
+            <div class="blog-meta">{{ p.created_at|date:"d M Y" }}</div>
+          </div>
+          {% empty %}
+          <p class="text-muted">No other posts.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
