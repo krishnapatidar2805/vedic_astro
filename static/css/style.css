@@ -355,6 +355,117 @@ a { text-decoration: none; transition: all .3s ease; }
 }
 .service-link:hover { color: var(--gold-dark); }
 
+/* Compact Service Cards */
+.compact-service-card {
+  padding: 24px 20px;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(212,175,55,.2);
+  transition: all .3s ease;
+}
+.compact-service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 14px 30px rgba(11,28,61,.12);
+}
+.compact-service-card .service-icon {
+  width: 52px; height: 52px;
+  font-size: 1.3rem;
+  margin: 0;
+}
+.badge-price {
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.25));
+  color: var(--gold-dark);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,.4);
+}
+.badge-contact {
+  background: rgba(11,28,61,.08);
+  color: var(--navy);
+  font-weight: 600;
+  font-size: .85rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.service-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.service-short-desc {
+  font-size: .88rem;
+  line-height: 1.5;
+  min-height: 42px;
+}
+.btn-outline-navy {
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 5px 14px;
+  transition: all .25s ease;
+}
+.btn-outline-navy:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* Trust Pillars Strip */
+.trust-strip {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(212,175,55,.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,.03);
+}
+.trust-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fbf9f4;
+  border: 1px solid rgba(212,175,55,.18);
+  text-align: left;
+}
+.trust-card i {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+.trust-card strong {
+  font-size: .95rem;
+  color: var(--navy);
+}
+
+/* About Points */
+.lead-text {
+  font-size: 1.15rem;
+  letter-spacing: .3px;
+}
+.about-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,.2);
+  font-size: .94rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.03);
+}
+.point-item i {
+  font-size: 1.15rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
 /* ===== Buttons ===== */
 .btn-navy {
   background: var(--navy);

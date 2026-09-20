@@ -7,32 +7,34 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <span class="hero-badge"><i class="fa-solid fa-om"></i> Trusted Vedic Astrologer</span>
-        <h1 class="hero-title">Discover Your Destiny with <span>Vedic Gajendra Sharma</span></h1>
+        <span class="hero-badge"><i class="fa-solid fa-om"></i> ज्योतिषाचार्य पंडित गजेंद्र शर्मा</span>
+        <h1 class="hero-title">सटीक ज्योतिषीय मार्गदर्शन एवं <span>वैदिक समाधान</span></h1>
         <p class="hero-subtitle">
-          Authentic Janam Kundli analysis, Kundli Matching, Vastu Shanti, Career &amp; Business
-          guidance, Puja and Vedic rituals — rooted in ancient wisdom, delivered with modern care.
+          जन्म कुंडली विश्लेषण, विवाह बाधा निवारण, वास्तु शांति एवं समस्त वैदिक पूजा अनुष्ठान — प्राचीन शास्त्रों पर आधारित।
         </p>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg">
-            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-gold btn-lg">
+            <i class="fa-solid fa-phone"></i> तुरंत कॉल करें
           </a>
-          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-outline-light btn-lg">
-            <i class="fa-solid fa-phone"></i> Call Now
+          <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-outline-light btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp परामर्श
+          </a>
+          <a href="{% url 'appointments:book' %}" class="btn btn-outline-gold btn-lg">
+            <i class="fa-solid fa-calendar-check"></i> अपॉइंटमेंट बुक करें
           </a>
         </div>
         <div class="hero-stats">
           <div>
-            <div class="stat-num">1000+</div>
-            <div class="stat-label">Happy Clients</div>
-          </div>
-          <div>
-            <div class="stat-num">{{ avg_rating }}★</div>
-            <div class="stat-label">Average Rating</div>
-          </div>
-          <div>
             <div class="stat-num">10+</div>
-            <div class="stat-label">Years Experience</div>
+            <div class="stat-label">वर्षों का अनुभव</div>
+          </div>
+          <div>
+            <div class="stat-num">1000+</div>
+            <div class="stat-label">संतुष्ट यजमान</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">शास्त्र सम्मत</div>
           </div>
         </div>
       </div>
@@ -42,7 +44,7 @@
             <div class="hero-photo-box">
               <img src="{% static 'img/astrologer.jpeg' %}" alt="Vedic Gajendra Sharma - Astrologer">
             </div>
-            <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> Blessed by Tradition</div>
+            <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> गुरु कृपा एवं आशीर्वाद</div>
           </div>
         </div>
       </div>
@@ -55,55 +57,107 @@
   </div>
 </section>
 
+<!-- ===== Trust Pillars Strip ===== -->
+<section class="trust-strip py-4">
+  <div class="container">
+    <div class="row g-3 text-center">
+      <div class="col-lg-3 col-6">
+        <div class="trust-card">
+          <i class="fa-solid fa-shield-halved text-gold"></i>
+          <div><strong>पूर्ण गोपनीयता</strong><br><small class="text-muted">आपकी बातें 100% सुरक्षित</small></div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="trust-card">
+          <i class="fa-solid fa-scroll text-gold"></i>
+          <div><strong>वैदिक पद्धति</strong><br><small class="text-muted">शास्त्रोक्त विधि व मंत्रोच्चार</small></div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="trust-card">
+          <i class="fa-solid fa-video text-gold"></i>
+          <div><strong>ऑनलाइन व प्रत्यक्ष</strong><br><small class="text-muted">फोन, वीडियो कॉल या व्यक्तिगत</small></div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="trust-card">
+          <i class="fa-solid fa-gem text-gold"></i>
+          <div><strong>सटीक उपाय</strong><br><small class="text-muted">सरल एवं प्रामाणिक समाधान</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== Services Section ===== -->
 <section class="section-pad">
   <div class="container text-center">
     <span class="section-label">Our Sacred Offerings</span>
-    <h2 class="section-title">Astrology &amp; Vedic <span>Services</span></h2>
+    <h2 class="section-title">प्रमुख वैदिक <span>सेवाएं व अनुष्ठान</span></h2>
     <div class="section-divider"></div>
-    <p class="text-muted mb-5 mx-auto" style="max-width:600px;">
-      From resolving life's toughest problems to guiding auspicious beginnings — explore our
-      full range of Vedic consultation services.
+    <p class="text-muted mb-4 mx-auto" style="max-width:560px;">
+      अपनी समस्या अनुसार सेवा चुनें और पंडित जी से सीधा मार्गदर्शन प्राप्त करें।
     </p>
     <div class="row g-4">
       {% for service in services %}
       <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon"><i class="{{ service.icon }}"></i></div>
-          <h5>{{ service.title }}</h5>
-          <p>{{ service.short_description }}</p>
-          {% if service.price > 0 %}<div class="service-price mb-2">₹{{ service.price }}</div>{% endif %}
-          <a href="{{ service.get_absolute_url }}" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card compact-service-card text-start">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="service-icon mb-0"><i class="{{ service.icon }}"></i></div>
+            {% if service.price > 0 %}
+              <span class="badge-price">₹{{ service.price|floatformat:0 }}</span>
+            {% else %}
+              <span class="badge-contact">संपर्क करें</span>
+            {% endif %}
+          </div>
+          <h5 class="service-heading">{{ service.title }}</h5>
+          <p class="service-short-desc text-muted mb-3">{{ service.short_description|truncatewords:14 }}</p>
+          <div class="d-flex gap-2">
+            <a href="{{ service.get_absolute_url }}" class="btn btn-sm btn-outline-navy flex-grow-1">विवरण देखें</a>
+            <a href="{% url 'appointments:book' %}" class="btn btn-sm btn-gold">बुक करें</a>
+          </div>
         </div>
       </div>
       {% empty %}
-      <p class="text-muted">Services will appear here soon. Add services from the Admin Dashboard.</p>
+      <p class="text-muted">सेवाएं जल्द ही उपलब्ध होंगी।</p>
       {% endfor %}
     </div>
-    <a href="{% url 'services:list' %}" class="btn btn-navy btn-lg mt-5">View All Services</a>
+    <a href="{% url 'services:list' %}" class="btn btn-navy btn-lg mt-5">सभी 14 सेवाएं देखें <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
 
-<!-- ===== About Preview ===== -->
+<!-- ===== About Section ===== -->
 <section class="section-pad" style="background:var(--cream-dark);">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-7 order-lg-1 order-2">
         <span class="section-label">About the Astrologer</span>
-        <h2 class="section-title">Pandit <span>Gajendra Sharma</span></h2>
-        <p class="text-muted">
-          A dedicated Vedic scholar and Bhagwat speaker from Kherkheda, Sitamau, Pandit Gajendra
-          Sharma has guided thousands of families through Kundli analysis, Vastu correction, Puja
-          rituals, and life-changing astrological remedies — combining deep scriptural knowledge
-          with genuine compassion for every client.
+        <h2 class="section-title">पंडित <span>गजेंद्र शर्मा</span></h2>
+        <p class="lead-text text-navy mb-3">
+          <strong>वैदिक ज्योतिषाचार्य एवं संगीतमय श्रीमद् भागवत कथा व्यास</strong>
         </p>
-        <ul class="list-unstyled about-list">
-          <li><i class="fa-solid fa-check"></i> Authentic Janam Kundli &amp; Palmistry Reading</li>
-          <li><i class="fa-solid fa-check"></i> Kundli Matching for Marriage Compatibility</li>
-          <li><i class="fa-solid fa-check"></i> Vastu Shanti &amp; Grah Dosh Nivaran</li>
-          <li><i class="fa-solid fa-check"></i> Shrimad Bhagwat Katha &amp; Vedic Anushthan</li>
-        </ul>
-        <a href="{% url 'core:about' %}" class="btn btn-outline-gold mt-3">More About Us</a>
+        <div class="about-points mb-4">
+          <div class="point-item">
+            <i class="fa-solid fa-circle-check text-gold"></i>
+            <div><strong>वैदिक ज्योतिष व हस्तरेखा:</strong> जन्म कुंडली, ग्रह दोष, कालसर्प व मांगलिक दोष का प्रामाणिक निवारण।</div>
+          </div>
+          <div class="point-item">
+            <i class="fa-solid fa-circle-check text-gold"></i>
+            <div><strong>श्रीमद् भागवत कथा व अनुष्ठान:</strong> सस्वर संगीतमय कथा, रुद्राभिषेक, महामृत्युंजय जाप व नवग्रह शांति।</div>
+          </div>
+          <div class="point-item">
+            <i class="fa-solid fa-circle-check text-gold"></i>
+            <div><strong>वास्तु शास्त्र परामर्श:</strong> घर, दुकान, फैक्ट्री एवं व्यावसायिक स्थल का संपूर्ण वास्तु विश्लेषण।</div>
+          </div>
+          <div class="point-item">
+            <i class="fa-solid fa-circle-check text-gold"></i>
+            <div><strong>स्थान:</strong> खड़किया, सीतामऊ (जिला मंदसौर, मध्य प्रदेश)।</div>
+          </div>
+        </div>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="{% url 'core:about' %}" class="btn btn-outline-gold">विस्तृत परिचय पढ़ें</a>
+          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-navy"><i class="fa-solid fa-phone"></i> सीधे बात करें</a>
+        </div>
       </div>
       <div class="col-lg-5 order-lg-2 order-1 text-center">
         <div class="about-img-wrap">
@@ -112,7 +166,7 @@
           </div>
           <div class="about-exp-badge">
             <div class="num">10+</div>
-            <div>Years of<br>Vedic Practice</div>
+            <div>वर्षों का<br>वैदिक अनुभव</div>
           </div>
         </div>
       </div>
