@@ -154,25 +154,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---- Interactive Navgrah Mandal Chips ----
-  const navgrahChips = document.querySelectorAll('.navgrah-chip');
-  const infoPlanetName = document.getElementById('infoPlanetName');
-  const infoPlanetRole = document.getElementById('infoPlanetRole');
-  const infoPlanetGem = document.getElementById('infoPlanetGem');
-  const infoPlanetRemedy = document.getElementById('infoPlanetRemedy');
-
-  if (navgrahChips.length > 0 && infoPlanetName) {
-    navgrahChips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        navgrahChips.forEach(function (c) { c.classList.remove('active'); });
-        chip.classList.add('active');
-
-        if (infoPlanetName) infoPlanetName.textContent = chip.dataset.planet || '';
-        if (infoPlanetRole) infoPlanetRole.textContent = chip.dataset.role || '';
-        if (infoPlanetGem) infoPlanetGem.textContent = chip.dataset.gem || '';
-        if (infoPlanetRemedy) infoPlanetRemedy.textContent = chip.dataset.remedy || '';
-      });
-    });
-  }
-
 });

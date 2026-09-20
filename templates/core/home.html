@@ -7,57 +7,42 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <span class="hero-badge"><i class="fa-solid fa-om"></i> ज्योतिषाचार्य पंडित गजेंद्र शर्मा</span>
-        <h1 class="hero-title">सटीक ज्योतिषीय मार्गदर्शन एवं <span>वैदिक समाधान</span></h1>
+        <span class="hero-badge"><i class="fa-solid fa-om"></i> Trusted Vedic Astrologer</span>
+        <h1 class="hero-title">Discover Your Destiny with <span>Vedic Gajendra Sharma</span></h1>
         <p class="hero-subtitle">
-          जन्म कुंडली विश्लेषण, विवाह बाधा निवारण, वास्तु शांति एवं समस्त वैदिक पूजा अनुष्ठान — प्राचीन शास्त्रों पर आधारित।
+          Authentic Janam Kundli analysis, Kundli Matching, Vastu Shanti, Career &amp; Business
+          guidance, Puja and Vedic rituals — rooted in ancient wisdom, delivered with modern care.
         </p>
-        <div class="d-flex flex-wrap gap-3 mb-4">
-          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-gold btn-lg">
-            <i class="fa-solid fa-phone"></i> तुरंत कॉल करें
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
           </a>
-          <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-outline-light btn-lg">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp परामर्श
-          </a>
-          <a href="{% url 'appointments:book' %}" class="btn btn-outline-gold btn-lg">
-            <i class="fa-solid fa-calendar-check"></i> अपॉइंटमेंट बुक करें
+          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-outline-light btn-lg">
+            <i class="fa-solid fa-phone"></i> Call Now
           </a>
         </div>
         <div class="hero-stats">
           <div>
-            <div class="stat-num">10+</div>
-            <div class="stat-label">वर्षों का अनुभव</div>
-          </div>
-          <div>
             <div class="stat-num">1000+</div>
-            <div class="stat-label">संतुष्ट यजमान</div>
+            <div class="stat-label">Happy Clients</div>
           </div>
           <div>
-            <div class="stat-num">100%</div>
-            <div class="stat-label">शास्त्र सम्मत</div>
+            <div class="stat-num">{{ avg_rating }}★</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+          <div>
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Years Experience</div>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="hero-photo-wrap">
-          <!-- Animated Planetary Cosmic Orbit Rings -->
-          <div class="cosmic-orbit-system">
-            <div class="orbit-ring orbit-ring-outer">
-              <div class="orbit-body planet-sun" title="सूर्य (Sun)">☀️</div>
-              <div class="orbit-body planet-jupiter" title="गुरु (Jupiter)">🟡</div>
-              <div class="orbit-body planet-saturn" title="शनि (Saturn)">🪐</div>
+          <div class="hero-photo-frame">
+            <div class="hero-photo-box">
+              <img src="{% static 'img/astrologer.jpeg' %}" alt="Vedic Gajendra Sharma - Astrologer">
             </div>
-            <div class="orbit-ring orbit-ring-inner">
-              <div class="orbit-body planet-moon" title="चन्द्र (Moon)">🌙</div>
-              <div class="orbit-body planet-mars" title="मंगल (Mars)">🔴</div>
-              <div class="orbit-body planet-venus" title="शुक्र (Venus)">✨</div>
-            </div>
-            <div class="hero-photo-frame">
-              <div class="hero-photo-box">
-                <img src="{% static 'img/astrologer.jpeg' %}" alt="Vedic Gajendra Sharma - Astrologer">
-              </div>
-              <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> गुरु कृपा एवं आशीर्वाद</div>
-            </div>
+            <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> Blessed by Tradition</div>
           </div>
         </div>
       </div>
@@ -70,167 +55,55 @@
   </div>
 </section>
 
-<!-- ===== Navgrah Mandal Strip ===== -->
-<section class="navgrah-strip py-3">
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-      <span class="navgrah-title"><i class="fa-solid fa-dharmachakra text-gold rotating-icon"></i> <strong>नवग्रह मंडल (Navgrah Mandal)</strong> — नवग्रह शांति व अचूक उपाय</span>
-      <small class="text-gold-light">किसी भी ग्रह पर टच करके उसका प्रभाव देखें 👇</small>
-    </div>
-    <div class="navgrah-carousel">
-      <div class="navgrah-chip active" data-planet="सूर्य देव (Sun)" data-role="आत्मबल, मान-सम्मान, पिता का सुख व सरकारी सफलता" data-gem="माणिक्य (Ruby / Ruby Stone)" data-remedy="आदित्य हृदय स्तोत्र व ॐ घृणि सूर्याय नमः">
-        <span class="chip-icon">☀️</span>
-        <span class="chip-name">सूर्य (Sun)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="चन्द्र देव (Moon)" data-role="मानसिक शांति, मन की स्थिरता, माता का सुख व एकाग्रता" data-gem="सच्चा मोती (Natural Pearl)" data-remedy="शिव पंचाक्षर मंत्र व सोमवार दूध अभिषेक">
-        <span class="chip-icon">🌙</span>
-        <span class="chip-name">चन्द्र (Moon)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="मंगल देव (Mars)" data-role="ऊर्जा, साहस, भूमि-भवन, पराक्रम व मांगलिक दोष निवारण" data-gem="लाल मूँगा (Red Coral)" data-remedy="हनुमान चालीsa व सुंदरकांड पाठ">
-        <span class="chip-icon">🔴</span>
-        <span class="chip-name">मंगल (Mars)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="बुध देव (Mercury)" data-role="व्यापार में वृद्धि, वाणी सिद्धि, तीव्र बुद्धि व बैंकिंग/सीए" data-gem="पन्ना (Emerald)" data-remedy="गणपति अथर्वशीर्ष पाठ व हरी घास दान">
-        <span class="chip-icon">🟢</span>
-        <span class="chip-name">बुध (Mercury)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="बृहस्पति देव (Jupiter)" data-role="उच्च विद्या, ज्ञान, संतान सुख, धर्म व दांपत्य सुख" data-gem="पीला पुखराज (Yellow Sapphire)" data-remedy="विष्णु सहस्रनाम व चने की दाल दान">
-        <span class="chip-icon">🟡</span>
-        <span class="chip-name">गुरु (Jupiter)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="शुक्र देव (Venus)" data-role="धन-वैभव, आकर्षण, ऐश्वर्य, वाहन व वैवाहिक सुख" data-gem="हीरा / श्वेत ओपल (Opal)" data-remedy="कनकधारा स्तोत्र व श्रीसूक्त पाठ">
-        <span class="chip-icon">✨</span>
-        <span class="chip-name">शुक्र (Venus)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="शनि देव (Saturn)" data-role="कर्म फल, लंबी आयु, न्याय, नौकरी में स्थायित्व व साढ़ेसाती" data-gem="नीलम (Blue Sapphire)" data-remedy="दशरथ कृत शनि स्तोत्र व सरसों का तेल दान">
-        <span class="chip-icon">🪐</span>
-        <span class="chip-name">शनि (Saturn)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="राहु देव (Rahu)" data-role="अकस्मात लाभ, विदेश गमन, तकनीकी क्षेत्र व भ्रम निवारण" data-gem="गोमेद (Hessonite)" data-remedy="कालभैरव अष्टकम व दुर्गा कवच">
-        <span class="chip-icon">🌑</span>
-        <span class="chip-name">राहु (Rahu)</span>
-      </div>
-      <div class="navgrah-chip" data-planet="केतु देव (Ketu)" data-role="अध्यात्म, मोक्ष, इंट्यूशन पावर व गुप्त ज्ञान" data-gem="लहसुनिया (Cat's Eye)" data-remedy="गणेश जी को दूर्वा अर्पण">
-        <span class="chip-icon">☄️</span>
-        <span class="chip-name">केतु (Ketu)</span>
-      </div>
-    </div>
-    <!-- Quick Interactive Planet Info Box -->
-    <div id="planetInfoBox" class="planet-info-box mt-3">
-      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-        <div class="info-content">
-          <span class="badge badge-gold me-2" id="infoPlanetName">सूर्य देव (Sun)</span>
-          <span class="info-role me-3" id="infoPlanetRole">आत्मबल, मान-सम्मान, पिता का सुख व सरकारी सफलता</span>
-          <span class="info-gem me-3"><i class="fa-solid fa-gem text-gold"></i> <strong>रत्न:</strong> <span id="infoPlanetGem" class="text-gold-light">माणिक्य (Ruby)</span></span>
-          <span class="info-remedy"><i class="fa-solid fa-hand-holding-heart text-gold"></i> <strong>वैदिक उपाय:</strong> <span id="infoPlanetRemedy">आदित्य हृदय स्तोत्र व ॐ घृणि सूर्याय नमः</span></span>
-        </div>
-        <a href="{% url 'appointments:book' %}" class="btn btn-sm btn-gold pulse-btn">ग्रह दोष परामर्श लें <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Trust Pillars Strip ===== -->
-<section class="trust-strip py-4">
-  <div class="container">
-    <div class="row g-3 text-center">
-      <div class="col-lg-3 col-6">
-        <div class="trust-card">
-          <i class="fa-solid fa-shield-halved text-gold"></i>
-          <div><strong>पूर्ण गोपनीयता</strong><br><small class="text-muted">आपकी बातें 100% सुरक्षित</small></div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-6">
-        <div class="trust-card">
-          <i class="fa-solid fa-scroll text-gold"></i>
-          <div><strong>वैदिक पद्धति</strong><br><small class="text-muted">शास्त्रोक्त विधि व मंत्रोच्चार</small></div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-6">
-        <div class="trust-card">
-          <i class="fa-solid fa-video text-gold"></i>
-          <div><strong>ऑनलाइन व प्रत्यक्ष</strong><br><small class="text-muted">फोन, वीडियो कॉल या व्यक्तिगत</small></div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-6">
-        <div class="trust-card">
-          <i class="fa-solid fa-gem text-gold"></i>
-          <div><strong>सटीक उपाय</strong><br><small class="text-muted">सरल एवं प्रामाणिक समाधान</small></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== Services Section ===== -->
 <section class="section-pad">
   <div class="container text-center">
     <span class="section-label">Our Sacred Offerings</span>
-    <h2 class="section-title">प्रमुख वैदिक <span>सेवाएं व अनुष्ठान</span></h2>
+    <h2 class="section-title">Astrology &amp; Vedic <span>Services</span></h2>
     <div class="section-divider"></div>
-    <p class="text-muted mb-4 mx-auto" style="max-width:560px;">
-      अपनी समस्या अनुसार सेवा चुनें और पंडित जी से सीधा मार्गदर्शन प्राप्त करें।
+    <p class="text-muted mb-5 mx-auto" style="max-width:600px;">
+      From resolving life's toughest problems to guiding auspicious beginnings — explore our
+      full range of Vedic consultation services.
     </p>
     <div class="row g-4">
       {% for service in services %}
       <div class="col-lg-4 col-md-6">
-        <div class="service-card compact-service-card text-start">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <div class="service-icon mb-0"><i class="{{ service.icon }}"></i></div>
-            {% if service.price > 0 %}
-              <span class="badge-price">₹{{ service.price|floatformat:0 }}</span>
-            {% else %}
-              <span class="badge-contact">संपर्क करें</span>
-            {% endif %}
-          </div>
-          <h5 class="service-heading">{{ service.title }}</h5>
-          <p class="service-short-desc text-muted mb-3">{{ service.short_description|truncatewords:14 }}</p>
-          <div class="d-flex gap-2">
-            <a href="{{ service.get_absolute_url }}" class="btn btn-sm btn-outline-navy flex-grow-1">विवरण देखें</a>
-            <a href="{% url 'appointments:book' %}" class="btn btn-sm btn-gold">बुक करें</a>
-          </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="{{ service.icon }}"></i></div>
+          <h5>{{ service.title }}</h5>
+          <p>{{ service.short_description }}</p>
+          {% if service.price > 0 %}<div class="service-price mb-2">₹{{ service.price }}</div>{% endif %}
+          <a href="{{ service.get_absolute_url }}" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       {% empty %}
-      <p class="text-muted">सेवाएं जल्द ही उपलब्ध होंगी।</p>
+      <p class="text-muted">Services will appear here soon. Add services from the Admin Dashboard.</p>
       {% endfor %}
     </div>
-    <a href="{% url 'services:list' %}" class="btn btn-navy btn-lg mt-5">सभी 14 सेवाएं देखें <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="{% url 'services:list' %}" class="btn btn-navy btn-lg mt-5">View All Services</a>
   </div>
 </section>
 
-<!-- ===== About Section ===== -->
+<!-- ===== About Preview ===== -->
 <section class="section-pad" style="background:var(--cream-dark);">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-7 order-lg-1 order-2">
         <span class="section-label">About the Astrologer</span>
-        <h2 class="section-title">पंडित <span>गजेंद्र शर्मा</span></h2>
-        <p class="lead-text text-navy mb-3">
-          <strong>वैदिक ज्योतिषाचार्य एवं संगीतमय श्रीमद् भागवत कथा व्यास</strong>
+        <h2 class="section-title">Pandit <span>Gajendra Sharma</span></h2>
+        <p class="text-muted">
+          A dedicated Vedic scholar and Bhagwat speaker from Kherkheda, Sitamau, Pandit Gajendra
+          Sharma has guided thousands of families through Kundli analysis, Vastu correction, Puja
+          rituals, and life-changing astrological remedies — combining deep scriptural knowledge
+          with genuine compassion for every client.
         </p>
-        <div class="about-points mb-4">
-          <div class="point-item">
-            <i class="fa-solid fa-circle-check text-gold"></i>
-            <div><strong>वैदिक ज्योतिष व हस्तरेखा:</strong> जन्म कुंडली, ग्रह दोष, कालसर्प व मांगलिक दोष का प्रामाणिक निवारण।</div>
-          </div>
-          <div class="point-item">
-            <i class="fa-solid fa-circle-check text-gold"></i>
-            <div><strong>श्रीमद् भागवत कथा व अनुष्ठान:</strong> सस्वर संगीतमय कथा, रुद्राभिषेक, महामृत्युंजय जाप व नवग्रह शांति।</div>
-          </div>
-          <div class="point-item">
-            <i class="fa-solid fa-circle-check text-gold"></i>
-            <div><strong>वास्तु शास्त्र परामर्श:</strong> घर, दुकान, फैक्ट्री एवं व्यावसायिक स्थल का संपूर्ण वास्तु विश्लेषण।</div>
-          </div>
-          <div class="point-item">
-            <i class="fa-solid fa-circle-check text-gold"></i>
-            <div><strong>स्थान:</strong> खड़किया, सीतामऊ (जिला मंदसौर, मध्य प्रदेश)।</div>
-          </div>
-        </div>
-        <div class="d-flex gap-3 flex-wrap">
-          <a href="{% url 'core:about' %}" class="btn btn-outline-gold">विस्तृत परिचय पढ़ें</a>
-          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-navy"><i class="fa-solid fa-phone"></i> सीधे बात करें</a>
-        </div>
+        <ul class="list-unstyled about-list">
+          <li><i class="fa-solid fa-check"></i> Authentic Janam Kundli &amp; Palmistry Reading</li>
+          <li><i class="fa-solid fa-check"></i> Kundli Matching for Marriage Compatibility</li>
+          <li><i class="fa-solid fa-check"></i> Vastu Shanti &amp; Grah Dosh Nivaran</li>
+          <li><i class="fa-solid fa-check"></i> Shrimad Bhagwat Katha &amp; Vedic Anushthan</li>
+        </ul>
+        <a href="{% url 'core:about' %}" class="btn btn-outline-gold mt-3">More About Us</a>
       </div>
       <div class="col-lg-5 order-lg-2 order-1 text-center">
         <div class="about-img-wrap">
@@ -239,7 +112,7 @@
           </div>
           <div class="about-exp-badge">
             <div class="num">10+</div>
-            <div>वर्षों का<br>वैदिक अनुभव</div>
+            <div>Years of<br>Vedic Practice</div>
           </div>
         </div>
       </div>
