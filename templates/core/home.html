@@ -40,11 +40,24 @@
       </div>
       <div class="col-lg-6">
         <div class="hero-photo-wrap">
-          <div class="hero-photo-frame">
-            <div class="hero-photo-box">
-              <img src="{% static 'img/astrologer.jpeg' %}" alt="Vedic Gajendra Sharma - Astrologer">
+          <!-- Animated Planetary Cosmic Orbit Rings -->
+          <div class="cosmic-orbit-system">
+            <div class="orbit-ring orbit-ring-outer">
+              <div class="orbit-body planet-sun" title="सूर्य (Sun)">☀️</div>
+              <div class="orbit-body planet-jupiter" title="गुरु (Jupiter)">🟡</div>
+              <div class="orbit-body planet-saturn" title="शनि (Saturn)">🪐</div>
             </div>
-            <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> गुरु कृपा एवं आशीर्वाद</div>
+            <div class="orbit-ring orbit-ring-inner">
+              <div class="orbit-body planet-moon" title="चन्द्र (Moon)">🌙</div>
+              <div class="orbit-body planet-mars" title="मंगल (Mars)">🔴</div>
+              <div class="orbit-body planet-venus" title="शुक्र (Venus)">✨</div>
+            </div>
+            <div class="hero-photo-frame">
+              <div class="hero-photo-box">
+                <img src="{% static 'img/astrologer.jpeg' %}" alt="Vedic Gajendra Sharma - Astrologer">
+              </div>
+              <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> गुरु कृपा एवं आशीर्वाद</div>
+            </div>
           </div>
         </div>
       </div>
@@ -54,6 +67,66 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none" style="width:100%;height:70px;">
       <path fill="#fdf6e3" d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,100L0,100Z"></path>
     </svg>
+  </div>
+</section>
+
+<!-- ===== Navgrah Mandal Strip ===== -->
+<section class="navgrah-strip py-3">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+      <span class="navgrah-title"><i class="fa-solid fa-dharmachakra text-gold rotating-icon"></i> <strong>नवग्रह मंडल (Navgrah Mandal)</strong> — नवग्रह शांति व अचूक उपाय</span>
+      <small class="text-gold-light">किसी भी ग्रह पर टच करके उसका प्रभाव देखें 👇</small>
+    </div>
+    <div class="navgrah-carousel">
+      <div class="navgrah-chip active" data-planet="सूर्य देव (Sun)" data-role="आत्मबल, मान-सम्मान, पिता का सुख व सरकारी सफलता" data-gem="माणिक्य (Ruby / Ruby Stone)" data-remedy="आदित्य हृदय स्तोत्र व ॐ घृणि सूर्याय नमः">
+        <span class="chip-icon">☀️</span>
+        <span class="chip-name">सूर्य (Sun)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="चन्द्र देव (Moon)" data-role="मानसिक शांति, मन की स्थिरता, माता का सुख व एकाग्रता" data-gem="सच्चा मोती (Natural Pearl)" data-remedy="शिव पंचाक्षर मंत्र व सोमवार दूध अभिषेक">
+        <span class="chip-icon">🌙</span>
+        <span class="chip-name">चन्द्र (Moon)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="मंगल देव (Mars)" data-role="ऊर्जा, साहस, भूमि-भवन, पराक्रम व मांगलिक दोष निवारण" data-gem="लाल मूँगा (Red Coral)" data-remedy="हनुमान चालीsa व सुंदरकांड पाठ">
+        <span class="chip-icon">🔴</span>
+        <span class="chip-name">मंगल (Mars)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="बुध देव (Mercury)" data-role="व्यापार में वृद्धि, वाणी सिद्धि, तीव्र बुद्धि व बैंकिंग/सीए" data-gem="पन्ना (Emerald)" data-remedy="गणपति अथर्वशीर्ष पाठ व हरी घास दान">
+        <span class="chip-icon">🟢</span>
+        <span class="chip-name">बुध (Mercury)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="बृहस्पति देव (Jupiter)" data-role="उच्च विद्या, ज्ञान, संतान सुख, धर्म व दांपत्य सुख" data-gem="पीला पुखराज (Yellow Sapphire)" data-remedy="विष्णु सहस्रनाम व चने की दाल दान">
+        <span class="chip-icon">🟡</span>
+        <span class="chip-name">गुरु (Jupiter)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="शुक्र देव (Venus)" data-role="धन-वैभव, आकर्षण, ऐश्वर्य, वाहन व वैवाहिक सुख" data-gem="हीरा / श्वेत ओपल (Opal)" data-remedy="कनकधारा स्तोत्र व श्रीसूक्त पाठ">
+        <span class="chip-icon">✨</span>
+        <span class="chip-name">शुक्र (Venus)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="शनि देव (Saturn)" data-role="कर्म फल, लंबी आयु, न्याय, नौकरी में स्थायित्व व साढ़ेसाती" data-gem="नीलम (Blue Sapphire)" data-remedy="दशरथ कृत शनि स्तोत्र व सरसों का तेल दान">
+        <span class="chip-icon">🪐</span>
+        <span class="chip-name">शनि (Saturn)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="राहु देव (Rahu)" data-role="अकस्मात लाभ, विदेश गमन, तकनीकी क्षेत्र व भ्रम निवारण" data-gem="गोमेद (Hessonite)" data-remedy="कालभैरव अष्टकम व दुर्गा कवच">
+        <span class="chip-icon">🌑</span>
+        <span class="chip-name">राहु (Rahu)</span>
+      </div>
+      <div class="navgrah-chip" data-planet="केतु देव (Ketu)" data-role="अध्यात्म, मोक्ष, इंट्यूशन पावर व गुप्त ज्ञान" data-gem="लहसुनिया (Cat's Eye)" data-remedy="गणेश जी को दूर्वा अर्पण">
+        <span class="chip-icon">☄️</span>
+        <span class="chip-name">केतु (Ketu)</span>
+      </div>
+    </div>
+    <!-- Quick Interactive Planet Info Box -->
+    <div id="planetInfoBox" class="planet-info-box mt-3">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <div class="info-content">
+          <span class="badge badge-gold me-2" id="infoPlanetName">सूर्य देव (Sun)</span>
+          <span class="info-role me-3" id="infoPlanetRole">आत्मबल, मान-सम्मान, पिता का सुख व सरकारी सफलता</span>
+          <span class="info-gem me-3"><i class="fa-solid fa-gem text-gold"></i> <strong>रत्न:</strong> <span id="infoPlanetGem" class="text-gold-light">माणिक्य (Ruby)</span></span>
+          <span class="info-remedy"><i class="fa-solid fa-hand-holding-heart text-gold"></i> <strong>वैदिक उपाय:</strong> <span id="infoPlanetRemedy">आदित्य हृदय स्तोत्र व ॐ घृणि सूर्याय नमः</span></span>
+        </div>
+        <a href="{% url 'appointments:book' %}" class="btn btn-sm btn-gold pulse-btn">ग्रह दोष परामर्श लें <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
   </div>
 </section>
 
