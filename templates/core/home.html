@@ -2,117 +2,244 @@
 {% load static %}
 {% block content %}
 
-<!-- ===== Hero Section ===== -->
-<section class="hero-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <span class="hero-badge"><i class="fa-solid fa-om"></i> Trusted Vedic Astrologer</span>
-        <h1 class="hero-title">Discover Your Destiny with <span>Vedic Gajendra Sharma</span></h1>
-        <p class="hero-subtitle">
-          Authentic Janam Kundli analysis, Kundli Matching, Vastu Shanti, Career &amp; Business
-          guidance, Puja and Vedic rituals — rooted in ancient wisdom, delivered with modern care.
+<!-- ── HERO SECTION ── -->
+<section class="hero-section" id="home">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-glow-3"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+  
+  <div class="container hero-content py-5">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <div class="hero-badge mb-3">
+          <span class="pulse-dot"></span> Certified Vedic Astrologer &amp; Katha Vyas
+        </div>
+        <h1 class="hero-headline">
+          Discover Destiny &amp;<br>
+          <span class="hl">Vedic Astrological Solutions</span>
+        </h1>
+        <div class="modern-divider start d-none d-lg-block"></div>
+        <div class="modern-divider d-lg-none"></div>
+        <p class="hero-sub text-lg-start mx-auto mx-lg-0">
+          Authentic Janam Kundli analysis, Kundli Matching, Vastu Shanti, Career guidance, Puja &amp; Vedic rituals rooted in ancient scriptural wisdom by Pandit Gajendra Sharma.
         </p>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg">
-            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+        
+        <div class="hero-trust-chips justify-content-center justify-content-lg-start">
+          <div class="trust-chip"><i class="fa-solid fa-om text-warning"></i> 100% Shastra Sammat</div>
+          <div class="trust-chip"><i class="fa-solid fa-shield-halved text-cyan"></i> 100% Confidential</div>
+          <div class="trust-chip"><i class="fa-solid fa-star text-warning"></i> 5.0 Star Rated</div>
+          <div class="trust-chip"><i class="fa-solid fa-bolt text-emerald"></i> Fast Consultation</div>
+        </div>
+        
+        <div class="hero-ctas mt-4 d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+          <a href="{% url 'appointments:book' %}" class="btn btn-primary-gradient px-4 py-3">
+            <i class="fa-solid fa-calendar-check"></i> Book Consultation
           </a>
-          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-outline-light btn-lg">
+          <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-wa px-4 py-3">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-glass px-4 py-3">
             <i class="fa-solid fa-phone"></i> Call Now
           </a>
         </div>
-        <div class="hero-stats">
-          <div>
-            <div class="stat-num">1000+</div>
-            <div class="stat-label">Happy Clients</div>
-          </div>
-          <div>
-            <div class="stat-num">{{ avg_rating }}★</div>
-            <div class="stat-label">Average Rating</div>
-          </div>
-          <div>
-            <div class="stat-num">10+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-        </div>
       </div>
-      <div class="col-lg-6">
+      
+      <div class="col-lg-5 text-center">
         <div class="hero-photo-wrap">
           <div class="hero-photo-frame">
             <div class="hero-photo-box">
-              <img src="{% static 'img/astrologer.jpeg' %}" alt="Vedic Gajendra Sharma - Astrologer">
+              <img src="{% static 'img/astrologer.jpeg' %}" alt="Pandit Gajendra Sharma - Vedic Astrologer">
             </div>
-            <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> Blessed by Tradition</div>
+            <div class="hero-photo-badge"><i class="fa-solid fa-hand-holding-heart"></i> Guru Kripa Blessed</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="hero-wave">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none" style="width:100%;height:70px;">
-      <path fill="#fdf6e3" d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,100L0,100Z"></path>
-    </svg>
+    
+    <!-- 4 Stats Cards -->
+    <div class="hero-stats">
+      <div class="hero-stat-card">
+        <div class="stat-num">1000+</div>
+        <div class="stat-label"><i class="fa-solid fa-users text-primary me-1"></i> Happy Yajmans</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num">10+</div>
+        <div class="stat-label"><i class="fa-solid fa-scroll text-cyan me-1"></i> Years Experience</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num">14+</div>
+        <div class="stat-label"><i class="fa-solid fa-om text-warning me-1"></i> Sacred Services</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num">5.0★</div>
+        <div class="stat-label"><i class="fa-solid fa-star text-warning me-1"></i> Top Rated</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== Services Section ===== -->
-<section class="section-pad">
-  <div class="container text-center">
-    <span class="section-label">Our Sacred Offerings</span>
-    <h2 class="section-title">Astrology &amp; Vedic <span>Services</span></h2>
-    <div class="section-divider"></div>
-    <p class="text-muted mb-5 mx-auto" style="max-width:600px;">
-      From resolving life's toughest problems to guiding auspicious beginnings — explore our
-      full range of Vedic consultation services.
-    </p>
-    <div class="row g-4">
+<!-- ── INFINITE RUNNING MARQUEE RIBBON ── -->
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>🕉️ जन्म कुंडली एवं हस्तरेखा विश्लेषण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>💍 विवाह बाधा निवारण व कुंडली मिलान</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🔥 काल सर्प दोष व मंगल भात पूजा</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🏠 संपूर्ण वास्तु शांति एवं ग्रह दोष निवारण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>📖 संगीतमय श्रीमद् भागवत कथा व्यास</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>⭐ 100% शास्त्र सम्मत वैदिक समाधान</span><span class="m-dot"></span></div>
+    <!-- Duplicate for infinite seamless scroll -->
+    <div class="marquee-item"><span>🕉️ जन्म कुंडली एवं हस्तरेखा विश्लेषण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>💍 विवाह बाधा निवारण व कुंडली मिलान</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🔥 काल सर्प दोष व मंगल भात पूजा</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🏠 संपूर्ण वास्तु शांति एवं ग्रह दोष निवारण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>📖 संगीतमय श्रीमद् भागवत कथा व्यास</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>⭐ 100% शास्त्र सम्मत वैदिक समाधान</span><span class="m-dot"></span></div>
+  </div>
+</div>
+
+<!-- ── SACRED OFFERINGS (SERVICES GRID) ── -->
+<section class="section-pad section-dark" id="services">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-eyebrow"><i class="fa-solid fa-fire text-warning"></i> Our Sacred Offerings</div>
+      <h2 class="section-title">
+        Astrology &amp; Vedic <span class="gradient-text-gold">Services</span>
+      </h2>
+      <div class="modern-divider"></div>
+      <p class="text-muted mx-auto" style="max-width: 600px;">
+        Explore authentic Vedic consultations, planetary remedies, and specialized rituals performed strictly according to scriptural traditions.
+      </p>
+    </div>
+    
+    <div class="row gy-4">
       {% for service in services %}
       <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon"><i class="{{ service.icon }}"></i></div>
-          <h5>{{ service.title }}</h5>
-          <p>{{ service.short_description }}</p>
-          {% if service.price > 0 %}<div class="service-price mb-2">₹{{ service.price }}</div>{% endif %}
-          <a href="{{ service.get_absolute_url }}" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card h-100">
+          <div class="service-card-header">
+            <div class="service-icon-box">
+              <i class="{{ service.icon }}"></i>
+            </div>
+            {% if service.price > 0 %}
+            <span class="service-badge-pill">Dakshina ₹{{ service.price|floatformat:0 }}</span>
+            {% else %}
+            <span class="service-badge-pill">Consult Panditji</span>
+            {% endif %}
+          </div>
+          
+          <h5 class="service-title">{{ service.title }}</h5>
+          <p class="service-desc">{{ service.short_description|truncatewords:16 }}</p>
+          
+          <div class="service-footer">
+            <a href="{{ service.get_absolute_url }}" class="service-link">
+              Learn More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="{% url 'appointments:book' %}" class="btn btn-wa btn-sm px-3">
+              <i class="fa-solid fa-calendar-check"></i> Book Now
+            </a>
+          </div>
         </div>
       </div>
       {% empty %}
-      <p class="text-muted">Services will appear here soon. Add services from the Admin Dashboard.</p>
+      <div class="col-12 text-center text-muted">
+        <p>Services will appear here soon.</p>
+      </div>
       {% endfor %}
     </div>
-    <a href="{% url 'services:list' %}" class="btn btn-navy btn-lg mt-5">View All Services</a>
+    
+    <div class="text-center mt-5">
+      <a href="{% url 'services:list' %}" class="btn btn-primary-gradient px-4 py-3">
+        <i class="fa-solid fa-layer-group me-1"></i> View All 14 Sacred Services
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- ===== About Preview ===== -->
-<section class="section-pad" style="background:var(--cream-dark);">
+<!-- ── ABOUT ASTROLOGER (PROFILE CARD STYLE) ── -->
+<section class="section-pad section-alt" id="about">
   <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-7 order-lg-1 order-2">
-        <span class="section-label">About the Astrologer</span>
-        <h2 class="section-title">Pandit <span>Gajendra Sharma</span></h2>
-        <p class="text-muted">
-          A dedicated Vedic scholar and Bhagwat speaker from Kherkheda, Sitamau, Pandit Gajendra
-          Sharma has guided thousands of families through Kundli analysis, Vastu correction, Puja
-          rituals, and life-changing astrological remedies — combining deep scriptural knowledge
-          with genuine compassion for every client.
-        </p>
-        <ul class="list-unstyled about-list">
-          <li><i class="fa-solid fa-check"></i> Authentic Janam Kundli &amp; Palmistry Reading</li>
-          <li><i class="fa-solid fa-check"></i> Kundli Matching for Marriage Compatibility</li>
-          <li><i class="fa-solid fa-check"></i> Vastu Shanti &amp; Grah Dosh Nivaran</li>
-          <li><i class="fa-solid fa-check"></i> Shrimad Bhagwat Katha &amp; Vedic Anushthan</li>
-        </ul>
-        <a href="{% url 'core:about' %}" class="btn btn-outline-gold mt-3">More About Us</a>
-      </div>
-      <div class="col-lg-5 order-lg-2 order-1 text-center">
-        <div class="about-img-wrap">
-          <div class="about-img-box">
-            <img src="{% static 'img/astrologer.jpeg' %}" alt="Gajendra Sharma">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5">
+        <div class="about-profile-card">
+          <div class="profile-avatar-container">
+            <div class="profile-avatar-glow"></div>
+            <img src="{% static 'img/astrologer.jpeg' %}" alt="Pandit Gajendra Sharma" class="profile-avatar-img">
+            <div class="avatar-online-badge"><i class="fa-solid fa-circle"></i> Available</div>
           </div>
-          <div class="about-exp-badge">
-            <div class="num">10+</div>
-            <div>Years of<br>Vedic Practice</div>
+          
+          <h3 class="about-name">
+            Pt. Gajendra Sharma <i class="fa-solid fa-certificate verified-badge" title="Certified Vedic Astrologer"></i>
+          </h3>
+          <div class="about-role">Jyotishacharya &amp; Shrimad Bhagwat Katha Vyas</div>
+          
+          <div class="skills-tags-wrap">
+            <span class="skill-tag">Janam Kundli</span>
+            <span class="skill-tag">Kundli Matching</span>
+            <span class="skill-tag">Kaal Sarp Puja</span>
+            <span class="skill-tag">Vastu Shanti</span>
+            <span class="skill-tag">Grah Dosh Nivaran</span>
+            <span class="skill-tag">Bhagwat Katha</span>
+          </div>
+          
+          <div class="about-mini-stats-grid">
+            <div class="about-mini-stat-card">
+              <div class="about-mini-num">10+</div>
+              <div class="about-mini-label">Years Practice</div>
+            </div>
+            <div class="about-mini-stat-card">
+              <div class="about-mini-num">1000+</div>
+              <div class="about-mini-label">Yajman Families</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-7">
+        <div class="ps-lg-4">
+          <div class="section-eyebrow"><i class="fa-solid fa-user-tie text-cyan"></i> About The Astrologer</div>
+          <h2 class="section-title">
+            Rooted in Shastras, <span class="gradient-text-cyan">Dedicated to Dharma</span>
+          </h2>
+          <div class="modern-divider start"></div>
+          
+          <p class="about-story">
+            A dedicated Vedic scholar and Katha speaker from Kherkheda, Sitamau (Mandsaur, M.P.), Pandit Gajendra Sharma has guided thousands of individuals and families through complex life challenges. Combining deep scriptural mastery with practical remedies, he provides authentic insight into career, marriage, health, and family prosperity.
+          </p>
+          
+          <div class="feature-pill-list">
+            <div class="feature-pill-item">
+              <div class="f-icon-box"><i class="fa-solid fa-scroll"></i></div>
+              <div class="f-text-box">
+                <h6>Authentic Vedic Vidhi &amp; Rituals</h6>
+                <p>Every ritual, havan, and path is conducted according to strict Vedic injunctions and auspicious Muhurats.</p>
+              </div>
+            </div>
+            
+            <div class="feature-pill-item">
+              <div class="f-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="f-text-box">
+                <h6>100% Confidential &amp; Compassionate</h6>
+                <p>Your personal horoscope details, family concerns, and discussions remain completely private.</p>
+              </div>
+            </div>
+            
+            <div class="feature-pill-item">
+              <div class="f-icon-box"><i class="fa-solid fa-video"></i></div>
+              <div class="f-text-box">
+                <h6>Online Consultation &amp; Temple Visits</h6>
+                <p>Connect over Phone, WhatsApp Video Call, or visit directly in Sitamau, Mandsaur (M.P.).</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="{% url 'core:about' %}" class="btn btn-primary-gradient px-4 py-3">
+              <i class="fa-solid fa-book-open"></i> Read Full Bio
+            </a>
+            <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-glass px-4 py-3">
+              <i class="fa-solid fa-phone"></i> Call Directly
+            </a>
           </div>
         </div>
       </div>
@@ -120,118 +247,171 @@
   </div>
 </section>
 
-<!-- ===== Gallery Preview ===== -->
-<section class="section-pad">
-  <div class="container text-center">
-    <span class="section-label">Moments of Devotion</span>
-    <h2 class="section-title">Our <span>Gallery &amp; Posters</span></h2>
-    <div class="section-divider"></div>
-    <div class="row g-4 mt-4 justify-content-center">
+<!-- ── POSTERS & GALLERY SHOWCASE ── -->
+<section class="section-pad section-dark" id="gallery">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-eyebrow"><i class="fa-solid fa-images text-cyan"></i> Moments of Devotion</div>
+      <h2 class="section-title">
+        Sacred Gallery &amp; <span class="gradient-text-cyan">Posters</span>
+      </h2>
+      <div class="modern-divider"></div>
+      <p class="text-muted mx-auto" style="max-width: 600px;">
+        Glimpses of sacred anushthans, Shrimad Bhagwat Katha, and Vedic rituals conducted by Pandit Gajendra Sharma.
+      </p>
+    </div>
+    
+    <div class="row gy-4">
       {% for img in gallery_images %}
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{{ img.image.url }}" alt="{{ img.title }}">
-          <div class="gallery-overlay">{{ img.title }}</div>
+        <div class="demo-video-card h-100">
+          <div class="demo-thumb-container">
+            <img src="{{ img.image.url }}" alt="{{ img.title }}" class="demo-thumb-img">
+            <div class="demo-badge-top-left"><i class="fa-solid fa-om text-warning me-1"></i> Vedic Pujan</div>
+            <div class="demo-badge-top-right">Sacred</div>
+          </div>
+          <div class="demo-card-body p-3">
+            <h6 class="demo-title text-white mb-2">{{ img.title }}</h6>
+            <div class="demo-card-footer mt-2">
+              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Full Photo</a>
+            </div>
+          </div>
         </div>
       </div>
       {% empty %}
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services">
-          <div class="gallery-overlay">Astrology Services</div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha">
-          <div class="gallery-overlay">Shrimad Bhagwat Katha</div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan &amp; Astrology">
-          <div class="gallery-overlay">Vedic Pujan &amp; Astrology</div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster4.jpeg' %}" alt="Contact Vedic Astrologer">
-          <div class="gallery-overlay">Contact for Pooja &amp; Katha</div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <a href="{% url 'gallery:list' %}" class="btn btn-navy btn-lg mt-5">View Full Gallery</a>
-  </div>
-</section>
-
-<!-- ===== CTA Band ===== -->
-<section class="cta-band">
-  <div class="container">
-    <h2>Seeking Clarity in Life? Let the Stars Guide You.</h2>
-    <div class="section-divider"></div>
-    <p class="text-white-50 mb-4">Book a personal consultation today and take the first step towards a brighter future.</p>
-    <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg me-2"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
-    <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-outline-light btn-lg"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
-  </div>
-</section>
-
-<!-- ===== Reviews Preview ===== -->
-{% if reviews %}
-<section class="section-pad">
-  <div class="container text-center">
-    <span class="section-label">Client Testimonials</span>
-    <h2 class="section-title">What Our <span>Clients Say</span></h2>
-    <div class="section-divider"></div>
-    <div class="row g-4 mt-3">
-      {% for review in reviews %}
-      <div class="col-lg-4 col-md-6">
-        <div class="review-card text-start">
-          <i class="fa-solid fa-quote-right quote-icon"></i>
-          <div class="review-stars">
-            {% for i in "12345" %}<i class="fa-solid fa-star{% if forloop.counter > review.rating %}-o{% endif %}"></i>{% endfor %}
+        <div class="demo-video-card h-100">
+          <div class="demo-thumb-container">
+            <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services" class="demo-thumb-img">
+            <div class="demo-badge-top-left"><i class="fa-solid fa-om text-warning me-1"></i> Astrology</div>
+            <div class="demo-badge-top-right">4K HD</div>
           </div>
-          <p class="text-muted">{{ review.comment|truncatewords:25 }}</p>
-          <div class="review-user">
-            <div class="review-avatar">{{ review.user.first_name|first|default:review.user.username|first|upper }}</div>
-            <div>
-              <strong>{{ review.user.first_name|default:review.user.username }}</strong>
+          <div class="demo-card-body p-3">
+            <h6 class="demo-title text-white mb-2">Vedic Astrology Services</h6>
+            <div class="demo-card-footer mt-2">
+              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="demo-video-card h-100">
+          <div class="demo-thumb-container">
+            <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha" class="demo-thumb-img">
+            <div class="demo-badge-top-left"><i class="fa-solid fa-book-bible text-warning me-1"></i> Katha</div>
+            <div class="demo-badge-top-right">Divine</div>
+          </div>
+          <div class="demo-card-body p-3">
+            <h6 class="demo-title text-white mb-2">Shrimad Bhagwat Katha</h6>
+            <div class="demo-card-footer mt-2">
+              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="demo-video-card h-100">
+          <div class="demo-thumb-container">
+            <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan" class="demo-thumb-img">
+            <div class="demo-badge-top-left"><i class="fa-solid fa-fire text-danger me-1"></i> Pujan</div>
+            <div class="demo-badge-top-right">Ritual</div>
+          </div>
+          <div class="demo-card-body p-3">
+            <h6 class="demo-title text-white mb-2">Vedic Pujan &amp; Rituals</h6>
+            <div class="demo-card-footer mt-2">
+              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="demo-video-card h-100">
+          <div class="demo-thumb-container">
+            <img src="{% static 'img/poster4.jpeg' %}" alt="Contact for Pooja" class="demo-thumb-img">
+            <div class="demo-badge-top-left"><i class="fa-solid fa-phone text-success me-1"></i> Contact</div>
+            <div class="demo-badge-top-right">Direct</div>
+          </div>
+          <div class="demo-card-body p-3">
+            <h6 class="demo-title text-white mb-2">Pooja &amp; Katha Booking</h6>
+            <div class="demo-card-footer mt-2">
+              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
             </div>
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
-    <a href="{% url 'reviews:list' %}" class="btn btn-outline-gold btn-lg mt-5">Read All Reviews</a>
+    
+    <div class="text-center mt-5">
+      <a href="{% url 'gallery:list' %}" class="btn btn-glass px-4 py-3">
+        <i class="fa-solid fa-images me-1"></i> Explore Full Photo Gallery
+      </a>
+    </div>
   </div>
 </section>
-{% endif %}
 
-<!-- ===== Blog Preview ===== -->
-{% if posts %}
-<section class="section-pad" style="background:var(--cream-dark);">
-  <div class="container text-center">
-    <span class="section-label">Vedic Insights</span>
-    <h2 class="section-title">Latest From Our <span>Blog</span></h2>
-    <div class="section-divider"></div>
-    <div class="row g-4 mt-3">
-      {% for post in posts %}
+<!-- ── CLIENT REVIEWS / TESTIMONIALS ── -->
+{% if reviews %}
+<section class="section-pad section-alt" id="reviews">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-eyebrow"><i class="fa-solid fa-star text-warning"></i> Client Testimonials</div>
+      <h2 class="section-title">
+        What Our <span class="gradient-text-gold">Yajmans Say</span>
+      </h2>
+      <div class="modern-divider"></div>
+    </div>
+    
+    <div class="row gy-4">
+      {% for review in reviews %}
       <div class="col-lg-4 col-md-6">
-        <div class="blog-card text-start">
-          {% if post.featured_image %}<img src="{{ post.featured_image.url }}" alt="{{ post.title }}">{% endif %}
-          <div class="blog-card-body">
-            {% if post.category %}<span class="blog-cat-tag">{{ post.category.name }}</span>{% endif %}
-            <h5><a href="{{ post.get_absolute_url }}" class="text-decoration-none" style="color:inherit;">{{ post.title }}</a></h5>
-            <p class="text-muted">{{ post.summary|truncatewords:15 }}</p>
-            <div class="blog-meta"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"d M Y" }}</div>
+        <div class="testimonial-card h-100">
+          <div class="test-stars">
+            {% for i in "12345" %}<i class="fa-solid fa-star{% if forloop.counter > review.rating %}-o{% endif %}"></i>{% endfor %}
+          </div>
+          <i class="fa-solid fa-quote-left test-quote-icon"></i>
+          <p class="test-message">{{ review.comment|truncatewords:28 }}</p>
+          
+          <div class="test-client-box">
+            <div class="test-avatar">{{ review.user.first_name|first|default:review.user.username|first|upper }}</div>
+            <div>
+              <div class="test-client-name">{{ review.user.first_name|default:review.user.username }}</div>
+              <span class="test-client-loc"><i class="fa-solid fa-circle-check text-cyan"></i> Verified Client</span>
+            </div>
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
-    <a href="{% url 'blog:list' %}" class="btn btn-navy btn-lg mt-5">Visit Our Blog</a>
+    
+    <div class="text-center mt-5">
+      <a href="{% url 'reviews:list' %}" class="btn btn-glass px-4 py-3">
+        <i class="fa-solid fa-comments me-1"></i> Read All Testimonials
+      </a>
+    </div>
   </div>
 </section>
 {% endif %}
+
+<!-- ── CTA BANNER BAND ── -->
+<section class="section-pad text-center position-relative overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); border-top: 1px solid rgba(99, 102, 241, 0.3); border-bottom: 1px solid rgba(99, 102, 241, 0.3);">
+  <div class="container position-relative" style="z-index: 2;">
+    <div class="section-eyebrow mb-3"><i class="fa-solid fa-sparkles text-warning"></i> Seek Divine Clarity</div>
+    <h2 class="section-title text-white mb-3">
+      Let Vedic Astrology Guide Your <span class="gradient-text-gold">Life &amp; Career</span>
+    </h2>
+    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">
+      Take the first step towards resolution. Book your personalized Kundli reading or sacred pooja today.
+    </p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="{% url 'appointments:book' %}" class="btn btn-primary-gradient px-4 py-3">
+        <i class="fa-solid fa-calendar-check"></i> Book Consultation Now
+      </a>
+      <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-wa px-4 py-3">
+        <i class="fa-brands fa-whatsapp"></i> Chat with Panditji on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

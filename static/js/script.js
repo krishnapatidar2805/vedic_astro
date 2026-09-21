@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ---- Scroll progress bar ----
+  const progressBar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', function () {
+    if (progressBar) {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = scrolled + '%';
+    }
+  });
+
+  // ---- Navbar scrolled class ----
+  const mainNav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 40) {
+      mainNav && mainNav.classList.add('scrolled');
+    } else {
+      mainNav && mainNav.classList.remove('scrolled');
+    }
+  });
+
   // ---- Page loader ----
   const loader = document.getElementById('page-loader');
   window.addEventListener('load', function () {
