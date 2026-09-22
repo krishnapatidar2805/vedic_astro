@@ -26,57 +26,57 @@
             {% csrf_token %}
             <div class="row g-3">
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Select Sacred Service</label>
+                <label class="form-label fw-semibold">Select Sacred Service</label>
                 {{ form.service }}
                 {% if form.service.errors %}<div class="text-danger small mt-1">{{ form.service.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Consultation Mode</label>
+                <label class="form-label fw-semibold">Consultation Mode</label>
                 {{ form.consultation_mode }}
                 {% if form.consultation_mode.errors %}<div class="text-danger small mt-1">{{ form.consultation_mode.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Your Full Name</label>
+                <label class="form-label fw-semibold">Your Full Name</label>
                 {{ form.full_name }}
                 {% if form.full_name.errors %}<div class="text-danger small mt-1">{{ form.full_name.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Phone / WhatsApp Number</label>
+                <label class="form-label fw-semibold">Phone / WhatsApp Number</label>
                 {{ form.phone }}
                 {% if form.phone.errors %}<div class="text-danger small mt-1">{{ form.phone.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Email Address</label>
+                <label class="form-label fw-semibold">Email Address</label>
                 {{ form.email }}
                 {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Place of Birth (City, State)</label>
+                <label class="form-label fw-semibold">Place of Birth (City, State)</label>
                 {{ form.place_of_birth }}
                 {% if form.place_of_birth.errors %}<div class="text-danger small mt-1">{{ form.place_of_birth.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Date of Birth</label>
+                <label class="form-label fw-semibold">Date of Birth</label>
                 {{ form.date_of_birth }}
                 {% if form.date_of_birth.errors %}<div class="text-danger small mt-1">{{ form.date_of_birth.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Time of Birth (Exact AM/PM)</label>
+                <label class="form-label fw-semibold">Time of Birth (Exact AM/PM)</label>
                 {{ form.time_of_birth }}
                 {% if form.time_of_birth.errors %}<div class="text-danger small mt-1">{{ form.time_of_birth.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Preferred Appointment Date</label>
+                <label class="form-label fw-semibold">Preferred Appointment Date</label>
                 {{ form.preferred_date }}
                 {% if form.preferred_date.errors %}<div class="text-danger small mt-1">{{ form.preferred_date.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label text-light fw-semibold">Preferred Appointment Time</label>
+                <label class="form-label fw-semibold">Preferred Appointment Time</label>
                 {{ form.preferred_time }}
                 {% if form.preferred_time.errors %}<div class="text-danger small mt-1">{{ form.preferred_time.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-12">
-                <label class="form-label text-light fw-semibold">Your Problem / Kundli Concerns</label>
+                <label class="form-label fw-semibold">Your Problem / Kundli Concerns</label>
                 {{ form.message }}
                 {% if form.message.errors %}<div class="text-danger small mt-1">{{ form.message.errors|striptags }}</div>{% endif %}
               </div>

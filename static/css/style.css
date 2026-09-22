@@ -1496,21 +1496,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── FORM STYLES ──────────────────────────────────────────────────────── */
-.form-control, .custom-input {
+.form-control, .custom-input, .form-select {
   background: var(--bg-input) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
-  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  color: var(--text-white) !important;
   border-radius: 12px !important;
   padding: 13px 18px !important;
   font-size: 0.95rem !important;
   transition: all var(--transition) !important;
 }
 
-.form-control:focus, .custom-input:focus {
+.form-control:focus, .custom-input:focus, .form-select:focus {
   outline: none !important;
   border-color: #818CF8 !important;
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2) !important;
   background: rgba(15, 23, 42, 0.95) !important;
+  color: #FFFFFF !important;
 }
 
 .form-control::placeholder, .custom-input::placeholder {
@@ -1518,10 +1519,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-label {
-  color: #E2E8F0;
-  font-size: 0.88rem;
+  color: #F1F5F9;
+  font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 7px;
+  display: block;
 }
 
 /* ── INNER PAGE HERO ──────────────────────────────────────────────────── */
@@ -3694,6 +3696,38 @@ h1, h2, h3, h4, h5, h6 {
   background: #FFFFFF !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .form-label {
+  color: #0F172A !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="light"] .form-control,
+[data-theme="light"] .form-select,
+[data-theme="light"] .custom-input {
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .form-control:focus,
+[data-theme="light"] .form-select:focus,
+[data-theme="light"] .custom-input:focus {
+  background: #FFFFFF !important;
+  border-color: #6366F1 !important;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15) !important;
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .form-control::placeholder,
+[data-theme="light"] .custom-input::placeholder {
+  color: #64748B !important;
+}
+
+[data-theme="light"] .form-select option {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
 }
 
 [data-theme="light"] .nav-search input {
