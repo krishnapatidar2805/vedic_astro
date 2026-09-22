@@ -1,58 +1,107 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Gallery | {{ SITE_NAME }}{% endblock %}
+{% block title %}Sacred Gallery & Posters | {{ SITE_NAME }}{% endblock %}
 {% block content %}
+
+<!-- ── PAGE HEADER ── -->
 <div class="page-header">
   <div class="container">
-    <h1>Our Gallery</h1>
-    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Gallery</span></nav>
+    <h1>Sacred <span class="gradient-text-cyan">Gallery &amp; Posters</span></h1>
+    <nav class="breadcrumb-nav mt-3">
+      <a href="{% url 'core:home' %}"><i class="fa-solid fa-house me-1"></i> Home</a> 
+      <span class="mx-1">/</span> 
+      <span>Gallery</span>
+    </nav>
   </div>
 </div>
-<section class="section-pad">
+
+<section class="section-pad section-dark">
   <div class="container">
     {% if categories %}
     <div class="d-flex flex-wrap gap-2 justify-content-center mb-5">
-      <a href="{% url 'gallery:list' %}" class="btn btn-outline-gold btn-sm">All</a>
+      <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm px-4">All</a>
       {% for cat in categories %}
-      <a href="?category={{ cat.id }}" class="btn btn-outline-gold btn-sm">{{ cat.name }}</a>
+      <a href="?category={{ cat.id }}" class="btn btn-glass btn-sm px-4">{{ cat.name }}</a>
       {% endfor %}
     </div>
     {% endif %}
+
     <div class="row g-4 mt-2 justify-content-center">
       {% for img in page_obj %}
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{{ img.image.url }}" alt="{{ img.title }}">
-          <div class="gallery-overlay">{{ img.title }}</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{{ img.image.url }}" alt="{{ img.title }}" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> Sacred</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">{{ img.title }}</h6>
+            <a href="{{ img.image.url }}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
         </div>
       </div>
       {% empty %}
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services">
-          <div class="gallery-overlay">Astrology Services</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> Astrology</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Astrology Services</h6>
+            <a href="{% static 'img/poster1.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha">
-          <div class="gallery-overlay">Shrimad Bhagwat Katha</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-book-bible text-warning me-1"></i> Katha</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Shrimad Bhagwat Katha</h6>
+            <a href="{% static 'img/poster2.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan &amp; Astrology">
-          <div class="gallery-overlay">Vedic Pujan &amp; Astrology</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan &amp; Astrology" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-fire text-danger me-1"></i> Pujan</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Vedic Pujan &amp; Astrology</h6>
+            <a href="{% static 'img/poster3.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item">
-          <img src="{% static 'img/poster4.jpeg' %}" alt="Contact Vedic Astrologer">
-          <div class="gallery-overlay">Contact for Pooja &amp; Katha</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster4.jpeg' %}" alt="Contact Vedic Astrologer" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-phone text-success me-1"></i> Contact</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Contact for Pooja &amp; Katha</h6>
+            <a href="{% static 'img/poster4.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
         </div>
       </div>
       {% endfor %}
     </div>
+
     {% if page_obj.has_other_pages %}
     <nav class="mt-5">
       <ul class="pagination justify-content-center">

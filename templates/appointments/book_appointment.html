@@ -1,83 +1,96 @@
 {% extends 'base.html' %}
-{% block title %}Book Appointment | {{ SITE_NAME }}{% endblock %}
+{% block title %}Book Consultation | {{ SITE_NAME }}{% endblock %}
 {% block content %}
+
+<!-- ── PAGE HEADER ── -->
 <div class="page-header">
   <div class="container">
-    <h1>Book Your Appointment</h1>
-    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Book Appointment</span></nav>
+    <h1>Book Your <span class="gradient-text-gold">Consultation</span></h1>
+    <nav class="breadcrumb-nav mt-3">
+      <a href="{% url 'core:home' %}"><i class="fa-solid fa-house me-1"></i> Home</a> 
+      <span class="mx-1">/</span> 
+      <span>Book Consultation</span>
+    </nav>
   </div>
 </div>
-<section class="section-pad">
+
+<section class="section-pad section-dark">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-9">
+      <div class="col-lg-8">
         <div class="form-card">
-          <span class="section-label">Consultation Request</span>
-          <h3 class="section-title mb-4">Fill Your <span>Details</span></h3>
+          <div class="section-eyebrow mb-2"><i class="fa-solid fa-calendar-days text-cyan"></i> Consultation Request</div>
+          <h3 class="section-title mb-4">Fill Your <span class="gradient-text-cyan">Birth Details</span></h3>
+          
           <form method="post" novalidate>
             {% csrf_token %}
             <div class="row g-3">
               <div class="col-md-6">
-                <label class="form-label">Select Service</label>
+                <label class="form-label text-light fw-semibold">Select Sacred Service</label>
                 {{ form.service }}
                 {% if form.service.errors %}<div class="text-danger small mt-1">{{ form.service.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label">Consultation Mode</label>
+                <label class="form-label text-light fw-semibold">Consultation Mode</label>
                 {{ form.consultation_mode }}
                 {% if form.consultation_mode.errors %}<div class="text-danger small mt-1">{{ form.consultation_mode.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label">Full Name</label>
+                <label class="form-label text-light fw-semibold">Your Full Name</label>
                 {{ form.full_name }}
                 {% if form.full_name.errors %}<div class="text-danger small mt-1">{{ form.full_name.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label">Phone Number</label>
+                <label class="form-label text-light fw-semibold">Phone / WhatsApp Number</label>
                 {{ form.phone }}
                 {% if form.phone.errors %}<div class="text-danger small mt-1">{{ form.phone.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label">Email Address</label>
+                <label class="form-label text-light fw-semibold">Email Address</label>
                 {{ form.email }}
                 {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label">Place of Birth</label>
+                <label class="form-label text-light fw-semibold">Place of Birth (City, State)</label>
                 {{ form.place_of_birth }}
                 {% if form.place_of_birth.errors %}<div class="text-danger small mt-1">{{ form.place_of_birth.errors|striptags }}</div>{% endif %}
               </div>
-              <div class="col-md-4">
-                <label class="form-label">Date of Birth</label>
+              <div class="col-md-6">
+                <label class="form-label text-light fw-semibold">Date of Birth</label>
                 {{ form.date_of_birth }}
                 {% if form.date_of_birth.errors %}<div class="text-danger small mt-1">{{ form.date_of_birth.errors|striptags }}</div>{% endif %}
               </div>
-              <div class="col-md-4">
-                <label class="form-label">Time of Birth</label>
+              <div class="col-md-6">
+                <label class="form-label text-light fw-semibold">Time of Birth (Exact AM/PM)</label>
                 {{ form.time_of_birth }}
                 {% if form.time_of_birth.errors %}<div class="text-danger small mt-1">{{ form.time_of_birth.errors|striptags }}</div>{% endif %}
               </div>
-              <div class="col-md-4"></div>
               <div class="col-md-6">
-                <label class="form-label">Preferred Appointment Date</label>
+                <label class="form-label text-light fw-semibold">Preferred Appointment Date</label>
                 {{ form.preferred_date }}
                 {% if form.preferred_date.errors %}<div class="text-danger small mt-1">{{ form.preferred_date.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-md-6">
-                <label class="form-label">Preferred Appointment Time</label>
+                <label class="form-label text-light fw-semibold">Preferred Appointment Time</label>
                 {{ form.preferred_time }}
                 {% if form.preferred_time.errors %}<div class="text-danger small mt-1">{{ form.preferred_time.errors|striptags }}</div>{% endif %}
               </div>
               <div class="col-12">
-                <label class="form-label">Your Message / Problem Description</label>
+                <label class="form-label text-light fw-semibold">Your Problem / Kundli Concerns</label>
                 {{ form.message }}
                 {% if form.message.errors %}<div class="text-danger small mt-1">{{ form.message.errors|striptags }}</div>{% endif %}
               </div>
             </div>
-            <button type="submit" class="btn btn-gold btn-lg mt-4"><i class="fa-solid fa-calendar-check"></i> Submit Appointment Request</button>
-            <div class="mt-4 pt-3 border-top text-center">
-              <p class="text-muted mb-2 small"><i class="fa-solid fa-qrcode text-gold"></i> Want to pay consultation dakshina / fee online?</p>
-              <a href="{% url 'core:payment' %}" target="_blank" class="btn btn-sm btn-outline-gold"><i class="fa-solid fa-wallet"></i> View UPI QR Code &amp; Pay Online</a>
+            
+            <button type="submit" class="btn btn-primary-gradient px-4 py-3 mt-4 w-100">
+              <i class="fa-solid fa-calendar-check me-1"></i> Submit Appointment Request
+            </button>
+            
+            <div class="mt-4 pt-3 border-top text-center" style="border-color:var(--border-glass) !important;">
+              <p class="text-muted mb-2 small"><i class="fa-solid fa-qrcode text-warning"></i> Want to pay consultation dakshina / fee online?</p>
+              <a href="{% url 'core:payment' %}" target="_blank" class="btn btn-sm btn-glass">
+                <i class="fa-solid fa-wallet me-1"></i> View UPI QR Code &amp; Pay Online
+              </a>
             </div>
           </form>
         </div>

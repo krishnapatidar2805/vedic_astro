@@ -3,50 +3,73 @@
 {% block title %}About Us | {{ SITE_NAME }}{% endblock %}
 {% block content %}
 
+<!-- ── PAGE HEADER ── -->
 <div class="page-header">
   <div class="container">
-    <h1>About Us</h1>
-    <nav class="breadcrumb-nav mt-2">
-      <a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>About</span>
+    <h1>About <span class="gradient-text-gold">Us</span></h1>
+    <nav class="breadcrumb-nav mt-3">
+      <a href="{% url 'core:home' %}"><i class="fa-solid fa-house me-1"></i> Home</a> 
+      <span class="mx-1">/</span> 
+      <span>About Panditji</span>
     </nav>
   </div>
 </div>
 
-<section class="section-pad">
+<!-- ── WHO WE ARE SECTION ── -->
+<section class="section-pad section-dark">
   <div class="container">
-    <div class="row align-items-center g-5">
+    <div class="row align-items-center gy-5">
       <div class="col-lg-7 order-lg-1 order-2">
-        <span class="section-label">Who We Are</span>
-        <h2 class="section-title">Meet Pandit <span>Gajendra Sharma</span></h2>
-        <p class="text-muted">
-          Vedic Gajendra Sharma is a respected astrologer, Vastu consultant, and Bhagwat Katha
-          speaker based in Village Kherkheda, near Kaleshwar Mandir on the Sitamau-Suwasra Road,
-          Tehsil Sitamau, District Mandsaur, Madhya Pradesh. With years of dedicated study in
-          Vedic scriptures, Jyotish Shastra, and Vastu Shastra, he has helped thousands of
-          families find peace, prosperity, and clarity through authentic astrological guidance.
+        <div class="section-eyebrow mb-3"><i class="fa-solid fa-om text-warning"></i> Who We Are</div>
+        <h2 class="section-title">
+          Meet Pandit <span class="gradient-text-gold">Gajendra Sharma</span>
+        </h2>
+        <div class="modern-divider start"></div>
+        
+        <p class="about-lead-text">
+          Vedic Gajendra Sharma is an esteemed Jyotishacharya, Vastu consultant, and Bhagwat Katha Vyas based in Village Kherkheda, near Kaleshwar Mandir on the Sitamau-Suwasra Road, Tehsil Sitamau, District Mandsaur, Madhya Pradesh. With lifelong devotion and scholarly mastery over Vedic scriptures, Jyotish Shastra, and Vastu Vidhan, he has guided thousands of individuals and families across India and abroad toward peace, prosperity, and spiritual clarity.
         </p>
-        <p class="text-muted">
-          His services include Janam Kundli analysis, Kundli Matching, Palmistry, Yagna,
-          Kaal Sarp Dosh Shanti, Rudrabhishek, Vastu Shanti, Pitru Shanti, Navgrah Shanti,
-          Grihshanti, Durga Saptashati Path, and complete Vedic Anushthan — all rooted in
-          traditional wisdom passed down through generations.
+        <p class="about-lead-text">
+          His consultations encompass Janam Kundli analysis, Kundli Matching (Guna Milan), Palmistry, Kaal Sarp Dosh Shanti, Mangal Bhat Puja, Rudrabhishek, Vastu Shanti, Pitru Dosh Nivaran, Navgrah Shanti, Durga Saptashati Path, and complete Vedic Anushthans — strictly performed according to sacred Shastras.
         </p>
-        <div class="row mt-4 g-3">
-          <div class="col-6">
-            <h5 class="text-navy" style="color:var(--navy);"><i class="fa-solid fa-om text-gold"></i> Court Case Problem</h5>
+        
+        <div class="row g-3 my-4">
+          <div class="col-sm-6">
+            <div class="problem-chip">
+              <i class="fa-solid fa-scale-balanced text-warning"></i>
+              <span>Court Case Problem</span>
+            </div>
           </div>
-          <div class="col-6">
-            <h5 style="color:var(--navy);"><i class="fa-solid fa-heart text-gold"></i> Love Problem</h5>
+          <div class="col-sm-6">
+            <div class="problem-chip">
+              <i class="fa-solid fa-heart text-danger"></i>
+              <span>Love &amp; Family Harmony</span>
+            </div>
           </div>
-          <div class="col-6">
-            <h5 style="color:var(--navy);"><i class="fa-solid fa-ring text-gold"></i> Marriage Problem</h5>
+          <div class="col-sm-6">
+            <div class="problem-chip">
+              <i class="fa-solid fa-ring text-warning"></i>
+              <span>Delayed Marriage Solution</span>
+            </div>
           </div>
-          <div class="col-6">
-            <h5 style="color:var(--navy);"><i class="fa-solid fa-briefcase text-gold"></i> Business Problem</h5>
+          <div class="col-sm-6">
+            <div class="problem-chip">
+              <i class="fa-solid fa-briefcase text-cyan"></i>
+              <span>Business &amp; Financial Growth</span>
+            </div>
           </div>
         </div>
-        <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg mt-4">Book a Consultation</a>
+        
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="{% url 'appointments:book' %}" class="btn btn-primary-gradient px-4 py-3">
+            <i class="fa-solid fa-calendar-check"></i> Book Consultation
+          </a>
+          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-glass px-4 py-3">
+            <i class="fa-solid fa-phone"></i> Call Directly
+          </a>
+        </div>
       </div>
+      
       <div class="col-lg-5 order-lg-2 order-1 text-center">
         <div class="about-img-wrap">
           <div class="about-img-box">
@@ -62,74 +85,144 @@
   </div>
 </section>
 
-<!-- Mission / Values -->
-<section class="section-pad" style="background:var(--cream-dark);">
+<!-- ── MISSION / VALUES ── -->
+<section class="section-pad section-alt">
   <div class="container text-center">
-    <span class="section-label">Our Promise</span>
-    <h2 class="section-title">Why Clients <span>Trust Us</span></h2>
-    <div class="section-divider"></div>
+    <div class="section-eyebrow mb-2"><i class="fa-solid fa-shield-halved text-cyan"></i> Our Sacred Promise</div>
+    <h2 class="section-title">Why Clients <span class="gradient-text-cyan">Trust Us</span></h2>
+    <div class="modern-divider"></div>
+    
     <div class="row g-4 mt-3">
       <div class="col-lg-3 col-md-6">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-scroll"></i></div>
-          <h5>Authentic Vedic Knowledge</h5>
-          <p>Guidance rooted strictly in traditional scriptures and Jyotish Shastra.</p>
+        <div class="service-card h-100 p-4">
+          <div class="service-icon-box mb-3">
+            <i class="fa-solid fa-scroll"></i>
+          </div>
+          <h5 class="service-title">Authentic Vedic Vidhi</h5>
+          <p class="service-desc">Guidance and remedies rooted strictly in traditional scriptures, Siddhanta Jyotish, and Vedic rituals.</p>
         </div>
       </div>
+      
       <div class="col-lg-3 col-md-6">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-lock"></i></div>
-          <h5>Complete Privacy</h5>
-          <p>Your personal and birth details remain 100% confidential.</p>
+        <div class="service-card h-100 p-4">
+          <div class="service-icon-box mb-3">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h5 class="service-title">100% Privacy</h5>
+          <p class="service-desc">All your birth details, family horoscopes, and consultations remain strictly private and confidential.</p>
         </div>
       </div>
+      
       <div class="col-lg-3 col-md-6">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-          <h5>Compassionate Guidance</h5>
-          <p>Every consultation is delivered with empathy and genuine care.</p>
+        <div class="service-card h-100 p-4">
+          <div class="service-icon-box mb-3">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <h5 class="service-title">Compassionate Guidance</h5>
+          <p class="service-desc">Every client's struggle is heard patiently with deep empathy, sincere prayer, and practical Vedic remedies.</p>
         </div>
       </div>
+      
       <div class="col-lg-3 col-md-6">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-medal"></i></div>
-          <h5>1000+ Happy Clients</h5>
-          <p>A trusted name across Mandsaur and neighboring districts.</p>
+        <div class="service-card h-100 p-4">
+          <div class="service-icon-box mb-3">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h5 class="service-title">1000+ Happy Families</h5>
+          <p class="service-desc">A respected, household name across Mandsaur, Madhya Pradesh, Rajasthan, and nationwide.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Poster Showcase -->
-<section class="section-pad">
+<!-- ── POSTER SHOWCASE ── -->
+<section class="section-pad section-dark">
   <div class="container text-center">
-    <span class="section-label">Our Services at a Glance</span>
-    <h2 class="section-title">Service <span>Highlights &amp; Posters</span></h2>
-    <div class="section-divider"></div>
-    <div class="row g-4 mt-4 justify-content-center">
+    <div class="section-eyebrow mb-2"><i class="fa-solid fa-images text-warning"></i> Sacred Visuals</div>
+    <h2 class="section-title">Service <span class="gradient-text-gold">Highlights &amp; Posters</span></h2>
+    <div class="modern-divider"></div>
+    
+    <div class="row g-4 mt-2 justify-content-center">
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item"><img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services"></div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> Astrology</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Astrology Services</h6>
+            <a href="{% static 'img/poster1.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
+        </div>
       </div>
+      
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item"><img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha"></div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-book-bible text-warning me-1"></i> Katha</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Shrimad Bhagwat Katha</h6>
+            <a href="{% static 'img/poster2.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
+        </div>
       </div>
+      
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item"><img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan &amp; Kundli Milan"></div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan &amp; Astrology" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-fire text-danger me-1"></i> Pujan</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Vedic Pujan &amp; Kundli Milan</h6>
+            <a href="{% static 'img/poster3.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
+        </div>
       </div>
+      
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="gallery-item"><img src="{% static 'img/poster4.jpeg' %}" alt="Contact Vedic Astrologer"></div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster4.jpeg' %}" alt="Contact for Vedic Poojan" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-phone text-success me-1"></i> Contact</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Contact for Pooja &amp; Katha</h6>
+            <a href="{% static 'img/poster4.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
+<!-- ── CTA BAND ── -->
+<section class="cta-band py-5 text-center">
   <div class="container">
-    <h2>Ready to Consult Pandit Gajendra Sharma?</h2>
-    <div class="section-divider"></div>
-    <a href="{% url 'appointments:book' %}" class="btn btn-gold btn-lg me-2">Book Appointment</a>
-    <a href="{% url 'core:contact' %}" class="btn btn-outline-light btn-lg">Contact Us</a>
+    <h2 class="text-white mb-3">Ready to Consult Pandit Gajendra Sharma?</h2>
+    <div class="modern-divider"></div>
+    <p class="text-white-50 mb-4 mx-auto" style="max-width: 600px;">
+      Take the first step toward planetary harmony, life clarity, and resolving spiritual obstacles today.
+    </p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="{% url 'appointments:book' %}" class="btn btn-primary-gradient px-4 py-3">
+        <i class="fa-solid fa-calendar-check me-1"></i> Book Appointment
+      </a>
+      <a href="{% url 'core:contact' %}" class="btn btn-glass px-4 py-3">
+        <i class="fa-solid fa-envelope me-1"></i> Contact Us
+      </a>
+    </div>
   </div>
 </section>
 

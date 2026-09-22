@@ -17,7 +17,7 @@
           <div class="review-stars">
             {% for i in "12345" %}<i class="fa-solid fa-star{% if forloop.counter > review.rating %}-o{% endif %}"></i>{% endfor %}
           </div>
-          <p class="text-muted">{{ review.comment }}</p>
+          <p class="review-comment">{{ review.comment }}</p>
           <div class="review-user">
             <div class="review-avatar">{{ review.user.first_name|first|default:review.user.username|first|upper }}</div>
             <strong>{{ review.user.first_name|default:review.user.username }}</strong>
@@ -33,7 +33,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-7">
         <div class="form-card">
-          <h5 style="color:var(--navy);" class="mb-3">Share Your Experience</h5>
+          <h4 class="form-title mb-3">Share Your Experience</h4>
           <form method="post" novalidate>
             {% csrf_token %}
             <div class="mb-3">

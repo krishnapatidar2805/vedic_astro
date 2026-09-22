@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="form-card">
-          <h4 style="color:var(--navy);" class="mb-4">Update Your Information</h4>
+          <h3 class="form-title mb-4">Update Your Information</h3>
           <form method="post" enctype="multipart/form-data" novalidate>
             {% csrf_token %}
             {% if user_form.non_field_errors %}

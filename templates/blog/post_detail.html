@@ -12,15 +12,15 @@
     <div class="row g-5">
       <div class="col-lg-8">
         {% if post.featured_image %}<img src="{{ post.featured_image.url }}" class="rounded-4 mb-4 w-100" style="max-height:420px;object-fit:cover;" alt="{{ post.title }}">{% endif %}
-        <div class="blog-meta mb-3"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"d M Y" }} &nbsp; <i class="fa-regular fa-user"></i> {% if post.author %}{{ post.author.first_name|default:post.author.username }}{% else %}Admin{% endif %}</div>
-        <div class="text-muted">{{ post.content|linebreaks }}</div>
+        <div class="blog-meta mb-3"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"d M Y" }} &nbsp; <i class="fa-regular fa-user"></i> {% if post.author %}{{ post.author.first_name|default:post.author.username }}{% else %}Panditji{% endif %}</div>
+        <div class="blog-article-content">{{ post.content|linebreaks }}</div>
       </div>
       <div class="col-lg-4">
         <div class="form-card">
-          <h5 style="color:var(--navy);" class="mb-3">Recent Posts</h5>
+          <h5 class="sidebar-card-title mb-3">Recent Posts</h5>
           {% for p in recent_posts %}
-          <div class="mb-3 pb-3 border-bottom">
-            <a href="{{ p.get_absolute_url }}" style="color:var(--navy); font-weight:600; text-decoration:none;">{{ p.title }}</a>
+          <div class="mb-3 pb-3 border-bottom" style="border-color: var(--border-glass) !important;">
+            <a href="{{ p.get_absolute_url }}" class="sidebar-post-link">{{ p.title }}</a>
             <div class="blog-meta">{{ p.created_at|date:"d M Y" }}</div>
           </div>
           {% empty %}

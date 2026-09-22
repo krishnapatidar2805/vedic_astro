@@ -2,23 +2,33 @@
 {% block title %}Privacy Policy | {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="page-header">
-  <div class="container"><h1>Privacy Policy</h1></div>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Privacy Policy</span></nav>
+  </div>
 </div>
 <section class="section-pad">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-9">
-        <p class="text-muted">Last updated: {% now "F Y" %}</p>
-        <h4 style="color:var(--navy);">1. Information We Collect</h4>
-        <p class="text-muted">We collect information you provide during registration and appointment booking, including your name, phone number, email, birth details (date, time, place of birth), and consultation messages.</p>
-        <h4 style="color:var(--navy);">2. How We Use Your Information</h4>
-        <p class="text-muted">Your information is used solely to provide astrology consultation services, confirm appointments, and communicate with you regarding your bookings. We never sell or share your personal data with third parties.</p>
-        <h4 style="color:var(--navy);">3. Data Security</h4>
-        <p class="text-muted">We take reasonable technical measures to protect your data from unauthorized access, alteration, or disclosure.</p>
-        <h4 style="color:var(--navy);">4. Cookies</h4>
-        <p class="text-muted">Our website may use cookies to enhance your browsing experience. You can disable cookies through your browser settings.</p>
-        <h4 style="color:var(--navy);">5. Contact</h4>
-        <p class="text-muted">For any privacy-related questions, please contact us at {{ BUSINESS_EMAIL }} or {{ BUSINESS_PHONE }}.</p>
+        <div class="form-card">
+          <p class="text-gold small mb-4"><i class="fa-regular fa-clock me-1"></i> Last updated: {% now "F Y" %}</p>
+          
+          <h4 class="form-title mb-2">1. Information We Collect</h4>
+          <p class="legal-text mb-4">We collect personal details that you provide during account registration and consultation booking, such as your full name, phone number, email address, and birth specifics (date of birth, time of birth, and place of birth) which are strictly required for generating accurate Janam Kundli charts.</p>
+          
+          <h4 class="form-title mb-2">2. How We Use Your Information</h4>
+          <p class="legal-text mb-4">Your birth data and personal information are used exclusively by Pandit Gajendra Sharma for calculating planetary positions, offering remedies, and confirming appointment schedules. We respect your sacred privacy and will never sell, rent, or distribute your personal information to any third party.</p>
+          
+          <h4 class="form-title mb-2">3. Data Security &amp; Confidentiality</h4>
+          <p class="legal-text mb-4">We implement robust technological and organizational security standards to safeguard your Kundli records and communications from unauthorized access, loss, or disclosure.</p>
+          
+          <h4 class="form-title mb-2">4. Cookies &amp; Preferences</h4>
+          <p class="legal-text mb-4">Our website uses local browser storage solely to preserve your preferred visual theme (Light Mode or Dark Mode) and improve your browsing convenience.</p>
+          
+          <h4 class="form-title mb-2">5. Contact Panditji</h4>
+          <p class="legal-text mb-0">For any privacy-related queries or data update requests, please reach out to us at <a href="mailto:{{ BUSINESS_EMAIL }}" class="text-gold">{{ BUSINESS_EMAIL }}</a> or call <a href="tel:{{ BUSINESS_PHONE }}" class="text-gold">{{ BUSINESS_PHONE }}</a>.</p>
+        </div>
       </div>
     </div>
   </div>

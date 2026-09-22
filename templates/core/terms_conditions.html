@@ -2,25 +2,36 @@
 {% block title %}Terms & Conditions | {{ SITE_NAME }}{% endblock %}
 {% block content %}
 <div class="page-header">
-  <div class="container"><h1>Terms &amp; Conditions</h1></div>
+  <div class="container">
+    <h1>Terms &amp; Conditions</h1>
+    <nav class="breadcrumb-nav mt-2"><a href="{% url 'core:home' %}">Home</a> <span class="mx-1">/</span> <span>Terms &amp; Conditions</span></nav>
+  </div>
 </div>
 <section class="section-pad">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-9">
-        <p class="text-muted">Last updated: {% now "F Y" %}</p>
-        <h4 style="color:var(--navy);">1. Acceptance of Terms</h4>
-        <p class="text-muted">By using this website and booking appointments with Vedic Gajendra Sharma, you agree to these Terms &amp; Conditions.</p>
-        <h4 style="color:var(--navy);">2. Services</h4>
-        <p class="text-muted">All astrology, puja, and Vastu consultations are provided for guidance purposes. Results may vary from person to person and are based on traditional Vedic principles.</p>
-        <h4 style="color:var(--navy);">3. Appointments</h4>
-        <p class="text-muted">Appointments are subject to availability and confirmation. Please arrive or be available on time for your scheduled consultation slot.</p>
-        <h4 style="color:var(--navy);">4. Payments</h4>
-        <p class="text-muted">Consultation fees, if applicable, will be communicated at the time of booking confirmation.</p>
-        <h4 style="color:var(--navy);">5. Limitation of Liability</h4>
-        <p class="text-muted">Astrological guidance is advisory in nature. We are not liable for personal, financial, or legal decisions made based on consultations.</p>
-        <h4 style="color:var(--navy);">6. Contact</h4>
-        <p class="text-muted">For questions regarding these terms, contact us at {{ BUSINESS_EMAIL }}.</p>
+        <div class="form-card">
+          <p class="text-gold small mb-4"><i class="fa-regular fa-clock me-1"></i> Last updated: {% now "F Y" %}</p>
+          
+          <h4 class="form-title mb-2">1. Acceptance of Terms</h4>
+          <p class="legal-text mb-4">By using this website and booking consultations or puja services with Pandit Gajendra Sharma, you unconditionally agree to comply with and be bound by these Terms &amp; Conditions.</p>
+          
+          <h4 class="form-title mb-2">2. Astrological Guidance &amp; Services</h4>
+          <p class="legal-text mb-4">All astrology consultations, horoscope interpretations, puja rituals, and Vastu advice are provided strictly for spiritual and personal guidance based on traditional Vedic principles. Outcomes may vary individually, and services are advisory in nature.</p>
+          
+          <h4 class="form-title mb-2">3. Appointments &amp; Punctuality</h4>
+          <p class="legal-text mb-4">Appointments are subject to Panditji's availability and confirmation. Please ensure you are available on time for your phone, video, or in-person consultation slot to allow thorough examination of your Kundli.</p>
+          
+          <h4 class="form-title mb-2">4. Dakshina &amp; Payments</h4>
+          <p class="legal-text mb-4">Dakshina and consultation fees are communicated clearly at the time of booking confirmation and can be paid securely through our UPI QR payment portal.</p>
+          
+          <h4 class="form-title mb-2">5. Limitation of Liability</h4>
+          <p class="legal-text mb-4">Astrological consultations provide traditional scriptural perspectives and remedies. Pandit Gajendra Sharma and Vedic Astro are not liable for personal, medical, financial, or legal decisions taken by clients based on guidance received.</p>
+          
+          <h4 class="form-title mb-2">6. Contact Information</h4>
+          <p class="legal-text mb-0">For any questions or clarification regarding these terms, please contact us directly at <a href="mailto:{{ BUSINESS_EMAIL }}" class="text-gold">{{ BUSINESS_EMAIL }}</a> or call <a href="tel:{{ BUSINESS_PHONE }}" class="text-gold">{{ BUSINESS_PHONE }}</a>.</p>
+        </div>
       </div>
     </div>
   </div>
