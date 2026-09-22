@@ -2606,20 +2606,19 @@ h1, h2, h3, h4, h5, h6 {
   100% { opacity: 1; transform: scale(1.04); filter: blur(24px); }
 }
 
-/* Authentic Vedic 12-Rashi Zodiac Astrolabe Dial Ring (Artistic Crescent Arc) */
-.hero-rashi-dial {
+/* Simple Elegant Golden Dashed Rotating Ring */
+.hero-photo-frame::before {
+  content: '';
   position: absolute;
-  top: -46px;
-  left: -46px;
-  width: 482px;
-  height: 482px;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px dashed rgba(245, 158, 11, 0.6);
+  animation: rotateFrame 24s linear infinite;
   pointer-events: none;
   z-index: 1;
-  animation: rotateRashiDial 90s linear infinite;
-  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));
 }
 
-@keyframes rotateRashiDial {
+@keyframes rotateFrame {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
@@ -3493,12 +3492,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 320px;
     border-radius: 50%;
   }
-  .hero-rashi-dial {
-    width: 396px;
-    height: 396px;
-    top: -38px;
-    left: -38px;
-  }
   .hero-badge-right {
     bottom: 12px;
     right: -5px;
@@ -3515,12 +3508,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 270px;
     height: 270px;
     border-radius: 50%;
-  }
-  .hero-rashi-dial {
-    width: 336px;
-    height: 336px;
-    top: -33px;
-    left: -33px;
   }
   .hero-photo-badge {
     font-size: 0.76rem;
@@ -4045,10 +4032,6 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="light"] .hero-photo-halo {
   background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.22) 0%, rgba(99, 102, 241, 0.15) 50%, transparent 75%);
-}
-
-[data-theme="light"] .hero-rashi-dial {
-  filter: drop-shadow(0 0 8px rgba(217, 119, 6, 0.45));
 }
 
 
