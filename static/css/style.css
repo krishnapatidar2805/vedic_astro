@@ -1668,69 +1668,148 @@ h1, h2, h3, h4, h5, h6 {
   margin: 3rem 0 1.5rem;
 }
 
-/* ── FOOTER SHLOKA (ELEGANT SOFT SACRED GLOW & GENTLE PULSE) ── */
+/* ── FOOTER SHLOKA (SACRED LUMINOUS GOLDEN LIGHTING & GENTLE BREATHING) ── */
 .footer-shloka-wrap {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 10px;
+  padding: 10px 10px;
   overflow: visible;
 }
 
-.footer-shloka {
+.footer-shloka,
+[data-theme="light"] .footer-shloka {
   position: relative;
   display: inline-block;
   font-family: 'Poppins', 'Segoe UI', serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  color: #FDE68A;
-  padding: 7px 22px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #FFFBEB !important;
+  padding: 9px 28px;
   border-radius: 50px;
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.22) 0%, rgba(99, 102, 241, 0.1) 60%, transparent 80%) !important;
+  border: 1.5px solid #F59E0B !important;
   transform-origin: center center;
   will-change: transform, box-shadow, text-shadow;
-  animation: gentleShlokaGlow 3.6s ease-in-out infinite alternate;
+  animation: radiantShlokaGlow 3.2s ease-in-out infinite alternate;
   cursor: default;
   user-select: none;
   z-index: 1;
 }
 
-@keyframes gentleShlokaGlow {
+@keyframes radiantShlokaGlow {
   0% {
-    transform: scale(0.97);
-    color: #FCD34D;
-    border-color: rgba(245, 158, 11, 0.25);
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
-    text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
-    opacity: 0.9;
+    transform: scale(0.96);
+    color: #FDE68A !important;
+    border-color: rgba(245, 158, 11, 0.6) !important;
+    box-shadow: 
+      0 0 16px rgba(245, 158, 11, 0.4),
+      0 0 30px rgba(99, 102, 241, 0.18),
+      inset 0 0 12px rgba(245, 158, 11, 0.2);
+    text-shadow: 
+      0 0 10px rgba(245, 158, 11, 0.75),
+      0 0 20px rgba(245, 158, 11, 0.45);
+    opacity: 0.92;
   }
   50% {
-    transform: scale(1.03);
-    color: #FFFBEB;
-    border-color: rgba(245, 158, 11, 0.55);
-    box-shadow: 0 0 18px rgba(245, 158, 11, 0.32);
-    text-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 18px rgba(251, 191, 36, 0.25);
+    transform: scale(1.05);
+    color: #FFFFFF !important;
+    border-color: #FBBF24 !important;
+    box-shadow: 
+      0 0 28px rgba(245, 158, 11, 0.8),
+      0 0 52px rgba(251, 191, 36, 0.5),
+      0 0 75px rgba(245, 158, 11, 0.25),
+      inset 0 0 18px rgba(245, 158, 11, 0.35);
+    text-shadow: 
+      0 0 8px #FFFFFF,
+      0 0 18px #FBBF24,
+      0 0 32px #F59E0B,
+      0 0 45px #D97706;
     opacity: 1;
   }
   100% {
-    transform: scale(0.97);
-    color: #FCD34D;
-    border-color: rgba(245, 158, 11, 0.25);
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
-    text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
-    opacity: 0.9;
+    transform: scale(0.96);
+    color: #FDE68A !important;
+    border-color: rgba(245, 158, 11, 0.6) !important;
+    box-shadow: 
+      0 0 16px rgba(245, 158, 11, 0.4),
+      0 0 30px rgba(99, 102, 241, 0.18),
+      inset 0 0 12px rgba(245, 158, 11, 0.2);
+    text-shadow: 
+      0 0 10px rgba(245, 158, 11, 0.75),
+      0 0 20px rgba(245, 158, 11, 0.45);
+    opacity: 0.92;
   }
 }
 
 @media (max-width: 576px) {
-  .footer-shloka {
-    font-size: 0.86rem;
-    padding: 6px 14px;
-    letter-spacing: 0.3px;
+  .footer-shloka,
+  [data-theme="light"] .footer-shloka {
+    font-size: 0.88rem !important;
+    padding: 7px 16px !important;
+    letter-spacing: 0.4px !important;
   }
+}
+
+/* ── CTA BANNER BAND (PERFECT CONTRAST IN BOTH LIGHT & DARK MODES) ── */
+.cta-banner-band {
+  background: linear-gradient(135deg, #090E1A 0%, #15102A 50%, #090E1A 100%) !important;
+  border-top: 1px solid rgba(245, 158, 11, 0.25) !important;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25) !important;
+  position: relative;
+  overflow: hidden;
+  padding: 70px 0 !important;
+}
+
+.cta-banner-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 250px;
+  background: radial-gradient(ellipse, rgba(99, 102, 241, 0.25) 0%, rgba(245, 158, 11, 0.15) 50%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-banner-band .cta-eyebrow,
+[data-theme="light"] .cta-banner-band .cta-eyebrow {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.5) !important;
+  color: #FDE68A !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 18px !important;
+  border-radius: 50px !important;
+}
+
+.cta-banner-band .cta-title,
+.cta-banner-band h2,
+[data-theme="light"] .cta-banner-band .cta-title,
+[data-theme="light"] .cta-banner-band h2 {
+  color: #FFFFFF !important;
+  font-size: 2.35rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+
+.cta-banner-band .cta-subtitle,
+.cta-banner-band p,
+[data-theme="light"] .cta-banner-band .cta-subtitle,
+[data-theme="light"] .cta-banner-band p {
+  color: #E2E8F0 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  font-weight: 450 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* ── HIGH-CONTRAST FOOTER TYPOGRAPHY (CRISP & LEGIBLE IN LIGHT & DARK MODES) ── */
