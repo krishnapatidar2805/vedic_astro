@@ -2569,10 +2569,10 @@ h1, h2, h3, h4, h5, h6 {
 .hero-photo-frame {
   position: relative;
   display: inline-block;
-  width: 370px;
-  height: 370px;
+  width: 390px;
+  height: 390px;
   border-radius: 50%;
-  padding: 7px;
+  padding: 8px;
   background: linear-gradient(135deg, #FFFBEB 0%, #F59E0B 40%, #6366F1 80%, #EC4899 100%);
   box-shadow: 
     0 0 45px rgba(245, 158, 11, 0.4),
@@ -2590,10 +2590,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Ambient Sacred Cosmic Halo */
 .hero-photo-halo {
   position: absolute;
-  inset: -28px;
+  inset: -24px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.35) 0%, rgba(99, 102, 241, 0.2) 50%, transparent 75%);
-  filter: blur(22px);
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.3) 0%, rgba(99, 102, 241, 0.18) 50%, transparent 75%);
+  filter: blur(20px);
   pointer-events: none;
   animation: auraBreathe 4s ease-in-out infinite alternate;
   z-index: 0;
@@ -2604,30 +2604,22 @@ h1, h2, h3, h4, h5, h6 {
   100% { opacity: 1; transform: scale(1.04); filter: blur(24px); }
 }
 
-/* Authentic Vedic 12-Rashi Zodiac Astrolabe Dial Ring (Concentric & Visible on All 4 Sides) */
+/* Authentic Vedic 12-Rashi Zodiac Astrolabe Dial Ring (Artistic Crescent Arc) */
 .hero-rashi-dial {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 480px !important;
-  height: 480px !important;
-  max-width: none !important;
-  max-height: none !important;
-  transform: translate(-50%, -50%);
-  transform-origin: center center;
+  top: -46px;
+  left: -46px;
+  width: 482px;
+  height: 482px;
   pointer-events: none;
   z-index: 1;
-  animation: rotateRashiDial 60s linear infinite;
-  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.65));
+  animation: rotateRashiDial 90s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));
 }
 
 @keyframes rotateRashiDial {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .hero-photo-box {
@@ -2685,13 +2677,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-badge-right {
-  bottom: 15px;
-  right: -12px;
+  bottom: 18px;
+  right: -10px;
 }
 
 .hero-badge-left {
-  bottom: 65px;
-  left: -14px;
+  bottom: 75px;
+  left: -12px;
 }
 
 /* ── THEME TOGGLE BUTTON ── */
@@ -3500,18 +3492,18 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
   }
   .hero-rashi-dial {
-    width: 420px !important;
-    height: 420px !important;
-    max-width: none !important;
-    max-height: none !important;
+    width: 396px;
+    height: 396px;
+    top: -38px;
+    left: -38px;
   }
   .hero-badge-right {
     bottom: 12px;
-    right: -8px;
+    right: -5px;
   }
   .hero-badge-left {
-    bottom: 55px;
-    left: -10px;
+    bottom: 60px;
+    left: -8px;
   }
   .hero-photo-wrap { margin-top: 30px; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
@@ -3523,10 +3515,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
   }
   .hero-rashi-dial {
-    width: 355px !important;
-    height: 355px !important;
-    max-width: none !important;
-    max-height: none !important;
+    width: 336px;
+    height: 336px;
+    top: -33px;
+    left: -33px;
   }
   .hero-photo-badge {
     font-size: 0.76rem;
@@ -3534,11 +3526,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero-badge-right {
     bottom: 6px;
-    right: -4px;
+    right: -2px;
   }
   .hero-badge-left {
-    bottom: 45px;
-    left: -6px;
+    bottom: 48px;
+    left: -4px;
   }
   .about-img-wrap { max-width: 100%; }
   .about-exp-badge { position: static; margin-top: 16px; display: inline-block; }
