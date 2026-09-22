@@ -1,3 +1,5 @@
+import urllib.parse
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import FAQ, SiteBanner
@@ -7,6 +9,22 @@ from blog.models import Post
 from gallery.models import GalleryImage
 from reviews.models import Review
 from django.db.models import Avg
+
+
+def get_contact_whatsapp_url(contact_msg):
+    phone_number = settings.BUSINESS_WHATSAPP
+    text = (
+        f"🙏 जय श्री राम, पंडित जी!\n"
+        f"मैंने आपकी वेबसाइट ({settings.SITE_NAME}) से संपर्क संदेश भेजा है:\n\n"
+        f"👤 नाम: {contact_msg.name}\n"
+        f"📞 मोबाइल नंबर: {contact_msg.phone or 'उपलब्ध नहीं'}\n"
+        f"📧 ईमेल: {contact_msg.email}\n"
+        f"📌 विषय: {contact_msg.subject or 'सामान्य पूछताछ / परामर्श'}\n\n"
+        f"💬 संदेश / समस्या:\n{contact_msg.message}\n\n"
+        f"कृपया मार्गदर्शन प्रदान करने की कृपा करें। सादर प्रणाम!"
+    )
+    encoded = urllib.parse.quote(text)
+    return f"https://wa.me/{phone_number}?text={encoded}"
 
 
 def home(request):
@@ -35,9 +53,10 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Thank you for reaching out! We will get back to you soon.')
-            return redirect('core:contact')
+            contact_msg = form.save()
+            whatsapp_url = get_contact_whatsapp_url(contact_msg)
+            messages.success(request, 'Thank you! Redirecting to Panditji on WhatsApp...')
+            return redirect(whatsapp_url)
         else:
             messages.error(request, 'Please correct the errors below.')
     else:
