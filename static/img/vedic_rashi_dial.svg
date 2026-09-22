@@ -1,142 +1,144 @@
 <svg class="hero-rashi-dial" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
 <defs>
-  <linearGradient id="dialGold" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#FFFBEB" stop-opacity="0.95"/>
-    <stop offset="30%" stop-color="#FBBF24" stop-opacity="0.9"/>
-    <stop offset="70%" stop-color="#D97706" stop-opacity="0.85"/>
-    <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.95"/>
+  <linearGradient id="dialGoldHigh" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#FFFBEB" stop-opacity="1"/>
+    <stop offset="25%" stop-color="#FBBF24" stop-opacity="1"/>
+    <stop offset="65%" stop-color="#D97706" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#B45309" stop-opacity="1"/>
   </linearGradient>
-  <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-    <feGaussianBlur stdDeviation="1.5" result="blur" />
-    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+  <linearGradient id="ringTrackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.35"/>
+    <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.2"/>
+    <stop offset="100%" stop-color="#D97706" stop-opacity="0.35"/>
+  </linearGradient>
+  <filter id="dialShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000" flood-opacity="0.35"/>
   </filter>
 </defs>
-<circle cx="260" cy="260" r="252" stroke="url(#dialGold)" stroke-width="1.5" fill="none" opacity="0.75"/>
-<line x1="512.00" y1="260.00" x2="504.00" y2="260.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="511.04" y1="281.96" x2="506.06" y2="281.53" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="508.17" y1="303.76" x2="503.25" y2="302.89" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="503.41" y1="325.22" x2="498.58" y2="323.93" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="496.80" y1="346.19" x2="492.10" y2="344.48" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="488.39" y1="366.50" x2="483.86" y2="364.39" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="478.24" y1="386.00" x2="471.31" y2="382.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="466.43" y1="404.54" x2="462.33" y2="401.67" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="453.04" y1="421.98" x2="449.21" y2="418.77" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="438.19" y1="438.19" x2="434.66" y2="434.66" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="421.98" y1="453.04" x2="418.77" y2="449.21" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="404.54" y1="466.43" x2="401.67" y2="462.33" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="386.00" y1="478.24" x2="382.00" y2="471.31" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="366.50" y1="488.39" x2="364.39" y2="483.86" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="346.19" y1="496.80" x2="344.48" y2="492.10" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="325.22" y1="503.41" x2="323.93" y2="498.58" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="303.76" y1="508.17" x2="302.89" y2="503.25" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="281.96" y1="511.04" x2="281.53" y2="506.06" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="260.00" y1="512.00" x2="260.00" y2="504.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="238.04" y1="511.04" x2="238.47" y2="506.06" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="216.24" y1="508.17" x2="217.11" y2="503.25" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="194.78" y1="503.41" x2="196.07" y2="498.58" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="173.81" y1="496.80" x2="175.52" y2="492.10" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="153.50" y1="488.39" x2="155.61" y2="483.86" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="134.00" y1="478.24" x2="138.00" y2="471.31" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="115.46" y1="466.43" x2="118.33" y2="462.33" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="98.02" y1="453.04" x2="101.23" y2="449.21" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="81.81" y1="438.19" x2="85.34" y2="434.66" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="66.96" y1="421.98" x2="70.79" y2="418.77" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="53.57" y1="404.54" x2="57.67" y2="401.67" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="41.76" y1="386.00" x2="48.69" y2="382.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="31.61" y1="366.50" x2="36.14" y2="364.39" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="23.20" y1="346.19" x2="27.90" y2="344.48" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="16.59" y1="325.22" x2="21.42" y2="323.93" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="11.83" y1="303.76" x2="16.75" y2="302.89" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="8.96" y1="281.96" x2="13.94" y2="281.53" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="8.00" y1="260.00" x2="16.00" y2="260.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="8.96" y1="238.04" x2="13.94" y2="238.47" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="11.83" y1="216.24" x2="16.75" y2="217.11" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="16.59" y1="194.78" x2="21.42" y2="196.07" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="23.20" y1="173.81" x2="27.90" y2="175.52" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="31.61" y1="153.50" x2="36.14" y2="155.61" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="41.76" y1="134.00" x2="48.69" y2="138.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="53.57" y1="115.46" x2="57.67" y2="118.33" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="66.96" y1="98.02" x2="70.79" y2="101.23" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="81.81" y1="81.81" x2="85.34" y2="85.34" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="98.02" y1="66.96" x2="101.23" y2="70.79" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="115.46" y1="53.57" x2="118.33" y2="57.67" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="134.00" y1="41.76" x2="138.00" y2="48.69" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="153.50" y1="31.61" x2="155.61" y2="36.14" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="173.81" y1="23.20" x2="175.52" y2="27.90" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="194.78" y1="16.59" x2="196.07" y2="21.42" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="216.24" y1="11.83" x2="217.11" y2="16.75" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="238.04" y1="8.96" x2="238.47" y2="13.94" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="260.00" y1="8.00" x2="260.00" y2="16.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="281.96" y1="8.96" x2="281.53" y2="13.94" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="303.76" y1="11.83" x2="302.89" y2="16.75" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="325.22" y1="16.59" x2="323.93" y2="21.42" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="346.19" y1="23.20" x2="344.48" y2="27.90" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="366.50" y1="31.61" x2="364.39" y2="36.14" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="386.00" y1="41.76" x2="382.00" y2="48.69" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="404.54" y1="53.57" x2="401.67" y2="57.67" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="421.98" y1="66.96" x2="418.77" y2="70.79" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="438.19" y1="81.81" x2="434.66" y2="85.34" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="453.04" y1="98.02" x2="449.21" y2="101.23" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="466.43" y1="115.46" x2="462.33" y2="118.33" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="478.24" y1="134.00" x2="471.31" y2="138.00" stroke="url(#dialGold)" stroke-width="1.5" opacity="0.7"/>
-<line x1="488.39" y1="153.50" x2="483.86" y2="155.61" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="496.80" y1="173.81" x2="492.10" y2="175.52" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="503.41" y1="194.78" x2="498.58" y2="196.07" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="508.17" y1="216.24" x2="503.25" y2="217.11" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<line x1="511.04" y1="238.04" x2="506.06" y2="238.47" stroke="url(#dialGold)" stroke-width="0.8" opacity="0.7"/>
-<circle cx="260" cy="260" r="242" stroke="url(#dialGold)" stroke-width="1" fill="none" opacity="0.6"/>
-<circle cx="260" cy="260" r="214" stroke="url(#dialGold)" stroke-width="1" fill="none" opacity="0.6"/>
-<line x1="466.71" y1="204.61" x2="493.75" y2="197.37" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="466.71" y1="315.39" x2="493.75" y2="322.63" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="411.32" y1="411.32" x2="431.12" y2="431.12" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="315.39" y1="466.71" x2="322.63" y2="493.75" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="204.61" y1="466.71" x2="197.37" y2="493.75" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="108.68" y1="411.32" x2="88.88" y2="431.12" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="53.29" y1="315.39" x2="26.25" y2="322.63" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="53.29" y1="204.61" x2="26.25" y2="197.37" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="108.68" y1="108.68" x2="88.88" y2="88.88" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="204.61" y1="53.29" x2="197.37" y2="26.25" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="315.39" y1="53.29" x2="322.63" y2="26.25" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<line x1="411.32" y1="108.68" x2="431.12" y2="88.88" stroke="url(#dialGold)" stroke-width="1" opacity="0.55" stroke-dasharray="1 2"/>
-<text x="488.00" y="260.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(90, 488.00, 260.00)" filter="url(#goldGlow)">♈</text>
-<text x="457.45" y="374.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(120, 457.45, 374.00)" filter="url(#goldGlow)">♉</text>
-<text x="374.00" y="457.45" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(150, 374.00, 457.45)" filter="url(#goldGlow)">♊</text>
-<text x="260.00" y="488.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(180, 260.00, 488.00)" filter="url(#goldGlow)">♋</text>
-<text x="146.00" y="457.45" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(210, 146.00, 457.45)" filter="url(#goldGlow)">♌</text>
-<text x="62.55" y="374.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(240, 62.55, 374.00)" filter="url(#goldGlow)">♍</text>
-<text x="32.00" y="260.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(270, 32.00, 260.00)" filter="url(#goldGlow)">♎</text>
-<text x="62.55" y="146.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(300, 62.55, 146.00)" filter="url(#goldGlow)">♏</text>
-<text x="146.00" y="62.55" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(330, 146.00, 62.55)" filter="url(#goldGlow)">♐</text>
-<text x="260.00" y="32.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(360, 260.00, 32.00)" filter="url(#goldGlow)">♑</text>
-<text x="374.00" y="62.55" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(390, 374.00, 62.55)" filter="url(#goldGlow)">♒</text>
-<text x="457.45" y="146.00" fill="url(#dialGold)" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" dominant-baseline="central" transform="rotate(420, 457.45, 146.00)" filter="url(#goldGlow)">♓</text>
-<circle cx="260" cy="260" r="206" stroke="url(#dialGold)" stroke-width="1.2" fill="none" opacity="0.8"/>
-<circle cx="466.00" cy="260.00" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="460.45" cy="307.51" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="444.09" cy="352.45" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="417.81" cy="392.41" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="383.01" cy="425.24" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="341.59" cy="449.15" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="295.77" cy="462.87" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="248.02" cy="465.65" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="200.92" cy="457.35" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="157.00" cy="438.40" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="118.63" cy="409.84" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="87.89" cy="373.20" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="66.42" cy="330.46" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="55.39" cy="283.92" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="55.39" cy="236.08" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="66.42" cy="189.54" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="87.89" cy="146.80" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="118.63" cy="110.16" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="157.00" cy="81.60" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="200.92" cy="62.65" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="248.02" cy="54.35" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="295.77" cy="57.13" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="341.59" cy="70.85" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="383.01" cy="94.76" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="417.81" cy="127.59" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="444.09" cy="167.55" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="460.45" cy="212.49" r="1.8" fill="#FFFBEB" opacity="0.85"/>
-<circle cx="260" cy="260" r="198" stroke="url(#dialGold)" stroke-width="2.5" fill="none" opacity="0.95"/>
+<circle cx="260" cy="260" r="248" fill="none" stroke="url(#ringTrackGrad)" stroke-width="40" opacity="0.4"/>
+<circle cx="260" cy="260" r="252" stroke="url(#dialGoldHigh)" stroke-width="2.5" fill="none" opacity="0.9" filter="url(#dialShadow)"/>
+<line x1="512.00" y1="260.00" x2="501.00" y2="260.00" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="511.04" y1="281.96" x2="505.06" y2="281.44" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="508.17" y1="303.76" x2="502.26" y2="302.72" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="503.41" y1="325.22" x2="497.62" y2="323.67" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="496.80" y1="346.19" x2="491.16" y2="344.14" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="488.39" y1="366.50" x2="482.95" y2="363.96" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="478.24" y1="386.00" x2="468.71" y2="380.50" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="466.43" y1="404.54" x2="461.51" y2="401.10" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="453.04" y1="421.98" x2="448.45" y2="418.13" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="438.19" y1="438.19" x2="433.95" y2="433.95" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="421.98" y1="453.04" x2="418.13" y2="448.45" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="404.54" y1="466.43" x2="401.10" y2="461.51" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="386.00" y1="478.24" x2="380.50" y2="468.71" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="366.50" y1="488.39" x2="363.96" y2="482.95" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="346.19" y1="496.80" x2="344.14" y2="491.16" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="325.22" y1="503.41" x2="323.67" y2="497.62" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="303.76" y1="508.17" x2="302.72" y2="502.26" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="281.96" y1="511.04" x2="281.44" y2="505.06" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="260.00" y1="512.00" x2="260.00" y2="501.00" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="238.04" y1="511.04" x2="238.56" y2="505.06" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="216.24" y1="508.17" x2="217.28" y2="502.26" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="194.78" y1="503.41" x2="196.33" y2="497.62" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="173.81" y1="496.80" x2="175.86" y2="491.16" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="153.50" y1="488.39" x2="156.04" y2="482.95" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="134.00" y1="478.24" x2="139.50" y2="468.71" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="115.46" y1="466.43" x2="118.90" y2="461.51" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="98.02" y1="453.04" x2="101.87" y2="448.45" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="81.81" y1="438.19" x2="86.05" y2="433.95" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="66.96" y1="421.98" x2="71.55" y2="418.13" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="53.57" y1="404.54" x2="58.49" y2="401.10" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="41.76" y1="386.00" x2="51.29" y2="380.50" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="31.61" y1="366.50" x2="37.05" y2="363.96" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="23.20" y1="346.19" x2="28.84" y2="344.14" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="16.59" y1="325.22" x2="22.38" y2="323.67" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="11.83" y1="303.76" x2="17.74" y2="302.72" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="8.96" y1="281.96" x2="14.94" y2="281.44" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="8.00" y1="260.00" x2="19.00" y2="260.00" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="8.96" y1="238.04" x2="14.94" y2="238.56" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="11.83" y1="216.24" x2="17.74" y2="217.28" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="16.59" y1="194.78" x2="22.38" y2="196.33" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="23.20" y1="173.81" x2="28.84" y2="175.86" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="31.61" y1="153.50" x2="37.05" y2="156.04" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="41.76" y1="134.00" x2="51.29" y2="139.50" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="53.57" y1="115.46" x2="58.49" y2="118.90" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="66.96" y1="98.02" x2="71.55" y2="101.87" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="81.81" y1="81.81" x2="86.05" y2="86.05" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="98.02" y1="66.96" x2="101.87" y2="71.55" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="115.46" y1="53.57" x2="118.90" y2="58.49" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="134.00" y1="41.76" x2="139.50" y2="51.29" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="153.50" y1="31.61" x2="156.04" y2="37.05" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="173.81" y1="23.20" x2="175.86" y2="28.84" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="194.78" y1="16.59" x2="196.33" y2="22.38" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="216.24" y1="11.83" x2="217.28" y2="17.74" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="238.04" y1="8.96" x2="238.56" y2="14.94" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="260.00" y1="8.00" x2="260.00" y2="19.00" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="281.96" y1="8.96" x2="281.44" y2="14.94" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="303.76" y1="11.83" x2="302.72" y2="17.74" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="325.22" y1="16.59" x2="323.67" y2="22.38" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="346.19" y1="23.20" x2="344.14" y2="28.84" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="366.50" y1="31.61" x2="363.96" y2="37.05" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="386.00" y1="41.76" x2="380.50" y2="51.29" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="404.54" y1="53.57" x2="401.10" y2="58.49" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="421.98" y1="66.96" x2="418.13" y2="71.55" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="438.19" y1="81.81" x2="433.95" y2="86.05" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="453.04" y1="98.02" x2="448.45" y2="101.87" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="466.43" y1="115.46" x2="461.51" y2="118.90" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="478.24" y1="134.00" x2="468.71" y2="139.50" stroke="url(#dialGoldHigh)" stroke-width="2.0" opacity="0.9"/>
+<line x1="488.39" y1="153.50" x2="482.95" y2="156.04" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="496.80" y1="173.81" x2="491.16" y2="175.86" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="503.41" y1="194.78" x2="497.62" y2="196.33" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="508.17" y1="216.24" x2="502.26" y2="217.28" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<line x1="511.04" y1="238.04" x2="505.06" y2="238.56" stroke="url(#dialGoldHigh)" stroke-width="1.0" opacity="0.7"/>
+<circle cx="260" cy="260" r="240" stroke="url(#dialGoldHigh)" stroke-width="1.2" fill="none" opacity="0.75"/>
+<circle cx="260" cy="260" r="216" stroke="url(#dialGoldHigh)" stroke-width="1.2" fill="none" opacity="0.75"/>
+<line x1="468.64" y1="204.10" x2="491.82" y2="197.88" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="468.64" y1="315.90" x2="491.82" y2="322.12" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="412.74" y1="412.74" x2="429.71" y2="429.71" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="315.90" y1="468.64" x2="322.12" y2="491.82" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="204.10" y1="468.64" x2="197.88" y2="491.82" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="107.26" y1="412.74" x2="90.29" y2="429.71" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="51.36" y1="315.90" x2="28.18" y2="322.12" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="51.36" y1="204.10" x2="28.18" y2="197.88" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="107.26" y1="107.26" x2="90.29" y2="90.29" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="204.10" y1="51.36" x2="197.88" y2="28.18" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="315.90" y1="51.36" x2="322.12" y2="28.18" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<line x1="412.74" y1="107.26" x2="429.71" y2="90.29" stroke="url(#dialGoldHigh)" stroke-width="1.5" opacity="0.8"/>
+<text x="488.00" y="260.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(90, 488.00, 260.00)" filter="url(#dialShadow)">♈</text>
+<text x="457.45" y="374.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(120, 457.45, 374.00)" filter="url(#dialShadow)">♉</text>
+<text x="374.00" y="457.45" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(150, 374.00, 457.45)" filter="url(#dialShadow)">♊</text>
+<text x="260.00" y="488.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(180, 260.00, 488.00)" filter="url(#dialShadow)">♋</text>
+<text x="146.00" y="457.45" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(210, 146.00, 457.45)" filter="url(#dialShadow)">♌</text>
+<text x="62.55" y="374.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(240, 62.55, 374.00)" filter="url(#dialShadow)">♍</text>
+<text x="32.00" y="260.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(270, 32.00, 260.00)" filter="url(#dialShadow)">♎</text>
+<text x="62.55" y="146.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(300, 62.55, 146.00)" filter="url(#dialShadow)">♏</text>
+<text x="146.00" y="62.55" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(330, 146.00, 62.55)" filter="url(#dialShadow)">♐</text>
+<text x="260.00" y="32.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(360, 260.00, 32.00)" filter="url(#dialShadow)">♑</text>
+<text x="374.00" y="62.55" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(390, 374.00, 62.55)" filter="url(#dialShadow)">♒</text>
+<text x="457.45" y="146.00" fill="#B45309" stroke="#FFFBEB" stroke-width="0.5" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" text-anchor="middle" dominant-baseline="central" transform="rotate(420, 457.45, 146.00)" filter="url(#dialShadow)">♓</text>
+<circle cx="260" cy="260" r="210" stroke="url(#dialGoldHigh)" stroke-width="1.5" fill="none" opacity="0.85"/>
+<circle cx="468.20" cy="287.41" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="454.01" cy="340.36" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="426.60" cy="387.84" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="387.84" cy="426.60" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="340.36" cy="454.01" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="287.41" cy="468.20" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="232.59" cy="468.20" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="179.64" cy="454.01" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="132.16" cy="426.60" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="93.40" cy="387.84" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="65.99" cy="340.36" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="51.80" cy="287.41" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="51.80" cy="232.59" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="65.99" cy="179.64" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="93.40" cy="132.16" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="132.16" cy="93.40" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="179.64" cy="65.99" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="232.59" cy="51.80" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="287.41" cy="51.80" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="340.36" cy="65.99" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="387.84" cy="93.40" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="426.60" cy="132.16" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="454.01" cy="179.64" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="468.20" cy="232.59" r="2.2" fill="#D97706" stroke="#FFFBEB" stroke-width="0.8" opacity="0.95"/>
+<circle cx="260" cy="260" r="206" stroke="url(#dialGoldHigh)" stroke-width="3" fill="none" opacity="1" filter="url(#dialShadow)"/>
 </svg>
