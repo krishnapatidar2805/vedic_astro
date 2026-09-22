@@ -156,90 +156,46 @@
   </div>
 </section>
 
-<!-- ── ABOUT ASTROLOGER (PROFILE CARD STYLE) ── -->
+<!-- ── ABOUT ASTROLOGER (CLASSIC ELEGANT LAYOUT) ── -->
 <section class="section-pad section-alt" id="about">
   <div class="container">
     <div class="row align-items-center gy-5">
-      <div class="col-lg-5">
-        <div class="about-profile-card">
-          <div class="profile-avatar-container">
-            <div class="profile-avatar-glow"></div>
-            <img src="{% static 'img/astrologer.jpeg' %}" alt="Pandit Gajendra Sharma" class="profile-avatar-img">
-            <div class="avatar-online-badge"><i class="fa-solid fa-circle"></i> Available</div>
-          </div>
-          
-          <h3 class="about-name">
-            Pt. Gajendra Sharma <i class="fa-solid fa-certificate verified-badge" title="Certified Vedic Astrologer"></i>
-          </h3>
-          <div class="about-role">Jyotishacharya &amp; Shrimad Bhagwat Katha Vyas</div>
-          
-          <div class="skills-tags-wrap">
-            <span class="skill-tag">Janam Kundli</span>
-            <span class="skill-tag">Kundli Matching</span>
-            <span class="skill-tag">Kaal Sarp Puja</span>
-            <span class="skill-tag">Vastu Shanti</span>
-            <span class="skill-tag">Grah Dosh Nivaran</span>
-            <span class="skill-tag">Bhagwat Katha</span>
-          </div>
-          
-          <div class="about-mini-stats-grid">
-            <div class="about-mini-stat-card">
-              <div class="about-mini-num">10+</div>
-              <div class="about-mini-label">Years Practice</div>
-            </div>
-            <div class="about-mini-stat-card">
-              <div class="about-mini-num">1000+</div>
-              <div class="about-mini-label">Yajman Families</div>
-            </div>
-          </div>
+      <div class="col-lg-7 order-lg-1 order-2">
+        <div class="section-eyebrow"><i class="fa-solid fa-user-tie text-cyan"></i> About The Astrologer</div>
+        <h2 class="section-title">
+          Pandit <span class="gradient-text-gold">Gajendra Sharma</span>
+        </h2>
+        <div class="modern-divider start"></div>
+        
+        <p class="about-lead text-muted mb-4">
+          A dedicated Vedic scholar and Bhagwat speaker from Kherkheda, Sitamau (Mandsaur, M.P.), Pandit Gajendra Sharma has guided thousands of individuals and families through complex life challenges. Combining deep scriptural mastery with practical remedies, he provides authentic insight into career, marriage, health, and family prosperity.
+        </p>
+        
+        <ul class="list-unstyled about-list my-4">
+          <li><i class="fa-solid fa-circle-check text-warning me-2"></i> Authentic Janam Kundli &amp; Palmistry Reading</li>
+          <li><i class="fa-solid fa-circle-check text-warning me-2"></i> Kundli Matching for Marriage Compatibility</li>
+          <li><i class="fa-solid fa-circle-check text-warning me-2"></i> Vastu Shanti &amp; Grah Dosh Nivaran</li>
+          <li><i class="fa-solid fa-circle-check text-warning me-2"></i> Shrimad Bhagwat Katha &amp; Vedic Anushthan</li>
+        </ul>
+        
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="{% url 'core:about' %}" class="btn btn-primary-gradient px-4 py-3">
+            <i class="fa-solid fa-book-open"></i> More About Us
+          </a>
+          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-glass px-4 py-3">
+            <i class="fa-solid fa-phone"></i> Call Directly
+          </a>
         </div>
       </div>
       
-      <div class="col-lg-7">
-        <div class="ps-lg-4">
-          <div class="section-eyebrow"><i class="fa-solid fa-user-tie text-cyan"></i> About The Astrologer</div>
-          <h2 class="section-title">
-            Rooted in Shastras, <span class="gradient-text-cyan">Dedicated to Dharma</span>
-          </h2>
-          <div class="modern-divider start"></div>
-          
-          <p class="about-story">
-            A dedicated Vedic scholar and Katha speaker from Kherkheda, Sitamau (Mandsaur, M.P.), Pandit Gajendra Sharma has guided thousands of individuals and families through complex life challenges. Combining deep scriptural mastery with practical remedies, he provides authentic insight into career, marriage, health, and family prosperity.
-          </p>
-          
-          <div class="feature-pill-list">
-            <div class="feature-pill-item">
-              <div class="f-icon-box"><i class="fa-solid fa-scroll"></i></div>
-              <div class="f-text-box">
-                <h6>Authentic Vedic Vidhi &amp; Rituals</h6>
-                <p>Every ritual, havan, and path is conducted according to strict Vedic injunctions and auspicious Muhurats.</p>
-              </div>
-            </div>
-            
-            <div class="feature-pill-item">
-              <div class="f-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-              <div class="f-text-box">
-                <h6>100% Confidential &amp; Compassionate</h6>
-                <p>Your personal horoscope details, family concerns, and discussions remain completely private.</p>
-              </div>
-            </div>
-            
-            <div class="feature-pill-item">
-              <div class="f-icon-box"><i class="fa-solid fa-video"></i></div>
-              <div class="f-text-box">
-                <h6>Online Consultation &amp; Temple Visits</h6>
-                <p>Connect over Phone, WhatsApp Video Call, or visit directly in Sitamau, Mandsaur (M.P.).</p>
-              </div>
-            </div>
+      <div class="col-lg-5 order-lg-2 order-1 text-center">
+        <div class="about-img-wrap">
+          <div class="about-img-box">
+            <img src="{% static 'img/astrologer.jpeg' %}" alt="Pandit Gajendra Sharma">
           </div>
-          
-          <div class="d-flex flex-wrap gap-3 mt-4">
-            <a href="{% url 'core:about' %}" class="btn btn-primary-gradient px-4 py-3">
-              <i class="fa-solid fa-book-open"></i> Read Full Bio
-            </a>
-            <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-glass px-4 py-3">
-              <i class="fa-solid fa-phone"></i> Call Directly
-            </a>
+          <div class="about-exp-badge">
+            <div class="num">10+</div>
+            <div>Years of<br>Vedic Practice</div>
           </div>
         </div>
       </div>
@@ -264,78 +220,73 @@
     <div class="row gy-4">
       {% for img in gallery_images %}
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="demo-video-card h-100">
-          <div class="demo-thumb-container">
-            <img src="{{ img.image.url }}" alt="{{ img.title }}" class="demo-thumb-img">
-            <div class="demo-badge-top-left"><i class="fa-solid fa-om text-warning me-1"></i> Vedic Pujan</div>
-            <div class="demo-badge-top-right">Sacred</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{{ img.image.url }}" alt="{{ img.title }}" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> Sacred</div>
           </div>
-          <div class="demo-card-body p-3">
-            <h6 class="demo-title text-white mb-2">{{ img.title }}</h6>
-            <div class="demo-card-footer mt-2">
-              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Full Photo</a>
-            </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">{{ img.title }}</h6>
+            <a href="{{ img.image.url }}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
           </div>
         </div>
       </div>
       {% empty %}
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="demo-video-card h-100">
-          <div class="demo-thumb-container">
-            <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services" class="demo-thumb-img">
-            <div class="demo-badge-top-left"><i class="fa-solid fa-om text-warning me-1"></i> Astrology</div>
-            <div class="demo-badge-top-right">4K HD</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster1.jpeg' %}" alt="Astrology Services" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> Astrology</div>
           </div>
-          <div class="demo-card-body p-3">
-            <h6 class="demo-title text-white mb-2">Vedic Astrology Services</h6>
-            <div class="demo-card-footer mt-2">
-              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="demo-video-card h-100">
-          <div class="demo-thumb-container">
-            <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha" class="demo-thumb-img">
-            <div class="demo-badge-top-left"><i class="fa-solid fa-book-bible text-warning me-1"></i> Katha</div>
-            <div class="demo-badge-top-right">Divine</div>
-          </div>
-          <div class="demo-card-body p-3">
-            <h6 class="demo-title text-white mb-2">Shrimad Bhagwat Katha</h6>
-            <div class="demo-card-footer mt-2">
-              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
-            </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Astrology Services</h6>
+            <a href="{% static 'img/poster1.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="demo-video-card h-100">
-          <div class="demo-thumb-container">
-            <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan" class="demo-thumb-img">
-            <div class="demo-badge-top-left"><i class="fa-solid fa-fire text-danger me-1"></i> Pujan</div>
-            <div class="demo-badge-top-right">Ritual</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster2.jpeg' %}" alt="Shrimad Bhagwat Katha" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-book-bible text-warning me-1"></i> Katha</div>
           </div>
-          <div class="demo-card-body p-3">
-            <h6 class="demo-title text-white mb-2">Vedic Pujan &amp; Rituals</h6>
-            <div class="demo-card-footer mt-2">
-              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
-            </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Shrimad Bhagwat Katha</h6>
+            <a href="{% static 'img/poster2.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-12">
-        <div class="demo-video-card h-100">
-          <div class="demo-thumb-container">
-            <img src="{% static 'img/poster4.jpeg' %}" alt="Contact for Pooja" class="demo-thumb-img">
-            <div class="demo-badge-top-left"><i class="fa-solid fa-phone text-success me-1"></i> Contact</div>
-            <div class="demo-badge-top-right">Direct</div>
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster3.jpeg' %}" alt="Vedic Pujan &amp; Astrology" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-fire text-danger me-1"></i> Pujan</div>
           </div>
-          <div class="demo-card-body p-3">
-            <h6 class="demo-title text-white mb-2">Pooja &amp; Katha Booking</h6>
-            <div class="demo-card-footer mt-2">
-              <a href="{% url 'gallery:list' %}" class="btn btn-glass btn-sm w-100">View Details</a>
-            </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Vedic Pujan &amp; Astrology</h6>
+            <a href="{% static 'img/poster3.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="poster-card h-100">
+          <div class="poster-frame">
+            <img src="{% static 'img/poster4.jpeg' %}" alt="Contact for Vedic Poojan" class="poster-img" loading="lazy">
+            <div class="poster-tag"><i class="fa-solid fa-phone text-success me-1"></i> Contact</div>
+          </div>
+          <div class="poster-info p-3 text-center">
+            <h6 class="poster-title mb-2">Contact for Vedic Poojan</h6>
+            <a href="{% static 'img/poster4.jpeg' %}" target="_blank" class="btn btn-glass btn-sm w-100">
+              <i class="fa-solid fa-expand me-1"></i> View Full Photo
+            </a>
           </div>
         </div>
       </div>
@@ -343,7 +294,7 @@
     </div>
     
     <div class="text-center mt-5">
-      <a href="{% url 'gallery:list' %}" class="btn btn-glass px-4 py-3">
+      <a href="{% url 'gallery:list' %}" class="btn btn-cyan px-4 py-3">
         <i class="fa-solid fa-images me-1"></i> Explore Full Photo Gallery
       </a>
     </div>

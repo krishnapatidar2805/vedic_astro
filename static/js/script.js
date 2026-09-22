@@ -77,102 +77,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ---- Sacred Vedic Mantra Audio Player ----
-  const mantraWidget = document.getElementById('mantraPlayer');
-  const mantraLabel = document.querySelector('.mantra-label');
-  const sacredAudio = document.getElementById('sacredAudio');
-
-  let audioCtx = null;
-  let synthNodes = null;
-  let isPlaying = false;
-
-  function startOmSynth() {
-    try {
-      const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
-      audioCtx = new AudioCtxClass();
-      const now = audioCtx.currentTime;
-
-      // Cosmic Om Frequency (136.1 Hz) + Harmonics (272.2Hz, 408.3Hz, 432Hz)
-      const freqs = [136.1, 272.2, 408.3, 432.0];
-      const masterGain = audioCtx.createGain();
-      masterGain.gain.setValueAtTime(0, now);
-      masterGain.gain.linearRampToValueAtTime(0.18, now + 1.5);
-      masterGain.connect(audioCtx.destination);
-
-      const oscillators = freqs.map(function (f, idx) {
-        const osc = audioCtx.createOscillator();
-        const g = audioCtx.createGain();
-        osc.type = idx === 0 ? 'sine' : (idx % 2 === 0 ? 'triangle' : 'sine');
-        osc.frequency.setValueAtTime(f, now);
-
-        // Subtle vibrating frequency modulation
-        const lfo = audioCtx.createOscillator();
-        const lfoGain = audioCtx.createGain();
-        lfo.frequency.setValueAtTime(0.25 + idx * 0.1, now);
-        lfoGain.gain.setValueAtTime(1.8, now);
-        lfo.connect(lfoGain);
-        lfoGain.connect(osc.frequency);
-        lfo.start();
-
-        g.gain.setValueAtTime(1 / (idx + 1.6), now);
-        osc.connect(g);
-        g.connect(masterGain);
-        osc.start();
-        return osc;
-      });
-
-      synthNodes = { masterGain: masterGain, oscillators: oscillators };
-    } catch (e) {
-      console.warn("Web Audio not supported", e);
-    }
+  /* ── THEME TOGGLE (LIGHT / DARK MODE) ── */
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('site-theme', theme);
   }
 
-  function stopOmSynth() {
-    if (audioCtx && synthNodes) {
-      try {
-        const now = audioCtx.currentTime;
-        synthNodes.masterGain.gain.linearRampToValueAtTime(0, now + 0.8);
-        setTimeout(function () {
-          if (audioCtx) {
-            audioCtx.close();
-            audioCtx = null;
-            synthNodes = null;
-          }
-        }, 1000);
-      } catch (e) {}
-    }
-  }
-
-  if (mantraWidget) {
-    mantraWidget.addEventListener('click', function (e) {
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      if (!isPlaying) {
-        isPlaying = true;
-        mantraWidget.classList.add('playing');
-        if (mantraLabel) mantraLabel.textContent = 'Pause Chant';
-
-        if (sacredAudio) {
-          sacredAudio.volume = 0.45;
-          const playPromise = sacredAudio.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(function () {
-              // Fallback to Web Audio synthesis if external audio file is blocked
-              startOmSynth();
-            });
-          }
-        } else {
-          startOmSynth();
-        }
-      } else {
-        isPlaying = false;
-        mantraWidget.classList.remove('playing');
-        if (mantraLabel) mantraLabel.textContent = 'Play Sacred Om';
-
-        if (sacredAudio) {
-          sacredAudio.pause();
-        }
-        stopOmSynth();
-      }
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(newTheme);
     });
   }
-
 });
