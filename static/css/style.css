@@ -390,26 +390,28 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--ff-display);
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 800;
   text-decoration: none;
+  margin-right: 2.2rem;
 }
 
 .brand-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
   background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #F59E0B 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  font-size: 1.45rem;
-  box-shadow: 0 0 22px rgba(139, 92, 246, 0.6);
-  margin-right: 8px;
+  font-size: 1.65rem;
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.65);
+  margin-right: 6px;
   animation: pulseBrandGlow 3s ease-in-out infinite alternate;
+  flex-shrink: 0;
 }
 
 @keyframes pulseBrandGlow {
@@ -438,9 +440,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
   color: #E2E8F0 !important;
-  font-size: 1.12rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  padding: 8px 18px !important;
+  padding: 7px 15px !important;
   border-radius: var(--radius-full);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -3940,7 +3942,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .navbar-brand {
-  font-size: 1.65rem !important;
+  font-size: 1.75rem !important;
 }
 
 [data-theme="light"] .brand-lokeshh {
@@ -3959,7 +3961,7 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="light"] .nav-link {
   color: #0F172A !important;
-  font-size: 1.12rem !important;
+  font-size: 1.05rem !important;
   font-weight: 700 !important;
 }
 
