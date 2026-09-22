@@ -5,7 +5,7 @@ import urllib.parse
 def site_settings(request):
     """Make business info available in every template."""
     whatsapp_number = settings.BUSINESS_WHATSAPP
-    default_msg = "🙏 प्रणाम पंडित जी, मुझे कुंडली व ज्योतिष परामर्श के लिए आपसे बात करनी है।"
+    default_msg = "Hello Pandit ji, I need Kundli and Astrology consultation."
     encoded_msg = urllib.parse.quote(default_msg)
     whatsapp_url = f"https://wa.me/{whatsapp_number}?text={encoded_msg}"
 
