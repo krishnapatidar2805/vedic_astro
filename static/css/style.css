@@ -1668,13 +1668,154 @@ h1, h2, h3, h4, h5, h6 {
   margin: 3rem 0 1.5rem;
 }
 
+/* ── FOOTER SHLOKA (ELEGANT SOFT SACRED GLOW & GENTLE PULSE) ── */
+.footer-shloka-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  overflow: visible;
+}
+
 .footer-shloka {
-  font-family: var(--ff-display);
+  position: relative;
+  display: inline-block;
+  font-family: 'Poppins', 'Segoe UI', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
   color: #FDE68A;
-  font-size: 1.02rem;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-shadow: 0 0 15px rgba(253, 230, 138, 0.4);
+  padding: 7px 22px;
+  border-radius: 50px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  transform-origin: center center;
+  will-change: transform, box-shadow, text-shadow;
+  animation: gentleShlokaGlow 3.6s ease-in-out infinite alternate;
+  cursor: default;
+  user-select: none;
+  z-index: 1;
+}
+
+@keyframes gentleShlokaGlow {
+  0% {
+    transform: scale(0.97);
+    color: #FCD34D;
+    border-color: rgba(245, 158, 11, 0.25);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.03);
+    color: #FFFBEB;
+    border-color: rgba(245, 158, 11, 0.55);
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.32);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 18px rgba(251, 191, 36, 0.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.97);
+    color: #FCD34D;
+    border-color: rgba(245, 158, 11, 0.25);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-shloka {
+    font-size: 0.86rem;
+    padding: 6px 14px;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* ── HIGH-CONTRAST FOOTER TYPOGRAPHY (CRISP & LEGIBLE IN LIGHT & DARK MODES) ── */
+.footer-dark,
+[data-theme="light"] .footer-dark {
+  background: #060A13 !important;
+  color: #E2E8F0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer-dark .navbar-brand .brand-lokeshh,
+[data-theme="light"] .footer-dark .navbar-brand .brand-lokeshh {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+
+.footer-dark .navbar-brand .brand-ai,
+[data-theme="light"] .footer-dark .navbar-brand .brand-ai {
+  color: #F59E0B !important;
+  font-weight: 800 !important;
+}
+
+.footer-dark .navbar-brand .brand-tools,
+[data-theme="light"] .footer-dark .navbar-brand .brand-tools {
+  color: #818CF8 !important;
+  font-weight: 800 !important;
+}
+
+.footer-dark .footer-tagline,
+.footer-dark p,
+[data-theme="light"] .footer-dark .footer-tagline,
+[data-theme="light"] .footer-dark p {
+  color: #CBD5E1 !important;
+  font-size: 0.93rem !important;
+  line-height: 1.75 !important;
+}
+
+.footer-dark .footer-heading,
+[data-theme="light"] .footer-dark .footer-heading {
+  color: #FFFFFF !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+}
+
+.footer-dark .footer-links li,
+[data-theme="light"] .footer-dark .footer-links li {
+  color: #CBD5E1 !important;
+  font-size: 0.92rem !important;
+}
+
+.footer-dark .footer-links a,
+[data-theme="light"] .footer-dark .footer-links a {
+  color: #E2E8F0 !important;
+  font-size: 0.92rem !important;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.footer-dark .footer-links a:hover,
+[data-theme="light"] .footer-dark .footer-links a:hover {
+  color: #FBBF24 !important;
+  transform: translateX(4px);
+}
+
+.footer-dark .footer-hr,
+[data-theme="light"] .footer-dark .footer-hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.footer-dark .footer-copy,
+[data-theme="light"] .footer-dark .footer-copy {
+  color: #94A3B8 !important;
+  font-size: 0.9rem !important;
+}
+
+.footer-dark .footer-copy a,
+[data-theme="light"] .footer-dark .footer-copy a {
+  color: #CBD5E1 !important;
+  font-size: 0.9rem !important;
+}
+
+.footer-dark .footer-copy a:hover,
+[data-theme="light"] .footer-dark .footer-copy a:hover {
+  color: #FBBF24 !important;
 }
 
 .footer-copy {
@@ -2336,79 +2477,98 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 20px #F59E0B); }
 }
 
-/* ── HERO ASTROLOGER PHOTO (ROYAL VEDIC ARCH DESIGN - FULL PHOTO) ── */
+/* ── HERO ASTROLOGER PHOTO (ROYAL SACRED CIRCLE WITH VEDIC SURYA CHAKRA) ── */
 .hero-photo-wrap {
   position: relative;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 10px;
+  padding: 30px 15px;
 }
 
 .hero-photo-frame {
   position: relative;
   display: inline-block;
-  width: 380px;
-  height: 490px;
-  border-radius: 190px 190px 28px 28px;
-  padding: 7px;
-  background: linear-gradient(145deg, #FDE68A 0%, #F59E0B 40%, #6366F1 80%, #EC4899 100%);
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(135deg, #FFFBEB 0%, #F59E0B 40%, #6366F1 80%, #EC4899 100%);
   box-shadow: 
-    0 0 40px rgba(245, 158, 11, 0.45),
+    0 0 45px rgba(245, 158, 11, 0.45),
     0 25px 60px rgba(0, 0, 0, 0.85);
   transition: transform 0.4s var(--ease), box-shadow 0.4s ease;
 }
 
 .hero-photo-frame:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: 
-    0 0 55px rgba(245, 158, 11, 0.65),
-    0 35px 75px rgba(0, 0, 0, 0.9);
+    0 0 65px rgba(245, 158, 11, 0.65),
+    0 32px 75px rgba(0, 0, 0, 0.95);
 }
 
-/* Ambient Sacred Aura Behind Frame (No dizzying spinning dashed circle) */
+/* Ambient Sacred Cosmic Halo */
 .hero-photo-halo {
   position: absolute;
-  inset: -16px;
-  border-radius: 205px 205px 40px 40px;
-  background: radial-gradient(circle at 50% 35%, rgba(245, 158, 11, 0.3) 0%, rgba(99, 102, 241, 0.2) 50%, transparent 75%);
-  filter: blur(16px);
+  inset: -22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.35) 0%, rgba(99, 102, 241, 0.2) 50%, transparent 75%);
+  filter: blur(18px);
   pointer-events: none;
   animation: auraBreathe 4s ease-in-out infinite alternate;
   z-index: 0;
 }
 
 @keyframes auraBreathe {
-  0% { opacity: 0.6; transform: scale(0.98); }
-  100% { opacity: 1; transform: scale(1.03); filter: blur(20px); }
+  0% { opacity: 0.6; transform: scale(0.97); }
+  100% { opacity: 1; transform: scale(1.04); filter: blur(24px); }
+}
+
+/* Sacred Vedic Surya Chakra Ring Radiating Around the Circle */
+.hero-surya-chakra {
+  position: absolute;
+  top: -46px;
+  left: -46px;
+  width: 482px;
+  height: 482px;
+  pointer-events: none;
+  z-index: 1;
+  animation: rotateChakra 55s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.6));
+}
+
+@keyframes rotateChakra {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .hero-photo-box {
   width: 100%;
   height: 100%;
-  border-radius: 184px 184px 22px 22px;
+  border-radius: 50%;
   overflow: hidden;
-  border: 3.5px solid #080C16;
+  border: 4px solid #080C16;
   background: #0B101D;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-photo-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 10%;
+  object-position: center 30%;
   display: block;
+  transform: scale(1.02);
   transition: transform 0.45s ease;
 }
 
 .hero-photo-frame:hover .hero-photo-box img {
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 /* Floating Badges */
@@ -2416,8 +2576,8 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   background: rgba(15, 23, 42, 0.94);
   color: #F8FAFC;
-  border: 1.5px solid rgba(245, 158, 11, 0.6);
-  padding: 7px 16px;
+  border: 1.5px solid rgba(245, 158, 11, 0.65);
+  padding: 7px 18px;
   border-radius: var(--radius-full);
   font-weight: 700;
   font-size: 0.85rem;
@@ -2432,19 +2592,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-photo-badge:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
   border-color: #FBBF24;
   box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
 }
 
 .hero-badge-right {
   bottom: 18px;
-  right: -12px;
+  right: -10px;
 }
 
 .hero-badge-left {
   bottom: 75px;
-  left: -14px;
+  left: -12px;
 }
 
 /* ── THEME TOGGLE BUTTON ── */
@@ -3249,18 +3409,18 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 991px) {
   .hero-photo-frame {
     width: 320px;
-    height: 415px;
-    border-radius: 160px 160px 24px 24px;
+    height: 320px;
+    border-radius: 50%;
   }
-  .hero-photo-box {
-    border-radius: 154px 154px 18px 18px;
-  }
-  .hero-photo-halo {
-    border-radius: 175px 175px 32px 32px;
+  .hero-surya-chakra {
+    width: 396px;
+    height: 396px;
+    top: -38px;
+    left: -38px;
   }
   .hero-badge-right {
     bottom: 12px;
-    right: -6px;
+    right: -5px;
   }
   .hero-badge-left {
     bottom: 60px;
@@ -3272,26 +3432,26 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 576px) {
   .hero-photo-frame {
     width: 270px;
-    height: 350px;
-    border-radius: 135px 135px 20px 20px;
+    height: 270px;
+    border-radius: 50%;
   }
-  .hero-photo-box {
-    border-radius: 130px 130px 15px 15px;
-  }
-  .hero-photo-halo {
-    border-radius: 145px 145px 26px 26px;
+  .hero-surya-chakra {
+    width: 336px;
+    height: 336px;
+    top: -33px;
+    left: -33px;
   }
   .hero-photo-badge {
     font-size: 0.76rem;
     padding: 5px 12px;
   }
   .hero-badge-right {
-    bottom: 8px;
-    right: -4px;
+    bottom: 6px;
+    right: -2px;
   }
   .hero-badge-left {
-    bottom: 50px;
-    left: -6px;
+    bottom: 48px;
+    left: -4px;
   }
   .about-img-wrap { max-width: 100%; }
   .about-exp-badge { position: static; margin-top: 16px; display: inline-block; }
@@ -3610,7 +3770,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .footer-shloka {
-  color: #FDE68A !important;
+  border-color: rgba(245, 158, 11, 0.45);
 }
 
 [data-theme="light"] .footer-copy {
@@ -3803,7 +3963,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .hero-photo-halo {
-  background: radial-gradient(circle at 50% 35%, rgba(245, 158, 11, 0.22) 0%, rgba(99, 102, 241, 0.15) 50%, transparent 75%);
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.22) 0%, rgba(99, 102, 241, 0.15) 50%, transparent 75%);
+}
+
+[data-theme="light"] .hero-surya-chakra {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.45));
 }
 
 
