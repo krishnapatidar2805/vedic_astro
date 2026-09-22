@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Booking Confirmation | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="container text-center">
+    <div class="badge-vedic mb-3">
+      <i class="fa-solid fa-circle-check text-success me-1"></i> बुकिंग सफलतापूर्वक दर्ज (Booking Received)
+    </div>
+    <h1 class="page-title">
+      पंडित जी से <span class="gradient-text-gold">WhatsApp पर स्लॉट कन्फर्म</span> करें
+    </h1>
+    <p class="text-muted mx-auto" style="max-width: 600px;">
+      आपकी बुकिंग आईडी <strong>#APP-{{ appointment.id|stringformat:"04d" }}</strong> वेबसाइट पर सेव कर ली गई है।
+    </p>
+  </div>
+</div>
+
+<section class="section-pad section-dark">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <div class="card card-vedic p-4 p-md-5 text-center shadow-lg border-gold-glow">
+          
+          <!-- Success Icon -->
+          <div class="mb-4">
+            <div class="success-icon-wrap mx-auto">
+              <i class="fa-solid fa-check text-success"></i>
+            </div>
+          </div>
+          
+          <h3 class="fw-bold mb-2 text-white">धन्यवाद, {{ appointment.full_name }} जी!</h3>
+          <p class="text-muted mb-4 fs-6">
+            पंडित गजेंद्र शर्मा जी से सीधा समय स्लॉट और मार्गदर्शन प्राप्त करने के लिए नीचे दिए गए बटन से अपना विवरण WhatsApp पर भेजें।
+          </p>
+
+          <!-- High-Converting WhatsApp Button -->
+          <div class="mb-4">
+            <a href="{{ whatsapp_url }}" id="waDirectBtn" target="_blank" class="btn btn-wa btn-lg px-4 py-3 w-100 fs-5 fw-bold shadow-lg d-flex align-items-center justify-content-center gap-2">
+              <i class="fa-brands fa-whatsapp fa-2xl"></i>
+              <span>पंडित जी के WhatsApp पर भेजें</span>
+            </a>
+            <div class="small text-muted mt-2">
+              <i class="fa-solid fa-shield-halved text-success me-1"></i> 100% सुरक्षित • सीधा पंडित जी के WhatsApp पर संदेश जाएगा
+            </div>
+            <div class="alert alert-dark border-0 mt-3 py-2 text-warning small rounded-pill bg-opacity-50">
+              <i class="fa-solid fa-bolt me-1"></i> <span id="autoRedirectMsg"><span id="countdown">2</span> सेकंड में WhatsApp खुल रहा है...</span>
+            </div>
+          </div>
+
+          <!-- Appointment Summary Card -->
+          <div class="booking-summary-box text-start p-3 p-md-4 rounded-4 mb-4">
+            <h6 class="text-warning fw-bold mb-3 border-bottom pb-2 border-warning border-opacity-25">
+              <i class="fa-solid fa-file-invoice me-1"></i> बुकिंग सारांश (Booking Details)
+            </h6>
+            <div class="row g-2 small">
+              <div class="col-6 text-muted">बुकिंग आईडी:</div>
+              <div class="col-6 text-white fw-bold text-end">#APP-{{ appointment.id|stringformat:"04d" }}</div>
+              
+              <div class="col-6 text-muted">सेवा (Service):</div>
+              <div class="col-6 text-white fw-bold text-end">{{ appointment.service.title|default:"Vedic Consultation" }}</div>
+              
+              <div class="col-6 text-muted">दिनांक व समय:</div>
+              <div class="col-6 text-white fw-bold text-end">{{ appointment.preferred_date|date:"d M, Y" }} ({{ appointment.preferred_time|time:"h:i A" }})</div>
+              
+              <div class="col-6 text-muted">परामर्श माध्यम:</div>
+              <div class="col-6 text-white fw-bold text-end">{{ appointment.get_consultation_mode_display }}</div>
+
+              {% if appointment.date_of_birth %}
+              <div class="col-6 text-muted">जन्म तिथि:</div>
+              <div class="col-6 text-white text-end">{{ appointment.date_of_birth|date:"d M, Y" }}</div>
+              {% endif %}
+
+              {% if appointment.place_of_birth %}
+              <div class="col-6 text-muted">जन्म स्थान:</div>
+              <div class="col-6 text-white text-end">{{ appointment.place_of_birth }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Secondary Actions -->
+          <div class="d-flex flex-wrap gap-2 justify-content-center">
+            <a href="{% url 'core:payment' %}" class="btn btn-outline-gold btn-sm px-3 py-2">
+              <i class="fa-solid fa-qrcode me-1"></i> ऑनलाइन दक्षिणा / फीस दें
+            </a>
+            <a href="{% url 'appointments:history' %}" class="btn btn-glass btn-sm px-3 py-2">
+              <i class="fa-solid fa-clock-rotate-left me-1"></i> मेरी बुकिंग सूची
+            </a>
+            <a href="{% url 'core:home' %}" class="btn btn-glass btn-sm px-3 py-2">
+              <i class="fa-solid fa-house me-1"></i> मुख्य पृष्ठ
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Auto Redirect Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var count = 2;
+    var countdownEl = document.getElementById('countdown');
+    var timer = setInterval(function() {
+      count--;
+      if (countdownEl) {
+        countdownEl.innerText = count;
+      }
+      if (count <= 0) {
+        clearInterval(timer);
+        var waBtn = document.getElementById('waDirectBtn');
+        if (waBtn) {
+          window.location.href = waBtn.href;
+        }
+      }
+    }, 1000);
+  });
+</script>
+
+<style>
+  .success-icon-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.15);
+    border: 2px solid #22c55e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.35);
+    animation: successPulse 2s infinite ease-in-out;
+  }
+  @keyframes successPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+    50% { transform: scale(1.06); box-shadow: 0 0 35px rgba(34, 197, 94, 0.6); }
+  }
+  .booking-summary-box {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  [data-theme="light"] .booking-summary-box {
+    background: #F8FAFC !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+  [data-theme="light"] .booking-summary-box .text-white {
+    color: #0F172A !important;
+  }
+</style>
+{% endblock %}
