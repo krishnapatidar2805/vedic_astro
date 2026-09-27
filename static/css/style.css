@@ -3002,20 +3002,21 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 260px !important;
+  max-width: 250px !important;
+  margin: 0 auto;
   padding: 6px;
   background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #6366F1 100%);
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 .about-img-box {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  border: 2.5px solid var(--bg-dark);
+  border: 2px solid var(--bg-dark);
   background: var(--bg-dark);
-  height: 320px !important;
-  max-height: 320px !important;
+  height: 270px !important;
+  max-height: 270px !important;
 }
 .about-img-box img {
   width: 100% !important;
@@ -3792,7 +3793,7 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 48px;
     left: -4px;
   }
-  .about-img-wrap { max-width: 100%; }
+  .about-img-wrap { max-width: 250px !important; margin: 0 auto; }
   .about-exp-badge { position: static; margin-top: 16px; display: inline-block; }
   .poster-frame { height: 350px; }
 }
