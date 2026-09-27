@@ -30,7 +30,7 @@ def get_contact_whatsapp_url(contact_msg):
 def home(request):
     services = Service.objects.filter(is_active=True)[:6]
     posts = Post.objects.filter(status='published')[:3]
-    gallery_images = GalleryImage.objects.filter(is_active=True)[:8]
+    gallery_images = GalleryImage.objects.filter(is_active=True)[:4]
     reviews = Review.objects.filter(is_approved=True)[:6]
     banners = SiteBanner.objects.filter(is_active=True)
     avg_rating = Review.objects.filter(is_approved=True).aggregate(Avg('rating'))['rating__avg'] or 5

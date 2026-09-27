@@ -9,3 +9,4 @@ staticfiles/
 media/profile_pics/
 *.log
 .DS_Store
+scratch/

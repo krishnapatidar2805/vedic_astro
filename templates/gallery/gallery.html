@@ -32,7 +32,7 @@
         <div class="poster-card h-100">
           <div class="poster-frame">
             <img src="{{ img.image.url }}" alt="{{ img.title }}" class="poster-img" loading="lazy">
-            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> Sacred</div>
+            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> {% if img.category %}{{ img.category.name }}{% else %}Sacred Poster{% endif %}</div>
           </div>
           <div class="poster-info p-3 text-center">
             <h6 class="poster-title mb-2">{{ img.title }}</h6>

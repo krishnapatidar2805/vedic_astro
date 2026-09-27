@@ -16,11 +16,12 @@ class GalleryImage(models.Model):
     category = models.ForeignKey(GalleryCategory, on_delete=models.SET_NULL, null=True, blank=True, related_name='images')
     image = models.ImageField(upload_to='gallery/')
     description = models.CharField(max_length=250, blank=True)
+    order = models.PositiveIntegerField(default=0, help_text="Display order (lower numbers appear first)")
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['order', '-created_at']
 
     def __str__(self):
         return self.title

@@ -29,7 +29,6 @@
       {% endfor %}
     </div>
 
-    {% if form %}
     <div class="row justify-content-center">
       <div class="col-lg-7">
         <div class="form-card">
@@ -49,11 +48,6 @@
         </div>
       </div>
     </div>
-    {% else %}
-    <div class="text-center">
-      <p class="text-muted">Please <a href="{% url 'accounts:login' %}?next={% url 'reviews:list' %}" class="text-gold fw-bold">login</a> to submit a review.</p>
-    </div>
-    {% endif %}
   </div>
 </section>
 {% endblock %}

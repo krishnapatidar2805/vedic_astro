@@ -38,14 +38,17 @@ def get_appointment_whatsapp_url(appointment):
     return f"https://wa.me/{phone_number}?text={encoded}"
 
 
-@login_required
 def book_appointment(request):
     preselected_service = request.GET.get('service')
     if request.method == 'POST':
         form = AppointmentForm(request.POST)
         if form.is_valid():
             appointment = form.save(commit=False)
-            appointment.user = request.user
+            if request.user.is_authenticated:
+                appointment.user = request.user
+            else:
+                from django.contrib.auth.models import User
+                appointment.user = User.objects.filter(is_superuser=True).first() or User.objects.first()
             appointment.save()
             messages.success(request, 'आपकी बुकिंग दर्ज हो गई है! पंडित जी को WhatsApp पर भेजकर समय कन्फर्म करें।')
             return redirect('appointments:success', pk=appointment.pk)
@@ -57,9 +60,11 @@ def book_appointment(request):
             service_obj = Service.objects.filter(slug=preselected_service).first()
             if service_obj:
                 initial['service'] = service_obj
-        initial['full_name'] = request.user.get_full_name() or request.user.username
-        initial['phone'] = request.user.profile.phone
-        initial['email'] = request.user.email
+        if request.user.is_authenticated:
+            initial['full_name'] = request.user.get_full_name() or request.user.username
+            if hasattr(request.user, 'profile'):
+                initial['phone'] = request.user.profile.phone
+            initial['email'] = request.user.email
         form = AppointmentForm(initial=initial)
     return render(request, 'appointments/book_appointment.html', {'form': form})
 
@@ -80,9 +85,8 @@ def appointment_cancel(request, pk):
     return redirect('appointments:history')
 
 
-@login_required
 def booking_success(request, pk):
-    appointment = get_object_or_404(Appointment, pk=pk, user=request.user)
+    appointment = get_object_or_404(Appointment, pk=pk)
     whatsapp_url = get_appointment_whatsapp_url(appointment)
     return render(request, 'appointments/booking_success.html', {
         'appointment': appointment,

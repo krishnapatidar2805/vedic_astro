@@ -54,13 +54,20 @@ class Command(BaseCommand):
 
         # ---- Gallery ----
         cat, _ = GalleryCategory.objects.get_or_create(name='Posters & Services')
-        poster_files = ['poster1.jpeg', 'poster2.jpeg', 'poster3.jpeg', 'poster4.jpeg']
-        poster_titles = ['Astrology Services', 'Sangeetmay Shrimad Bhagwat Katha', 'Vedic Pujan & Astrology', 'Contact for Vedic Poojan']
-        for fname, title in zip(poster_files, poster_titles):
+        poster_info = [
+            ('vastu_astrologer_banner.jpg', 'Vastu Expert & Astrologer - Vedic Gajendra Sharma', 1),
+            ('shubh_vastu_emblem.jpg', 'Shubh Vastu Sukhi Samriddhi - Pandit Gajendra Sharma', 2),
+            ('vastu_solutions_banner.jpg', 'Advanced Vastu & Kundli Solutions - Vedic Gajendra Sharma', 3),
+            ('poster1.jpeg', 'Astrology Services', 4),
+            ('poster2.jpeg', 'Sangeetmay Shrimad Bhagwat Katha', 5),
+            ('poster3.jpeg', 'Vedic Pujan & Astrology', 6),
+            ('poster4.jpeg', 'Contact for Vedic Poojan', 7),
+        ]
+        for fname, title, ord_num in poster_info:
             fpath = os.path.join(base, fname)
             if os.path.exists(fpath) and not GalleryImage.objects.filter(title=title).exists():
                 with open(fpath, 'rb') as f:
-                    gi = GalleryImage(title=title, category=cat, is_active=True)
+                    gi = GalleryImage(title=title, category=cat, order=ord_num, is_active=True)
                     gi.image.save(fname, File(f), save=True)
         self.stdout.write(self.style.SUCCESS(f'Created {GalleryImage.objects.count()} gallery images'))
 

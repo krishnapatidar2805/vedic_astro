@@ -13,18 +13,20 @@ def review_list(request):
     paginator = Paginator(reviews, 6)
     page_obj = paginator.get_page(request.GET.get('page'))
 
-    form = None
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            form = ReviewForm(request.POST)
-            if form.is_valid():
-                review = form.save(commit=False)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            if request.user.is_authenticated:
                 review.user = request.user
-                review.save()
-                messages.success(request, 'Thank you! Your review has been submitted and is awaiting approval.')
-                return redirect('reviews:list')
-        else:
-            form = ReviewForm()
+            else:
+                from django.contrib.auth.models import User
+                review.user = User.objects.filter(is_superuser=True).first() or User.objects.first()
+            review.save()
+            messages.success(request, 'Thank you! Your review has been submitted and is awaiting approval.')
+            return redirect('reviews:list')
+    else:
+        form = ReviewForm()
 
     return render(request, 'reviews/review_list.html', {
         'page_obj': page_obj,

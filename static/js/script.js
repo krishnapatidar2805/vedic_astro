@@ -93,4 +93,63 @@ document.addEventListener('DOMContentLoaded', function () {
       applyTheme(newTheme);
     });
   }
+
+  // ---- Animated Stats Counter (Increasing Numbers) ----
+  const counterEls = document.querySelectorAll('[data-counter]');
+  let counterStarted = false;
+
+  function runCounters() {
+    if (counterStarted) return;
+    counterStarted = true;
+
+    counterEls.forEach(function (el) {
+      const target = parseFloat(el.getAttribute('data-counter'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      const duration = 1800; // 1.8 seconds smooth animation
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentVal = target * easeOut;
+
+        if (decimals > 0) {
+          el.textContent = currentVal.toFixed(decimals) + suffix;
+        } else {
+          el.textContent = Math.floor(currentVal) + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          if (decimals > 0) {
+            el.textContent = target.toFixed(decimals) + suffix;
+          } else {
+            el.textContent = target + suffix;
+          }
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    });
+  }
+
+  if (counterEls.length > 0) {
+    const heroStatsWrap = document.querySelector('.hero-stats');
+    if (heroStatsWrap && 'IntersectionObserver' in window) {
+      const counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            runCounters();
+            counterObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.15 });
+      counterObserver.observe(heroStatsWrap);
+    } else {
+      setTimeout(runCounters, 300);
+    }
+  }
 });
