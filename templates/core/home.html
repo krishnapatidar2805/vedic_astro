@@ -15,16 +15,18 @@
         <div class="hero-badge mb-3">
           <span class="pulse-dot"></span> Certified Vedic Astrologer &amp; Katha Vyas
         </div>
-        <h1 class="hero-headline">
-          Vedic Astrology &amp;<br>
-          <span class="hl">Kundli Solutions</span>
-        </h1>
-        <div class="modern-divider start d-none d-lg-block"></div>
-        <div class="modern-divider d-lg-none"></div>
-        <p class="hero-sub text-lg-start mx-auto mx-lg-0">
-          Authentic Janam Kundli analysis, Kundli Matching, Vastu Shanti, Career guidance, Puja &amp; Vedic rituals rooted in ancient scriptural wisdom by Pandit Gajendra Sharma.
+        <div class="hero-headline-wrap">
+          <div class="headline-ambient-glow"></div>
+          <h1 class="hero-headline">
+            <span class="hero-line-1">Vedic Astrology &amp;</span><br>
+            <span class="hero-line-2"><span class="hl">Kundli Solutions</span></span>
+          </h1>
+        </div>
+
+        <p class="hero-sub">
+          Authentic Vedic guidance, Kundli analysis, and sacred remedies for marriage, career, and life prosperity.
         </p>
-        
+
         <div class="hero-trust-chips justify-content-center justify-content-lg-start">
           <div class="trust-chip"><i class="fa-solid fa-om text-warning"></i> 100% Shastra Sammat</div>
           <div class="trust-chip"><i class="fa-solid fa-shield-halved text-cyan"></i> 100% Confidential</div>
@@ -32,17 +34,7 @@
           <div class="trust-chip"><i class="fa-solid fa-bolt text-emerald"></i> Fast Consultation</div>
         </div>
         
-        <div class="hero-ctas mt-4 d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
-          <a href="{% url 'appointments:book' %}" class="btn btn-primary-gradient px-4 py-3">
-            <i class="fa-solid fa-calendar-check"></i> Book Consultation
-          </a>
-          <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-wa px-4 py-3">
-            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-          </a>
-          <a href="tel:{{ BUSINESS_PHONE }}" class="btn btn-glass px-4 py-3">
-            <i class="fa-solid fa-phone"></i> Call Now
-          </a>
-        </div>
+
       </div>
       
       <div class="col-lg-5 text-center">
@@ -64,53 +56,13 @@
         </div>
       </div>
     </div>
-    
-    <!-- 4 Stats Cards -->
-    <div class="hero-stats">
-      <div class="hero-stat-card">
-        <div class="stat-num">1000+</div>
-        <div class="stat-label"><i class="fa-solid fa-users text-primary me-1"></i> Happy Yajmans</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="stat-num">10+</div>
-        <div class="stat-label"><i class="fa-solid fa-scroll text-cyan me-1"></i> Years Experience</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="stat-num">14+</div>
-        <div class="stat-label"><i class="fa-solid fa-om text-warning me-1"></i> Sacred Services</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="stat-num">5.0★</div>
-        <div class="stat-label"><i class="fa-solid fa-star text-warning me-1"></i> Top Rated</div>
-      </div>
-    </div>
   </div>
 </section>
-
-<!-- ── INFINITE RUNNING MARQUEE RIBBON ── -->
-<div class="marquee-wrapper">
-  <div class="marquee-track">
-    <div class="marquee-item"><span>🕉️ जन्म कुंडली एवं हस्तरेखा विश्लेषण</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>💍 विवाह बाधा निवारण व कुंडली मिलान</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>🔥 काल सर्प दोष व मंगल भात पूजा</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>🏠 संपूर्ण वास्तु शांति एवं ग्रह दोष निवारण</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>📖 संगीतमय श्रीमद् भागवत कथा व्यास</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>⭐ 100% शास्त्र सम्मत वैदिक समाधान</span><span class="m-dot"></span></div>
-    <!-- Duplicate for infinite seamless scroll -->
-    <div class="marquee-item"><span>🕉️ जन्म कुंडली एवं हस्तरेखा विश्लेषण</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>💍 विवाह बाधा निवारण व कुंडली मिलान</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>🔥 काल सर्प दोष व मंगल भात पूजा</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>🏠 संपूर्ण वास्तु शांति एवं ग्रह दोष निवारण</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>📖 संगीतमय श्रीमद् भागवत कथा व्यास</span><span class="m-dot"></span></div>
-    <div class="marquee-item"><span>⭐ 100% शास्त्र सम्मत वैदिक समाधान</span><span class="m-dot"></span></div>
-  </div>
-</div>
 
 <!-- ── SACRED OFFERINGS (SERVICES GRID) ── -->
 <section class="section-pad section-dark" id="services">
   <div class="container">
     <div class="text-center mb-5">
-      <div class="section-eyebrow"><i class="fa-solid fa-fire text-warning"></i> Our Sacred Offerings</div>
       <h2 class="section-title">
         Astrology &amp; Vedic <span class="gradient-text-gold">Services</span>
       </h2>
@@ -120,14 +72,14 @@
     <div class="row gy-4">
       {% for service in services %}
       <div class="col-lg-4 col-md-6">
-        <div class="service-card h-100">
+        <div class="service-card h-100 {% if service.is_featured %}service-card-featured{% endif %}">
           <div class="service-card-header">
             <div class="service-icon-box">
               <i class="{{ service.icon }}"></i>
             </div>
             <div class="d-flex align-items-center gap-2">
               {% if service.is_featured %}
-              <span class="service-badge-pill" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24; border-color: rgba(245, 158, 11, 0.4);"><i class="fa-solid fa-star text-warning"></i> Featured</span>
+              <span class="service-badge-featured"><i class="fa-solid fa-star text-warning"></i> Featured</span>
               {% endif %}
               {% if service.price > 0 %}
               <span class="service-badge-pill">Dakshina ₹{{ service.price|floatformat:0 }}</span>
@@ -164,6 +116,49 @@
     </div>
   </div>
 </section>
+
+<!-- ── 4 STATS CARDS (COUNTING ANIMATION) ── -->
+<section class="section-stats-wrap py-5">
+  <div class="container">
+    <div class="hero-stats">
+      <div class="hero-stat-card">
+        <div class="stat-num" data-counter="1000" data-suffix="+">0+</div>
+        <div class="stat-label"><i class="fa-solid fa-users text-primary me-1"></i> Happy Yajmans</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num" data-counter="10" data-suffix="+">0+</div>
+        <div class="stat-label"><i class="fa-solid fa-scroll text-cyan me-1"></i> Years Experience</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num" data-counter="14" data-suffix="+">0+</div>
+        <div class="stat-label"><i class="fa-solid fa-om text-warning me-1"></i> Sacred Services</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num" data-counter="5.0" data-decimals="1" data-suffix="★">0.0★</div>
+        <div class="stat-label"><i class="fa-solid fa-star text-warning me-1"></i> Top Rated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INFINITE RUNNING MARQUEE RIBBON ── -->
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>🕉️ जन्म कुंडली एवं हस्तरेखा विश्लेषण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>💍 विवाह बाधा निवारण व कुंडली मिलान</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🔥 काल सर्प दोष व मंगल भात पूजा</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🏠 संपूर्ण वास्तु शांति एवं ग्रह दोष निवारण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>📖 संगीतमय श्रीमद् भागवत कथा व्यास</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>⭐ 100% शास्त्र सम्मत वैदिक समाधान</span><span class="m-dot"></span></div>
+    <!-- Duplicate for infinite seamless scroll -->
+    <div class="marquee-item"><span>🕉️ जन्म कुंडली एवं हस्तरेखा विश्लेषण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>💍 विवाह बाधा निवारण व कुंडली मिलान</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🔥 काल सर्प दोष व मंगल भात पूजा</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>🏠 संपूर्ण वास्तु शांति एवं ग्रह दोष निवारण</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>📖 संगीतमय श्रीमद् भागवत कथा व्यास</span><span class="m-dot"></span></div>
+    <div class="marquee-item"><span>⭐ 100% शास्त्र सम्मत वैदिक समाधान</span><span class="m-dot"></span></div>
+  </div>
+</div>
 
 <!-- ── ABOUT ASTROLOGER (CLASSIC ELEGANT LAYOUT) ── -->
 <section class="section-pad section-alt" id="about">
@@ -228,7 +223,7 @@
         <div class="poster-card h-100">
           <div class="poster-frame">
             <img src="{{ img.image.url }}" alt="{{ img.title }}" class="poster-img" loading="lazy">
-            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> Sacred</div>
+            <div class="poster-tag"><i class="fa-solid fa-om text-warning me-1"></i> {% if img.category %}{{ img.category.name }}{% else %}Sacred Poster{% endif %}</div>
           </div>
           <div class="poster-info p-3 text-center">
             <h6 class="poster-title mb-2">{{ img.title }}</h6>
@@ -349,28 +344,6 @@
 </section>
 {% endif %}
 
-<!-- ── CTA BANNER BAND ── -->
-<section class="section-pad text-center position-relative overflow-hidden cta-banner-band">
-  <div class="cta-banner-glow"></div>
-  <div class="container position-relative" style="z-index: 2;">
-    <div class="section-eyebrow cta-eyebrow mb-3">
-      <i class="fa-solid fa-sparkles text-warning"></i> Seek Divine Clarity
-    </div>
-    <h2 class="section-title cta-title mb-3">
-      Let Vedic Astrology Guide Your <span class="gradient-text-gold">Life &amp; Career</span>
-    </h2>
-    <p class="cta-subtitle mx-auto mb-4" style="max-width: 650px;">
-      Take the first step towards resolution. Book your personalized Kundli reading or sacred pooja today.
-    </p>
-    <div class="d-flex flex-wrap justify-content-center gap-3">
-      <a href="{% url 'appointments:book' %}" class="btn btn-primary-gradient px-4 py-3">
-        <i class="fa-solid fa-calendar-check"></i> Book Consultation Now
-      </a>
-      <a href="{{ BUSINESS_WHATSAPP_URL }}" target="_blank" class="btn btn-wa px-4 py-3">
-        <i class="fa-brands fa-whatsapp"></i> Chat with Panditji on WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
+
 
 {% endblock %}
