@@ -3002,7 +3002,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 310px;
+  max-width: 260px !important;
   padding: 6px;
   background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #6366F1 100%);
   border-radius: 20px;
@@ -3014,12 +3014,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 15px;
   border: 2.5px solid var(--bg-dark);
   background: var(--bg-dark);
+  height: 320px !important;
+  max-height: 320px !important;
 }
 .about-img-box img {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: 100% !important;
   display: block;
-  object-fit: contain;
+  object-fit: cover !important;
+  object-position: top center !important;
   transition: transform 0.4s ease;
 }
 .about-img-wrap:hover .about-img-box img {
