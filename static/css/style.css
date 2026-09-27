@@ -85,6 +85,7 @@ img, picture, video, canvas, svg {
 }
 
 html {
+  font-size: 90%;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -157,9 +158,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.95rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--text-white);
   margin-bottom: 0.5rem;
 }
@@ -513,9 +514,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
   color: #E2E8F0 !important;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  padding: 7px 15px !important;
+  padding: 6px 14px !important;
   border-radius: var(--radius-full);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -4247,7 +4248,7 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="light"] .nav-link {
   color: #0F172A !important;
-  font-size: 1.05rem !important;
+  font-size: 0.92rem !important;
   font-weight: 700 !important;
 }
 
