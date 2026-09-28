@@ -3273,29 +3273,17 @@ h1, h2, h3, h4, h5, h6 {
 /* ── INNER PAGES HERO / PAGE HEADER ── */
 .page-header {
   position: relative;
-  padding: 50px 0 45px;
-  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.18) 0%, rgba(8, 12, 22, 0.98) 70%);
+  padding: 45px 0 40px;
+  background: var(--bg-main);
   border-bottom: 1px solid var(--border-glass);
   text-align: center;
   overflow: hidden;
 }
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  height: 250px;
-  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.25), transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
-}
 .page-header h1 {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
   color: var(--text-white);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   position: relative;
   z-index: 2;
 }
@@ -3303,24 +3291,31 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid var(--border-glass);
-  padding: 6px 18px;
+  padding: 7px 22px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   backdrop-filter: blur(8px);
   position: relative;
   z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 .breadcrumb-nav a {
-  color: #FDE68A;
-  font-weight: 600;
+  color: #FBBF24;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 .breadcrumb-nav a:hover {
-  color: #FFFFFF;
+  color: #FDE68A;
+}
+.breadcrumb-nav .mx-1 {
+  color: rgba(255, 255, 255, 0.4);
 }
 .breadcrumb-nav span {
-  color: #94A3B8;
+  color: #F8FAFC !important;
+  font-weight: 600;
 }
 
 /* ── PROBLEM CHIP & LEAD TEXT ── */
@@ -4333,6 +4328,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ── LIGHT MODE HIGH-CONTRAST TYPOGRAPHY & HERO/ABOUT OVERRIDES ── */
+[data-theme="light"] .page-header {
+  background: #F8FAFC !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .page-header h1 {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .breadcrumb-nav {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .breadcrumb-nav a {
+  color: #D97706 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .breadcrumb-nav a:hover {
+  color: #B45309 !important;
+}
+
+[data-theme="light"] .breadcrumb-nav .mx-1 {
+  color: #94A3B8 !important;
+}
+
+[data-theme="light"] .breadcrumb-nav span {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
 [data-theme="light"] .about-lead-text {
   color: #1E293B !important;
   font-size: 1.06rem;
