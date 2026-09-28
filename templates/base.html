@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <!-- Custom CSS -->
-<link rel="stylesheet" href="{% static 'css/style.css' %}?v=55.0">
+<link rel="stylesheet" href="{% static 'css/style.css' %}?v=56.0">
 <script>
   (function() {
     var savedTheme = localStorage.getItem('site-theme') || 'dark';
@@ -37,23 +37,31 @@
 
 <!-- ── NAVBAR ── -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container-fluid px-3 px-md-4 px-lg-4" style="max-width: 1440px;">
-    <a class="navbar-brand me-lg-4" href="{% url 'core:home' %}">
+  <div class="container-fluid px-2 px-sm-3 px-md-4 px-lg-4" style="max-width: 1440px;">
+    <a class="navbar-brand me-auto me-lg-4 d-flex align-items-center" href="{% url 'core:home' %}">
       <div class="brand-icon-box">
         <i class="fa-solid fa-om"></i>
       </div>
       <span class="brand-lokeshh">Vedic</span><span class="brand-ai">Astro</span><span class="brand-tools">Sharma</span>
     </a>
     
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavMenu" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="navbar-toggler-icon-custom">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
+    <!-- Top Right Actions Group (Theme Toggle + Hamburger) -->
+    <div class="nav-header-actions d-flex align-items-center gap-2 order-lg-3">
+      <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle Light and Dark Mode" title="Toggle Theme (Light / Dark)">
+        <i class="fa-solid fa-sun theme-icon-sun"></i>
+        <i class="fa-solid fa-moon theme-icon-moon"></i>
+      </button>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavMenu" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="navbar-toggler-icon-custom">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
     
-    <div class="collapse navbar-collapse" id="mainNavMenu">
+    <div class="collapse navbar-collapse order-lg-2" id="mainNavMenu">
       <!-- Main Nav Links aligned to the RIGHT side -->
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 gap-xl-3 my-2 my-lg-0">
         <li class="nav-item"><a class="nav-link" href="{% url 'core:home' %}">Home</a></li>
@@ -62,14 +70,6 @@
         <li class="nav-item"><a class="nav-link" href="{% url 'gallery:list' %}">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
       </ul>
-
-      <!-- Right Action Items (Theme Toggle) -->
-      <div class="nav-actions-wrap d-flex align-items-center ms-lg-3 me-lg-2 pt-2 pt-lg-0">
-        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle Light and Dark Mode" title="Toggle Theme (Light / Dark)">
-          <i class="fa-solid fa-sun theme-icon-sun"></i>
-          <i class="fa-solid fa-moon theme-icon-moon"></i>
-        </button>
-      </div>
     </div>
   </div>
 </nav>
