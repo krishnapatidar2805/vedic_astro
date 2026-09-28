@@ -742,16 +742,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-text-col {
-  margin-top: -30px;
+  margin-top: -45px;
   position: relative;
-  left: 45px;
   z-index: 2;
+}
+
+@media (min-width: 992px) {
+  .hero-text-col {
+    padding-left: 65px;
+    margin-top: -45px;
+  }
 }
 
 @media (max-width: 991.98px) {
   .hero-text-col {
     margin-top: 0;
-    left: 0;
+    padding-left: 0;
   }
 }
 
