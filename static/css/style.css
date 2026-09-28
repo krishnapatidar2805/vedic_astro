@@ -742,14 +742,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-text-col {
-  margin-top: 0;
+  margin-top: -30px;
   position: relative;
+  left: 45px;
   z-index: 2;
 }
 
 @media (max-width: 991.98px) {
   .hero-text-col {
     margin-top: 0;
+    left: 0;
   }
 }
 
